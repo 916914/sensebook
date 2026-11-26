@@ -1,0 +1,17 @@
+SenseBook is open source under three licences, by type of material.
+Full texts are in the LICENSES/ folder.
+
+  Software (prototype/software/, tools/)
+      Apache License 2.0                          LICENSES/Apache-2.0.txt
+
+  Hardware design (design/cad/, prototype/hardware/,
+  and the device design described in design/)
+      CERN Open Hardware Licence v2, Weakly Reciprocal   LICENSES/CERN-OHL-W-2.0.txt
+
+  Documents, images and data (docs/, finance/, design/*.md,
+  design/renders/, design/diagrams/, Image_Prompts.md)
+      Creative Commons Attribution 4.0 International    LICENSES/CC-BY-4.0.txt
+
+Copyright 2026 the SenseBook founding team.
+
+Where a file carries its own licence notice, that notice applies.

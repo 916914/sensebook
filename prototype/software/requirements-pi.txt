@@ -1,0 +1,9 @@
+# Pi Zero 2 W extras. Use `pip install -r requirements-pi.txt` inside a venv created with
+#   python3 -m venv --system-site-packages .venv
+# picamera2 and its libcamera bindings come from apt (python3-picamera2), NOT pip.
+gpiozero>=2.0
+smbus2        # MAX17048 fuel gauge over I2C (optional)
+lgpio          # gpiozero pin factory on Bookworm (or apt: python3-lgpio)
+# On the Pi, replace opencv-python-headless with apt's python3-opencv (pip wheels are huge/slow on 512 MB):
+#   sudo apt install python3-opencv python3-numpy
+# and install the rest of requirements.txt except numpy/opencv/sounddevice/pyttsx3.

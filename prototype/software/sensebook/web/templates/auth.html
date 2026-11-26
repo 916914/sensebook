@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+<form method="post" autocomplete="off">
+  <label for="pin">{% if setup %}Choose a PIN (4 to 8 digits){% else %}Guardian PIN{% endif %}</label>
+  <input id="pin" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4,8}" required autofocus>
+  <p><button type="submit">{% if setup %}Save PIN{% else %}Unlock{% endif %}</button></p>
+</form>
+{% if setup %}<p class="muted">The PIN protects settings and deletion. It is stored only on this device, hashed.</p>{% endif %}
+{% endblock %}

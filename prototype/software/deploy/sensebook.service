@@ -1,0 +1,19 @@
+[Unit]
+Description=SenseBook study companion
+After=network-online.target sound.target bluetooth.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/sensebook
+EnvironmentFile=/home/pi/sensebook/.env
+Environment=PYTHONUNBUFFERED=1
+# the pi user needs groups: audio video gpio bluetooth
+ExecStart=/home/pi/sensebook/.venv/bin/python -m sensebook --mode device --provider gemini --config /home/pi/sensebook/config.yaml
+Restart=on-failure
+RestartSec=5
+MemoryMax=400M
+
+[Install]
+WantedBy=multi-user.target

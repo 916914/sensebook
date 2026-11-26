@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block body %}
+<p class="muted">Pages the device has read and cached. Cached pages can be read offline.</p>
+<div class="tablewrap"><table><thead><tr><th scope="col">Book</th><th scope="col">Page</th><th scope="col">Language</th><th scope="col">Seen</th><th scope="col">Confidence</th></tr></thead>
+<tbody>{% for r in rows %}<tr><td>{{ r.book }}</td><td>{{ r.page_label or '-' }}</td><td>{{ r.lang }}</td><td>{{ r.seen_count }}x</td><td>{{ (r.confidence*100)|round|int }}%</td></tr>
+{% else %}<tr><td colspan="5">No pages yet.</td></tr>{% endfor %}</tbody></table></div>
+{% endblock %}

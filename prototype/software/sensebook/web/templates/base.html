@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} - SenseBook</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <p><strong>SenseBook</strong> companion</p>
+  {% if session.get('ok') %}
+  <nav aria-label="Main"><ul>
+    {% for ep, label in NAV %}<li><a href="{{ url_for(ep) }}" {% if request.endpoint == ep %}aria-current="page"{% endif %}>{{ label }}</a></li>{% endfor %}
+    <li><form method="post" action="{{ url_for('logout') }}"><input type="hidden" name="csrf" value="{{ csrf() }}"><button type="submit">Log out</button></form></li>
+  </ul></nav>
+  {% endif %}
+</header>
+<main id="main" tabindex="-1">
+  <h1>{{ title }}</h1>
+  <div role="status" aria-live="polite">
+  {% for cat, m in get_flashed_messages(with_categories=true) %}<p class="flash {{ cat }}">{{ m }}</p>{% endfor %}
+  </div>
+  {% block body %}{% endblock %}
+</main>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block body %}
+{% if not mem_on %}<p>Memory is off. Notes are not saved until it is turned on in <a href="{{ url_for('settings') }}">Settings</a>.</p>{% endif %}
+<p>{{ summary }}</p>
+<h2>Notes</h2>
+<ul>{% for n in notes %}<li>{{ n.text }} <span class="muted">({{ n.created[:10] }})</span>
+<form method="post" style="display:inline"><input type="hidden" name="csrf" value="{{ csrf() }}"><input type="hidden" name="action" value="delete_note"><input type="hidden" name="id" value="{{ n.id }}"><button type="submit" aria-label="Delete note: {{ n.text }}">Delete</button></form></li>
+{% else %}<li>No notes.</li>{% endfor %}</ul>
+<h2>Bookmarks</h2>
+<ul>{% for b in bookmarks %}<li>{{ b.label }} ({{ b.book }})</li>{% else %}<li>No bookmarks.</li>{% endfor %}</ul>
+<h2>Your data</h2>
+<p><a class="btn" href="{{ url_for('export') }}" download>Export everything (JSON)</a></p>
+<form method="post" data-confirm="Delete all notes, history, reminders and cached pages? This cannot be undone.">
+  <input type="hidden" name="csrf" value="{{ csrf() }}"><input type="hidden" name="action" value="delete_all">
+  <label for="dpin">Guardian PIN to delete everything</label>
+  <input id="dpin" name="pin" type="password" inputmode="numeric" required>
+  <p><button class="danger" type="submit">Delete everything</button></p>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block body %}
+{% if not mem_on %}
+<p>Memory is off, so study history is not saved. Turn it on under <a href="{{ url_for('settings') }}">Settings</a>.</p>
+{% else %}
+<section aria-labelledby="t"><h2 id="t">Today</h2>
+<div class="cards">
+  <div class="card"><b>{{ stats.study_minutes_today }}</b>minutes studied</div>
+  <div class="card"><b>{{ stats.pages_today }}</b>pages read</div>
+  <div class="card"><b>{{ stats.quiz_avg if stats.quiz_avg is not none else 'n/a' }}{% if stats.quiz_avg is not none %}%{% endif %}</b>average quiz score ({{ stats.quiz_count }} answers)</div>
+  <div class="card"><b>{{ due|length }}</b>topics due for review</div>
+</div></section>
+<h2>Concepts</h2>
+<div class="tablewrap"><table><caption class="muted">Mastery estimate and next review</caption>
+<thead><tr><th scope="col">Concept</th><th scope="col">Mastery</th><th scope="col">Next review</th></tr></thead>
+<tbody>{% for c in concepts %}<tr><td>{{ c.name }}</td><td>{{ (c.mastery*100)|round|int }}%</td><td>{{ c.due[:10] if c.due }}</td></tr>
+{% else %}<tr><td colspan="3">No concepts yet. Ask the device to "test me".</td></tr>{% endfor %}</tbody></table></div>
+{% endif %}
+{% endblock %}

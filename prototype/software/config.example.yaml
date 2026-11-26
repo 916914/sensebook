@@ -1,0 +1,94 @@
+# Copy to config.yaml. Every key is optional; defaults live in sensebook/config.py.
+timezone: Asia/Dhaka
+data_dir: data                  # SQLite DB, audio cache
+language: bn                    # bn | en  (can be changed in the web app or by voice)
+voice_speed: 1.0                # 0.7 .. 1.4
+
+gemini:
+  # Model IDs checked against ai.google.dev docs (Nov 2026). Change here, not in code.
+  text_model: gemini-3.5-flash-lite        # image->text, audio->answer, function calling
+  tts_model: gemini-3.8-flash-tts          # multi-speaker TTS, Bangla supported
+  tts_api: interactions                    # interactions | generate_content (falls back automatically)
+  voices:                                  # prebuilt voice names
+    reader: Kore
+    explainer: Puck
+    host_learner: Leda
+    host_teacher: Charon
+  tts_sample_rate: 24000
+
+camera:
+  device_index: 0
+  low_res: [160, 120]
+  still_res: [2304, 1296]       # normal capture (Pi); small print re-captures at full_res
+  full_res: [4608, 2592]
+  small_print_wait_s: 20        # wait for the view to change after "pull the stick up", then wait for Play
+  attach_checks: true           # guidance after attaching to a book
+  lens:                         # M12 ultra-wide (~120 deg); written by scripts/calibrate_camera.py
+    model: none                 # none | standard | fisheye
+    K: null                     # 3x3 camera matrix, row-major (9 numbers)
+    D: null                     # distortion coefficients (fisheye: 4)
+    size: null                  # [width, height] of the calibration images
+    balance: 0.3                # 0 = crop to valid pixels, 1 = keep the whole view
+  motion_threshold: 0.035       # mean abs diff (0..1) that counts as "moving"
+  still_threshold: 0.012        # below this the scene counts as "still"
+  stable_seconds: 0.8           # 0.6-1.0: page still this long before capture
+  change_threshold: 0.01        # still frame must differ from last captured page by this
+  fps: 6
+
+  hand_skin_fraction: 0.04      # extra skin-tone area entering from an edge counts as a hand
+  hand_motion_fraction: 0.2     # ...or a motion blob this large touching an edge
+  rectify: true                 # keystone-correct using the detected page quadrilateral
+  homography: null              # fallback fixed 3x3, e.g. [1,0,0, 0,1,0, 0,0,1], calibrated for the stand
+  spread_aspect: null           # optional spread width/height (e.g. 1.4)
+
+flip:                           # seamless page flipping
+  hand_action: stop             # stop | duck | none (hand in frame)
+  stop_mode: immediate          # immediate | word (soft fade-out)
+  duck_level: 0.25
+  auto_continue: true           # read on across page turns without a button press
+  earcon: true
+  spoken_prompt: false          # "turn the page" (accessibility mode in the web app also enables it)
+  preload: {enabled: true, sentences: 3}
+
+battery:                        # optional MAX17048 fuel gauge on I2C (GPIO 2/3)
+  gauge: auto                   # auto | none
+  warn_levels: [20, 10]
+  poll_seconds: 60
+
+hardware:
+  hold_seconds: 0.8             # hold Play/Pause = where am I; hold Vol+/Vol- = reading speed; hold Back = repeat
+  jack_active_low: true         # jack-detect switch closes to ground when a plug is inserted
+  hub_active_low: true          # hub sensor closes to ground when clamped on a book
+  speed_step: 0.1
+
+pages:
+  phash_max_distance: 6         # Hamming distance (of 64) treated as the same page
+  min_confidence: 0.55
+
+audio:
+  output: speaker               # speaker | headphones | bluetooth
+  private_mode: true            # mute speaker when output != speaker
+  hat: i2s                      # i2s (final hardware) | wm8960 (legacy dev kit)
+  alsa_device: default          # playback PCM, see docs/AUDIO.md (legacy: plughw:wm8960soundcard)
+  alsa_capture_device: mic_in   # capture PCM (legacy: plughw:wm8960soundcard)
+  amp_enable_owner: app         # app (default): SenseBook alone drives GPIO 25 | driver: overlay owns it
+  amp_idle_seconds: 3.0         # MAX98357A SD goes low this long after the last sound
+  bluetooth_sink: ""            # PipeWire/Pulse sink name, set by scripts/pair_bluetooth.sh
+  mixer_card: wm8960soundcard   # legacy only
+  record_seconds_max: 30
+  sample_rate: 16000
+
+discussion:
+  minutes: 4
+  segment_lines: 6
+
+hardware:
+  light_level: 0.4              # reading light 0..1
+
+webapp:
+  host: 127.0.0.1             # --mode device binds 0.0.0.0 (LAN) automatically; always behind the guardian PIN
+  port: 8080
+
+storage:
+  keep_captures: false        # true: keep page JPEGs and Ask audio in data/captures (local only)
+                              # purge with: python -m sensebook --purge-captures

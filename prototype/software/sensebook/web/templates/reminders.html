@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>New reminder</h2>
+<form method="post">
+  <input type="hidden" name="csrf" value="{{ csrf() }}"><input type="hidden" name="action" value="create">
+  <label for="m">What</label><input id="m" name="message" required>
+  <label for="w">When (Dhaka time)</label><input id="w" name="when" type="datetime-local" required>
+  <label for="r">Repeat</label><select id="r" name="repeat"><option value="none">Once</option><option value="daily">Every day</option><option value="weekly">Every week</option></select>
+  <p><button type="submit">Add reminder</button></p>
+</form>
+<h2>All reminders</h2>
+{% for it in items %}{% set r = it.r %}
+<details><summary>{{ r.message }}: {{ it.local.replace('T',' ') }} ({{ r.repeat }}){% if not r.active %}, done{% endif %}</summary>
+<form method="post">
+  <input type="hidden" name="csrf" value="{{ csrf() }}"><input type="hidden" name="id" value="{{ r.id }}">
+  <label for="m{{ r.id }}">What</label><input id="m{{ r.id }}" name="message" value="{{ r.message }}" required>
+  <label for="w{{ r.id }}">When</label><input id="w{{ r.id }}" name="when" type="datetime-local" value="{{ it.local }}" required>
+  <label for="r{{ r.id }}">Repeat</label><select id="r{{ r.id }}" name="repeat">{% for o in ['none','daily','weekly'] %}<option value="{{ o }}" {% if o==r.repeat %}selected{% endif %}>{{ o }}</option>{% endfor %}</select>
+  <p><button name="action" value="edit" type="submit">Save</button> <button class="danger" name="action" value="delete" type="submit">Delete</button></p>
+</form></details>
+{% else %}<p>No reminders.</p>{% endfor %}
+{% endblock %}

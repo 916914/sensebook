@@ -1,0 +1,27 @@
+# Environments and dependencies
+.venv/
+**/.venv/
+node_modules/
+__pycache__/
+*.pyc
+
+# Secrets and local settings (never commit)
+.env
+.env.*
+!.env.example
+.vercel/
+.claude/
+CLAUDE.md
+
+# Device data, captures and recordings from the prototype
+prototype/software/data/
+*.sqlite
+*.db
+captures/
+*.wav
+
+# Built site (rebuilt from sources by tools/build_site.py)
+site/
+
+# Office lock files
+~$*

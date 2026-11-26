@@ -1,0 +1,328 @@
+{
+ "lens_model": {
+  "type": "equidistant f-theta",
+  "f_px": 2200,
+  "hfov": 120.0,
+  "vfov": 67.5,
+  "dfov": 137.7
+ },
+ "coverage": {
+  "textbook_9cm": {
+   "spread_mm": [
+    370,
+    245
+   ],
+   "stick_mm": 90.0,
+   "tip_deg": 10.5,
+   "axis_below_horizontal": 55.5,
+   "lens_height_mm": 116.2,
+   "lens_setback_mm": 26.4,
+   "margin_pct": 3.1,
+   "points": {
+    "near (top edge, centre)": {
+     "dpi_across": 480,
+     "dpi_down": 457,
+     "dpi_min": 457,
+     "squash": 0.95
+    },
+    "near corner (top edge, outer)": {
+     "dpi_across": 143,
+     "dpi_down": 287,
+     "dpi_min": 143,
+     "squash": 2.01
+    },
+    "centre of spread": {
+     "dpi_across": 301,
+     "dpi_down": 182,
+     "dpi_min": 182,
+     "squash": 0.6
+    },
+    "far (reader edge, centre)": {
+     "dpi_across": 200,
+     "dpi_down": 74,
+     "dpi_min": 74,
+     "squash": 0.37
+    },
+    "far corner (reader edge, outer)": {
+     "dpi_across": 145,
+     "dpi_down": 111,
+     "dpi_min": 111,
+     "squash": 0.77
+    }
+   },
+   "dpi_min_overall": 74
+  },
+  "large_18cm": {
+   "spread_mm": [
+    460,
+    300
+   ],
+   "stick_mm": 180.0,
+   "tip_deg": 14.5,
+   "axis_below_horizontal": 59.5,
+   "lens_height_mm": 205.2,
+   "lens_setback_mm": 25.7,
+   "margin_pct": 18.2,
+   "points": {
+    "near (top edge, centre)": {
+     "dpi_across": 278,
+     "dpi_down": 268,
+     "dpi_min": 268,
+     "squash": 0.96
+    },
+    "near corner (top edge, outer)": {
+     "dpi_across": 126,
+     "dpi_down": 199,
+     "dpi_min": 126,
+     "squash": 1.58
+    },
+    "centre of spread": {
+     "dpi_across": 208,
+     "dpi_down": 157,
+     "dpi_min": 157,
+     "squash": 0.76
+    },
+    "far (reader edge, centre)": {
+     "dpi_across": 151,
+     "dpi_down": 77,
+     "dpi_min": 77,
+     "squash": 0.51
+    },
+    "far corner (reader edge, outer)": {
+     "dpi_across": 112,
+     "dpi_down": 93,
+     "dpi_min": 93,
+     "squash": 0.83
+    }
+   },
+   "dpi_min_overall": 77
+  },
+  "large_at_9cm": {
+   "spread_mm": [
+    460,
+    300
+   ],
+   "stick_mm": 90.0,
+   "tip_deg": 10.0,
+   "axis_below_horizontal": 55.0,
+   "lens_height_mm": 116.3,
+   "lens_setback_mm": 26.5,
+   "margin_pct": -5.9,
+   "points": {
+    "near (top edge, centre)": {
+     "dpi_across": 480,
+     "dpi_down": 457,
+     "dpi_min": 457,
+     "squash": 0.95
+    },
+    "near corner (top edge, outer)": {
+     "dpi_across": 104,
+     "dpi_down": 251,
+     "dpi_min": 104,
+     "squash": 2.41
+    },
+    "centre of spread": {
+     "dpi_across": 271,
+     "dpi_down": 145,
+     "dpi_min": 145,
+     "squash": 0.54
+    },
+    "far (reader edge, centre)": {
+     "dpi_across": 172,
+     "dpi_down": 54,
+     "dpi_min": 54,
+     "squash": 0.31
+    },
+    "far corner (reader edge, outer)": {
+     "dpi_across": 121,
+     "dpi_down": 93,
+     "dpi_min": 93,
+     "squash": 0.77
+    }
+   },
+   "dpi_min_overall": 54
+  },
+  "textbook_18cm": {
+   "spread_mm": [
+    370,
+    245
+   ],
+   "stick_mm": 180.0,
+   "tip_deg": 16.0,
+   "axis_below_horizontal": 61.0,
+   "lens_height_mm": 204.8,
+   "lens_setback_mm": 25.5,
+   "margin_pct": 28.8,
+   "points": {
+    "near (top edge, centre)": {
+     "dpi_across": 277,
+     "dpi_down": 269,
+     "dpi_min": 269,
+     "squash": 0.97
+    },
+    "near corner (top edge, outer)": {
+     "dpi_across": 155,
+     "dpi_down": 217,
+     "dpi_min": 155,
+     "squash": 1.4
+    },
+    "centre of spread": {
+     "dpi_across": 222,
+     "dpi_down": 179,
+     "dpi_min": 179,
+     "squash": 0.81
+    },
+    "far (reader edge, centre)": {
+     "dpi_across": 170,
+     "dpi_down": 99,
+     "dpi_min": 99,
+     "squash": 0.59
+    },
+    "far corner (reader edge, outer)": {
+     "dpi_across": 131,
+     "dpi_down": 110,
+     "dpi_min": 110,
+     "squash": 0.84
+    }
+   },
+   "dpi_min_overall": 99
+  }
+ },
+ "min_stick": {
+  "textbook_370x245": {
+   "zero_margin_stick_mm": 82.0,
+   "zero_margin_lens_mm": 108,
+   "margin3_stick_mm": 90.0,
+   "margin3_lens_mm": 116
+  },
+  "large_460x300": {
+   "zero_margin_stick_mm": 110.0,
+   "zero_margin_lens_mm": 136,
+   "margin3_stick_mm": 122.0,
+   "margin3_lens_mm": 148
+  }
+ },
+ "clearance": {
+  "textbook_9cm": {
+   "unit_front_y": -13.0,
+   "stick_front_y": -35.0,
+   "hub_front_y": -31.0,
+   "blade_upright_y": -0.5,
+   "unit_bottom_z": 109.4,
+   "unit_top_z": 151.2
+  },
+  "large_18cm": {
+   "unit_front_y": -10.5,
+   "stick_front_y": -35.0,
+   "hub_front_y": -31.0,
+   "blade_upright_y": -0.5,
+   "unit_bottom_z": 199.1,
+   "unit_top_z": 241.2
+  }
+ },
+ "stability": {
+  "mass_total_g": 137,
+  "mass_unit_g": 104,
+  "tripod_no_book": {
+   "mass_g": 137,
+   "com_height_mm": 126,
+   "min_edge_dist_mm": 30.9,
+   "tip_angle_deg": 13.8,
+   "push_to_tip_at_unit_N": 0.27,
+   "polygon": [
+    [
+     -25.0,
+     -102.0
+    ],
+    [
+     25.0,
+     -102.0
+    ],
+    [
+     40.583278321848965,
+     63.4415450925655
+    ],
+    [
+     -40.583278321848965,
+     63.4415450925655
+    ]
+   ],
+   "com": [
+    0.0,
+    -37.89766546202634
+   ]
+  },
+  "table_with_book": {
+   "F_back_N": 1.64,
+   "F_lateral_N": 0.57,
+   "per_blade_hold_N": 0.74,
+   "push_height_mm": 152
+  },
+  "in_hand": [
+   {
+    "beta": 30,
+    "moment_Nm": 0.077,
+    "blade_root_stress_MPa": 179,
+    "free_span_rotation_deg": 3.2
+   },
+   {
+    "beta": 45,
+    "moment_Nm": 0.107,
+    "blade_root_stress_MPa": 251,
+    "free_span_rotation_deg": 4.5
+   },
+   {
+    "beta": 60,
+    "moment_Nm": 0.13,
+    "blade_root_stress_MPa": 305,
+    "free_span_rotation_deg": 5.4
+   },
+   {
+    "beta": 90,
+    "moment_Nm": 0.149,
+    "blade_root_stress_MPa": 348,
+    "free_span_rotation_deg": 6.2
+   },
+   {
+    "beta": 45,
+    "moment_Nm": 0.18,
+    "blade_root_stress_MPa": 422,
+    "free_span_rotation_deg": 7.5,
+    "stick": "18cm"
+   },
+   {
+    "beta": 90,
+    "moment_Nm": 0.25,
+    "blade_root_stress_MPa": 586,
+    "free_span_rotation_deg": 10.4,
+    "stick": "18cm"
+   }
+  ],
+  "spring": {
+   "k_Nmm_per_deg": 1.61,
+   "table": [
+    {
+     "open_deg": 0,
+     "torque_Nmm": 135,
+     "pad_force_N": 3.0
+    },
+    {
+     "open_deg": 20,
+     "torque_Nmm": 167,
+     "pad_force_N": 3.7
+    },
+    {
+     "open_deg": 40,
+     "torque_Nmm": 200,
+     "pad_force_N": 4.4
+    },
+    {
+     "open_deg": 60,
+     "torque_Nmm": 232,
+     "pad_force_N": 5.2
+    }
+   ],
+   "squeeze_force_at_pads_N": 11.1
+  }
+ }
+}

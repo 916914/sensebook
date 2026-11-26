@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block body %}
+{% if not mem_on %}<p>Memory is off, so quiz results are not saved.</p>{% endif %}
+<div class="tablewrap"><table><thead><tr><th scope="col">When</th><th scope="col">Question</th><th scope="col">You said</th><th scope="col">Score</th></tr></thead>
+<tbody>{% for r in rows %}<tr><td>{{ r.ts[:16] }}</td><td>{{ r.question }}</td><td>{{ r.answer_heard }}</td><td>{{ (r.score*100)|round|int }}%</td></tr>
+{% else %}<tr><td colspan="4">No quiz results yet.</td></tr>{% endfor %}</tbody></table></div>
+{% endblock %}
