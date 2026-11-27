@@ -58,11 +58,17 @@ Visual: render 01 (the unit over an open book, studio light).
 
 SenseBook is our first step. Our ambition extends further: to build technologies that expand learning, independence and opportunity. (brief)
 
-**Human Intelligence.** Technologies that deepen how people learn, reason and understand.
+**Five fields of work** (owner, 27 Nov; replaces the brief's three pillars, shown side by side):
 
-**Human Independence.** Technologies that let people do for themselves what circumstance or disability has made them depend on others to do.
+| Field | Line | Programmes |
+|---|---|---|
+| Intellectual advancement | Technologies that deepen how people learn, reason and understand. | SenseBook (in development), LabAnywhere, SkillSense |
+| Physical independence | Technologies that let people move, act and live on their own terms, whatever their body or circumstance. | MotionSense, CareLift, HumanBridge |
+| Economic opportunity | Technologies that widen access to the skills, tools and markets through which people earn and build. | MicroFactory, FarmGate, FreshBank, MaterialBank |
+| Health and wellbeing | Technologies that make good health easier to reach and to keep. | ClinicOne, AirWorks, AquaTrust |
+| Societal infrastructure | Technologies that make the systems communities depend on more resilient and dependable. | FloodCore, DrainWorks, RoadSense, PowerBrick |
 
-**Human Opportunity.** Technologies that widen access to the skills, tools and work through which people shape their own lives.
+Key under the fields: In development · Proposed, not yet built. Only SenseBook is in development; the others are named only, never described as products.
 
 Link: **See our vision**
 
