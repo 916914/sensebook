@@ -262,6 +262,17 @@ def copy(rel, dest_rel=None):
     return "/" + (dest_rel or rel).replace("\\", "/")
 
 
+def tracked(prefix):
+    """Files under `prefix` that are committed to git, so uncommitted work in progress is never published.
+    Returns None if git isn't available (then everything on disk is used)."""
+    import subprocess
+    try:
+        r = subprocess.run(["git", "-C", ROOT, "ls-files", "--", prefix], capture_output=True, text=True, check=True)
+        return {line.strip() for line in r.stdout.splitlines() if line.strip()}
+    except (OSError, subprocess.CalledProcessError):
+        return None
+
+
 def read(rel):
     p = os.path.join(ROOT, rel)
     if not os.path.isfile(p):
@@ -378,19 +389,25 @@ def main():
     # renders and 3D viewer from the build
     renders_dir = os.path.join(ROOT, "design", "renders")
     renders, caps = [], []
+    ok_renders = tracked("design/renders")
     if os.path.isdir(renders_dir):
         for f in sorted(os.listdir(renders_dir)):
+            if ok_renders is not None and f"design/renders/{f}" not in ok_renders:
+                continue
             if f.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
                 renders.append(copy(f"design/renders/{f}", f"renders/{f}"))
                 caps.append(os.path.splitext(f)[0].replace("_", " ").replace("-", " "))
     viewer = False
     vdir = os.path.join(ROOT, "design", "viewer")
-    if os.path.isfile(os.path.join(vdir, "index.html")):
+    ok_viewer = tracked("design/viewer")
+    if os.path.isfile(os.path.join(vdir, "index.html")) and (ok_viewer is None or "design/viewer/index.html" in ok_viewer):
         for d, _, fs in os.walk(vdir):
             for f in fs:
                 if f.endswith((".py", ".pyc", ".md")) or f.startswith("."):
                     continue
                 rel = os.path.relpath(os.path.join(d, f), ROOT).replace("\\", "/")
+                if ok_viewer is not None and rel not in ok_viewer:
+                    continue
                 copy(rel, "viewer/" + os.path.relpath(os.path.join(d, f), vdir).replace("\\", "/"))
         viewer = True
 
