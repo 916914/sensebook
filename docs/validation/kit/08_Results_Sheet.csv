@@ -1,0 +1,6 @@
+code,group,date,city_type,class,version,tutor_or_coaching,tutoring_spend_tk_month,stuck_evenings_7d,phone_access,ai_use_last_month,interest_level,price_shown_tk,deposit,vw_too_cheap_tk,vw_good_deal_tk,vw_expensive_tk,vw_too_expensive_tk,subscription_wtp_tk_month,keeps_device_or_phone,trial_days_used,trial_minutes_total,attach_time_s_thin,attach_time_s_thick,read_task_alone,ask_task_alone,org_commitment_level,best_quote
+S01,student,,,,,,,,,,,,,,,,,,,,,,,,,,
+P01,parent,,,,,,,,,,,,,,,,,,,,,,,,,,
+B01,blind_low_vision,,,,,,,,,,,,,,,,,,,,,,,,,,
+T01,teacher_school,,,,,,,,,,,,,,,,,,,,,,,,,,
+O01,organisation_funder,,,,,,,,,,,,,,,,,,,,,,,,,,
