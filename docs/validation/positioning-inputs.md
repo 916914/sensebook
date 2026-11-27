@@ -2,7 +2,7 @@
 
 For the positioning and brand chat. These are the facts and limits the positioning should rest on. They come from desk research on 27 November 2026; nobody has been interviewed and no SenseBook hardware has been tested. Sources are linked; full detail is in the [validation report](SenseBook_Validation_Report.md).
 
-**Version:** 1.1 (27 Nov 2026). Market, technology, student-alternative and blind-reader evidence is in. Legal points (NCTB rights, children's data) follow in the report.
+**Version:** 1.2 (27 Nov 2026). All evidence is in, including the legal points (NCTB rights, children's data, the AI provider's age terms), which are in section 5 of the report.
 
 ## 1. Who the first customer really is
 | Track | Buyer (pays) | User | Evidence |
@@ -79,7 +79,8 @@ SenseBook's own proof points (preference over a phone, independence for blind re
 | "Blind students can't read their textbooks" / "the only Bangla reader" | Free DAISY talking textbooks exist for Classes 1–10; Lookout and Envision list Bengali | "Reads the printed page in front of you, hands-free: guides, notes and books that aren't in audio" |
 | "One-sixth to one-quarter of the price of imported reading aids" (current plan line) | The arithmetic is wrong: Tk 16,990 is about 1/20 of OrCam Read 3 ($2,790) and about 1/14 of Envision Glasses' lowest price ($1,899) | "A small fraction of the price of imported readers", with the real figures |
 | "Your tutor … for less than one month of tuition" | True only for the Tk 399 subscription; the device is Tk 14,990 up front, which is 5–14 months of a typical tutor outside Dhaka (Tk 1,100–3,000 a month) | Compare the subscription with tuition, and say the device price plainly |
-| "NCTB-approved" or anything implying endorsement | No NCTB permission or memorandum yet | Don't use NCTB's name or logo as an endorsement |
+| "NCTB-approved" or anything implying endorsement | No NCTB permission or memorandum yet. Textbook copyright sits with the Government or NCTB, and the Note-Books (Prohibition) Act 1980 bars unauthorised textbook explanations | Don't use NCTB's name or logo as an endorsement; "works with NCTB textbooks" only after permission |
+| "Powered by Google Gemini" (or any provider name) for the student product | Google's Gemini API terms (effective 23 Mar 2026) bar services likely to be used by under-18s; the provider may change | Don't name the AI provider in brand materials |
 | Battery hours, "certified", "safe for children" | No device tested or certified (BTRC, battery tests) | "Prototype" until certified |
 
 ## 6. The price range the evidence supports

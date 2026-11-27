@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 176" width="100%" role="img">
+<text x="290.0" y="23.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5B676D" text-anchor="end" font-weight="normal">Secondary students (general schools, BANBEIS 2025)</text>
+<rect x="300.0" y="10" width="273.3" height="18" rx="3" fill="#9FC2C6"/>
+<text x="579.3" y="23.0" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#1B2528" text-anchor="start" font-weight="normal">8.64m</text>
+<text x="290.0" y="51.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5B676D" text-anchor="end" font-weight="normal">Urban, about 30%</text>
+<rect x="300.0" y="38" width="81.9" height="18" rx="3" fill="#9FC2C6"/>
+<text x="387.9" y="51.0" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#1B2528" text-anchor="start" font-weight="normal">2.59m</text>
+<text x="290.0" y="79.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5B676D" text-anchor="end" font-weight="normal">Top two income quintiles, about half</text>
+<rect x="300.0" y="66" width="41.1" height="18" rx="3" fill="#9FC2C6"/>
+<text x="347.1" y="79.0" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#1B2528" text-anchor="start" font-weight="normal">1.30m</text>
+<text x="290.0" y="107.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5B676D" text-anchor="end" font-weight="normal">With home internet: plan (76%)</text>
+<rect x="300.0" y="94" width="31.0" height="18" rx="3" fill="#9FC2C6"/>
+<text x="337.0" y="107.0" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#1B2528" text-anchor="start" font-weight="normal">0.98m</text>
+<text x="290.0" y="135.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#1B2528" text-anchor="end" font-weight="bold">With home internet: BBS 2024 urban (61.6%)</text>
+<rect x="300.0" y="122" width="25.3" height="18" rx="3" fill="#1F5A63"/>
+<text x="331.3" y="135.0" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#1B2528" text-anchor="start" font-weight="bold">0.80m</text>
+<line x1="300.0" y1="6" x2="300.0" y2="154" stroke="#5B676D" stroke-width="1"/>
+</svg>

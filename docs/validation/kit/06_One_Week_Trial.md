@@ -17,7 +17,7 @@ Run these before the trial. If T1 fails, the trial still runs, but read-any-prin
 - Capture at the device geometry: lens about 11–12 cm above the spine at the top edge, looking down at about 55°, ultra-wide lens (or the closest phone lens). Repeat at 18 cm. Light: daylight, a ceiling tube light, and a single lamp during a power cut.
 - Ground truth: the NCTB PDFs for textbook pages; type the others by hand.
 - Measure: character error rate (CER) for the near half and the far half of the spread separately; **invented words** (text that isn't on the page) per 1,000 words, counted separately from missed words; numbers and units read wrong.
-- Why: the design analysis puts resolution at the reader's edge of the spread at about **74 dpi** at 9 cm and **77 dpi** at 18 cm (`design/cad/out/analysis_results.json`). OCR is usually run at 200–300 dpi. This is the riskiest number in the product.
+- Why: the design analysis puts resolution at the reader's edge of the spread at about **74 dpi** at 9 cm and **99 dpi** at 18 cm for a textbook spread, and 77 dpi at 18 cm for a large 46 × 30 cm spread (`design/cad/out/analysis_results.json`). OCR is usually run at 200–300 dpi. This is the riskiest number in the product.
 
 **T2. Bangla voice listening test.**
 - 10 listeners (at least 5 blind or low-vision, mixed ages) hear the same 2-minute NCTB passage in 5–6 voices: two cloud voices, the planned Gemini TTS voice, one open-source neural voice running on a Pi Zero 2 W, and espeak-ng.
