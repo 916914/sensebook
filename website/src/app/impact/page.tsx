@@ -7,7 +7,7 @@ import { impact } from "@/content/impact";
 
 export const metadata: Metadata = {
   title: "Impact",
-  description: "The barriers we intend to remove and the outcomes we intend to measure, in education, accessibility, intellectual independence, Bangladeshi capability and global human impact.",
+  description: "The barriers we remove and the outcomes we measure, in education, accessibility, intellectual independence, Bangladeshi capability and global human impact.",
 };
 
 export default function ImpactPage() {
@@ -23,7 +23,7 @@ export default function ImpactPage() {
         <div aria-hidden="true" className="hidden grid-cols-12 gap-8 pb-4 text-sm text-quiet lg:grid">
           <span className="col-span-4" />
           <span className="col-span-4">The barrier</span>
-          <span className="col-span-4">What we intend to measure</span>
+          <span className="col-span-4">What we measure</span>
         </div>
         <ul>
           {impact.areas.map((a) => (
@@ -34,7 +34,7 @@ export default function ImpactPage() {
                 <p className="mt-1 lg:mt-0">{a.barrier}</p>
               </div>
               <div className="lg:col-span-4">
-                <p className="text-sm text-quiet lg:sr-only">What we intend to measure</p>
+                <p className="text-sm text-quiet lg:sr-only">What we measure</p>
                 <p className="mt-1 text-quiet lg:mt-0">{a.measure}</p>
               </div>
             </li>

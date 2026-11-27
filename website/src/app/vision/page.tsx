@@ -89,7 +89,7 @@ export default function VisionPage() {
           <div className="lg:col-span-4 lg:col-start-9 lg:self-end">
             <p className="text-mist">{vision.close.text}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/impact">How we intend to matter</ButtonLink>
+              <ButtonLink href="/impact">How we measure impact</ButtonLink>
             </div>
           </div>
         </div>

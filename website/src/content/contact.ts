@@ -11,8 +11,8 @@ export const contact = {
     { name: "Institutions", subject: "Institutions", text: "Schools, universities, libraries and organisations of blind and low-vision readers who want to shape and test what we build." },
     { name: "Press", subject: "Press", text: "For interviews and accurate information about the institution and SenseBook." },
     { name: "Design collaborators", subject: "Design", text: "Industrial, interaction and type designers who care about objects that are calm, clear and lasting." },
-    { name: "Engineers", subject: "Engineering", text: "Hardware, embedded and software engineers. SenseBook’s design files are public, and reading them is a good place to start." },
+    { name: "Engineers", subject: "Engineering", text: "Hardware, embedded and software engineers who want to build technology that people depend on." },
   ],
   reply: "We read every message, and reply where there is a clear way to work together.",
-  missing: "Our contact address will be published here shortly.",
+  missing: "Our public contact address is being set up.",
 } as const;

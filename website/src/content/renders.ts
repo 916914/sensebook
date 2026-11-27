@@ -13,6 +13,7 @@ export type RenderId =
   | "paperback"
   | "tripod"
   | "folded"
+  | "held"
   | "extended";
 
 export type RenderAsset = {
@@ -101,6 +102,13 @@ export const renders: Record<RenderId, RenderAsset> = {
     alt: "SenseBook folded flat beside a pencil and a phone, its legs folded along the stick.",
     caption: "Folded, beside a pencil and a phone.",
   },
+  held: {
+    file: "13_held_in_the_hands.jpg",
+    width: 1800,
+    height: 1200,
+    alt: "SenseBook clipped to a hardcover textbook that is held open in two hands, the unit above the top edge of the book.",
+    caption: "In the hands, with the same textbook as everyone else.",
+  },
   extended: {
     file: "15_stick_extended_small_print.jpg",
     width: 1800,
@@ -115,4 +123,4 @@ export const renderSrc = (id: RenderId) => `/design/renders/${renders[id].file}`
 /** The build chat’s 3D model, copied from design/cad/out/sensebook.glb. */
 export const modelSrc = "/design/model/sensebook.glb";
 
-export const renderNote = "Render of the prototype design from SenseBook’s open CAD model. Not a photograph.";
+export const renderNote = "Render of the prototype design from SenseBook’s CAD model. Not a photograph.";

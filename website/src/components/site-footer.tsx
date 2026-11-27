@@ -28,14 +28,11 @@ export function SiteFooter() {
         </nav>
 
         <div className="text-[0.9375rem] leading-relaxed text-mist lg:col-span-4">
-          <p>
-            SenseBook is designed in the open. Software under Apache-2.0, hardware under CERN-OHL-W-2.0, documents and images
-            under CC BY 4.0.
-          </p>
+          <p>For investors, researchers, institutions, press, designers and engineers who want to work with us.</p>
           <p className="mt-4">
-            <a href={site.repoUrl} className="link-draw text-stone" rel="noopener">
-              SenseBook&rsquo;s design files on GitHub
-            </a>
+            <Link href="/contact" className="link-draw text-stone">
+              Contact us
+            </Link>
           </p>
         </div>
       </Container>

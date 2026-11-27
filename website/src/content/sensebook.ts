@@ -7,7 +7,7 @@ export const sensebook = {
     title: "SenseBook",
     subtitle: "A screen-free AI learning companion for printed books.",
     text: "It clips onto a book, sees the page, and answers your questions aloud. The book stays at the centre.",
-    status: "In development. Every image on this page is a render of the current prototype design, made from its open CAD model.",
+    status: "In development. Every image on this page is a render of the current prototype design, made from its CAD model.",
   },
   whatItIs: {
     title: "What it is",
@@ -39,13 +39,74 @@ export const sensebook = {
     contexts: "The same grip works on a desk, in the hands, or standing on its own over a letter or a loose sheet. For small print, the stick extends.",
     note: "These steps describe the prototype design. They have not yet been tested with readers.",
   },
-  whoItServes: {
-    title: "Who it serves",
-    groups: [
-      { name: "School students", text: "Help with the textbook in front of them, at the moment they are stuck, without waiting for the next lesson." },
-      { name: "University learners", text: "A way to question dense texts, check their reading, and go further than the page." },
-      { name: "Blind and low-vision readers", text: "Printed books read aloud and explained on request, with controls made for touch." },
-      { name: "Lifelong learners", text: "Any book on the shelf becomes a patient conversation, at any age." },
+  // Who it serves (owner, 27 Nov): one product, four lives. Illustrative, not testimonials.
+  lives: {
+    label: "Who it serves",
+    title: "One product. Different lives.",
+    lede: "The same SenseBook, with the same features and the same intelligence, in four very different lives. Nothing about it marks one reader out from another.",
+    stories: [
+      {
+        name: "The student in a remote village",
+        situation: "She is studying physics at night. Her teacher is not available, and her family cannot afford a private tutor for every subject.",
+        outcome: "She does not have to skip the chapter because she cannot understand it.",
+        render: "paperback",
+      },
+      {
+        name: "The university student",
+        situation: "He is studying a difficult engineering theory and wants to understand how it is used in the real world.",
+        outcome: "Instead of switching between five different resources, he has an intellectual conversation while he keeps reading.",
+        render: "extended",
+      },
+      {
+        name: "The student who is blind",
+        situation: "She wants to study from the same textbook as her classmates.",
+        outcome: "She uses the same SenseBook, with the same features and intelligence, to pursue the same academic ambitions.",
+        render: "held",
+      },
+      {
+        name: "The lifelong learner",
+        situation: "He left university years ago, but he wants to understand economics, psychology, technology and business.",
+        outcome: "His education does not end with his graduation.",
+        render: "tripod",
+      },
+    ],
+    note: "These are illustrative future experiences, not existing users or testimonials. The pictures are renders of the prototype design.",
+  },
+  // Six ways SenseBook could change society (owner, 27 Nov). Possibilities, stated as such.
+  society: {
+    title: "Six ways SenseBook could transform society",
+    lede: "SenseBook is one device. Used widely, it could change how a society learns. These are the changes we are designing for. None of them has been measured yet.",
+    ways: [
+      {
+        name: "Democratising personalised education",
+        text: "Give students in remote villages on-demand explanations, discussion and academic guidance that would otherwise need a knowledgeable person to be there.",
+        line: "Geography should not determine how deeply someone can learn.",
+      },
+      {
+        name: "Reducing educational inequality",
+        text: "Supplement private tutoring, and reduce families’ dependence on extra paid instruction, where SenseBook proves effective.",
+        line: "A family’s financial circumstances should not determine how many questions their child can afford to ask.",
+      },
+      {
+        name: "Normalising inclusive education",
+        text: "A blind student and a sighted student use the same commercially desirable technology to study the same subject.",
+        line: "Accessibility becomes an ordinary feature of modern education, instead of something that needs visibly separate equipment.",
+      },
+      {
+        name: "Developing a generation of independent thinkers",
+        text: "Move students beyond memorisation by encouraging questioning, reasoning, debating, connecting concepts and applying knowledge.",
+        line: "Imagine students preparing for examinations by defending their understanding in conversation, rather than memorising model answers.",
+      },
+      {
+        name: "Creating a lifelong learning society",
+        text: "A farmer studying modern agricultural techniques, a technician understanding machinery, an entrepreneur studying economics and an adult learning English could all benefit.",
+        line: "Education no longer has to end when someone leaves an academic institution.",
+      },
+      {
+        name: "Building Bangladesh’s technological capabilities",
+        text: "Develop locally engineered consumer hardware, Bangla AI learning systems, accessible digital content, electronics manufacturing expertise and, in time, intellectual capabilities Bangladesh can export.",
+        line: "The technology Bangladesh learns with can also be designed, engineered and made in Bangladesh.",
+      },
     ],
   },
   conversational: {
@@ -74,21 +135,16 @@ export const sensebook = {
   },
   visuals: {
     title: "The design",
-    text: "SenseBook is designed in the open. The renders below come straight from its CAD model, which anyone can download, inspect and build from.",
+    text: "Every part of SenseBook is drawn in a full CAD model. The renders below come straight from it.",
     modelTitle: "Turn it. Pull it apart.",
     modelText: "The full CAD model of the prototype: every part of the unit and the grip. Drag to turn it, use the slider to pull it apart, and select a part to name it.",
     modelNote: "This is the CAD model, not a photograph. Bought parts are drawn at typical sizes, and nothing has been built or tested yet.",
-  },
-  open: {
-    title: "Designed in the open",
-    text: "SenseBook’s software is published under Apache-2.0, its hardware under CERN-OHL-W-2.0, and its documents and images under CC BY 4.0. Engineers, researchers and readers can check our work, repair what they own, and improve on it.",
-    cta: "SenseBook’s design files on GitHub",
   },
   roadmap: {
     title: "The road ahead",
     lede: "Each stage begins only when the one before it is done well. We do not publish dates we cannot keep.",
     stages: [
-      { name: "Prototype design", text: "A complete CAD model, parts list and assembly guide, published openly.", now: true },
+      { name: "Prototype design", text: "A complete CAD model, parts list and assembly guide.", now: true },
       { name: "First working units", text: "Hand-built from the parts list and tested on real books." },
       { name: "Reader trials", text: "With school students, university learners and blind and low-vision readers, measured against what we set out to change." },
       { name: "Ready to make", text: "Refined for cost, durability and manufacture." },

@@ -9,8 +9,6 @@ export const site = {
   signature: "Born in Bangladesh. Built for humanity.",
   description:
     "Human Advancement is a technology institution, born in Bangladesh and built for humanity, dedicated to advancing human potential. Our first invention is SenseBook, a screen-free AI learning companion for printed books.",
-  /** Public repository of SenseBook’s open design files. */
-  repoUrl: "https://github.com/916914/sensebook",
   /** Set NEXT_PUBLIC_CONTACT_EMAIL at build time (for example in Vercel). It is never committed to the repo. */
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "",
   /** Public URL of the site once published, used for metadata. */

@@ -43,7 +43,7 @@ const files = listFiles(site);
 const size = files.reduce((s, f) => s + statSync(f).size, 0);
 const renders = files.filter((f) => f.includes(join("public", "design"))).length;
 console.log(`${PROJECT}: ${files.length} files, ${(size / 1e6).toFixed(1)} MB (${renders} SenseBook renders/model files)`);
-if (renders < 12) console.warn("Warning: SenseBook renders are missing. Run `npm run sync-design` first.");
+if (renders < 13) console.warn("Warning: SenseBook renders are missing. Run `npm run sync-design` first.");
 if (process.argv.includes("--dry-run")) process.exit(0);
 
 const token = (process.env.VERCEL_TOKEN || "").trim();

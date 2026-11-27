@@ -33,7 +33,7 @@ export default function ContactPage() {
 
       <Section tone="stone" labelledBy="who-title">
         <h2 id="who-title" className="display display-m max-w-[18ch]">
-          Who we would like to hear from
+          Who we want to hear from
         </h2>
         <ul className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
           {contact.audiences.map((a) => (
@@ -44,11 +44,6 @@ export default function ContactPage() {
                 {email && (
                   <a href={mailto(a.subject)} className="link-draw text-[0.9375rem] font-medium">
                     Write about {a.subject.toLowerCase()}
-                  </a>
-                )}
-                {a.name === "Engineers" && (
-                  <a href={site.repoUrl} className="link-draw text-[0.9375rem] font-medium" rel="noopener">
-                    Read the design files
                   </a>
                 )}
               </p>

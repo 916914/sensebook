@@ -8,7 +8,6 @@ import { Section } from "@/components/section";
 import { ModelStage } from "@/components/sensebook/model-stage";
 import { modelSrc, renderSrc } from "@/content/renders";
 import { sensebook } from "@/content/sensebook";
-import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "SenseBook",
@@ -84,12 +83,16 @@ export default function SenseBookPage() {
             </li>
           ))}
         </ol>
-        <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:mt-28">
-          <RenderFigure note={false} id="hardcover" tone="night" sizes="(min-width: 640px) 50vw, 100vw" aspect="3 / 2" />
-          <RenderFigure note={false} id="paperback" tone="night" sizes="(min-width: 640px) 50vw, 100vw" aspect="3 / 2" />
-          <RenderFigure note={false} id="tripod" tone="night" sizes="(min-width: 640px) 50vw, 100vw" aspect="3 / 2" />
-          <RenderFigure note={false} id="extended" tone="night" sizes="(min-width: 640px) 50vw, 100vw" aspect="3 / 2" />
-        </div>
+        <RenderFigure
+          note={false}
+          id="hardcover"
+          tone="night"
+          sizes="(min-width: 1344px) 1248px, 100vw"
+          aspect="16 / 7"
+          position="50% 45%"
+          parallax={3}
+          className="mt-20 lg:mt-28"
+        />
         <div className="mt-12 grid lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="lede text-stone">{s.howItWorks.contexts}</p>
@@ -98,21 +101,40 @@ export default function SenseBookPage() {
         </div>
       </Section>
 
-      {/* Who it serves */}
-      <Section tone="stone" labelledBy="who-title">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-          <h2 id="who-title" className="display display-m lg:col-span-4">
-            {s.whoItServes.title}
-          </h2>
-          <ul className="grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:col-span-8">
-            {s.whoItServes.groups.map((g) => (
-              <li key={g.name} className="border-t border-ink/80 pt-5">
-                <h3 className="text-lg font-semibold">{g.name}</h3>
-                <p className="mt-2 text-quiet">{g.text}</p>
-              </li>
-            ))}
-          </ul>
+      {/* Who it serves: one product, four lives (illustrative) */}
+      <Section tone="stone" labelledBy="lives-title">
+        <div className="grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-6">
+            <p className="text-quiet">{s.lives.label}</p>
+            <Reveal>
+              <h2 id="lives-title" className="display display-l mt-4">
+                {s.lives.title}
+              </h2>
+            </Reveal>
+          </div>
+          <p className="lede lg:col-span-5 lg:col-start-8 lg:self-end">{s.lives.lede}</p>
         </div>
+        <ul className="mt-16 lg:mt-24">
+          {s.lives.stories.map((story) => (
+            <li key={story.name} className="grid gap-8 border-t border-rule py-12 md:grid-cols-12 md:gap-10 lg:py-16">
+              <RenderFigure
+                note={false}
+                caption={false}
+                id={story.render}
+                sizes="(min-width: 768px) 40vw, 100vw"
+                aspect="4 / 3"
+                className="md:col-span-5"
+              />
+              <div className="md:col-span-7 md:pt-2 lg:col-span-6 lg:col-start-7">
+                <h3 className="text-xl font-semibold tracking-[-0.01em]">{story.name}</h3>
+                <p className="mt-3 max-w-xl text-quiet">{story.situation}</p>
+                <span aria-hidden="true" className="mt-8 block h-[2px] w-10 bg-marigold" />
+                <p className="display display-s mt-6 max-w-[26ch]">{story.outcome}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <p className="border-t border-rule pt-6 text-sm text-quiet">{s.lives.note}</p>
       </Section>
 
       {/* Conversational learning */}
@@ -195,8 +217,33 @@ export default function SenseBookPage() {
         </div>
       </Section>
 
-      {/* Open design + roadmap */}
-      <Section tone="night" labelledBy="roadmap-title">
+      {/* Six ways SenseBook could change society (owner, 27 Nov) */}
+      <Section tone="night" labelledBy="society-title">
+        <div className="grid gap-8 lg:grid-cols-12">
+          <Reveal className="lg:col-span-7">
+            <h2 id="society-title" className="display display-l max-w-[16ch]">
+              {s.society.title}
+            </h2>
+          </Reveal>
+          <p className="lede text-mist lg:col-span-4 lg:col-start-9 lg:self-end">{s.society.lede}</p>
+        </div>
+        <ol className="mt-16 grid gap-px overflow-hidden bg-graphite md:grid-cols-2 lg:mt-24 lg:grid-cols-3">
+          {s.society.ways.map((w, i) => (
+            <li key={w.name} className="flex flex-col bg-night py-10 md:px-8 md:odd:pl-0 lg:px-10 lg:py-12 lg:odd:pl-10 lg:[&:nth-child(3n+1)]:pl-0">
+              <span aria-hidden="true" className="font-display text-xl font-light text-dim">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-stone">{w.name}</h3>
+              <p className="mt-3 text-mist">{w.text}</p>
+              <span aria-hidden="true" className="mt-8 block h-[2px] w-8 bg-marigold" />
+              <p className="mt-5 font-display text-[1.375rem] leading-snug font-light text-stone">{w.line}</p>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      {/* Roadmap */}
+      <Section tone="night" labelledBy="roadmap-title" className="border-t border-graphite">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <h2 id="roadmap-title" className="display display-l">
@@ -223,17 +270,11 @@ export default function SenseBookPage() {
           </ol>
         </div>
 
-        <div className="mt-24 grid gap-8 border-t border-graphite pt-16 lg:mt-32 lg:grid-cols-12 lg:pt-20">
-          <h2 className="display display-m lg:col-span-5">{s.open.title}</h2>
-          <div className="lg:col-span-6 lg:col-start-7">
-            <p className="text-mist">{s.open.text}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href={site.repoUrl} variant="secondary">
-                {s.open.cta}
-              </ButtonLink>
-              <ButtonLink href="/contact">Work with us</ButtonLink>
-            </div>
-          </div>
+        <div className="mt-16 flex flex-wrap gap-3 lg:mt-20">
+          <ButtonLink href="/contact">Work with us</ButtonLink>
+          <ButtonLink href="/vision" variant="secondary">
+            See our vision
+          </ButtonLink>
         </div>
       </Section>
     </>

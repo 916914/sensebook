@@ -22,6 +22,7 @@ const files = [
   ["renders/10_on_open_hardcover.jpg", "renders/10_on_open_hardcover.jpg"],
   ["renders/11_on_thin_paperback.jpg", "renders/11_on_thin_paperback.jpg"],
   ["renders/12_table_tripod_no_book.jpg", "renders/12_table_tripod_no_book.jpg"],
+  ["renders/13_held_in_the_hands.jpg", "renders/13_held_in_the_hands.jpg"],
   ["renders/14_folded.jpg", "renders/14_folded.jpg"],
   ["renders/15_stick_extended_small_print.jpg", "renders/15_stick_extended_small_print.jpg"],
   ["cad/out/sensebook.glb", "model/sensebook.glb"],

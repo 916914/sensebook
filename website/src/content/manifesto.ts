@@ -17,7 +17,7 @@ export const manifesto = {
     {
       heading: "Greatness should not be a privilege",
       paragraphs: [
-        "We do not mean that everyone will become great at everything. We mean that the chance to find out should not depend on luck.",
+        "We do not mean that everyone becomes great at everything. We mean that the chance to find out should not depend on luck.",
         "The things that help people learn, think, work and live on their own terms have mostly been built for those who already have the most: a patient teacher, a good library, someone to read aloud, time to ask a question twice. Today these are privileges. They do not have to be.",
       ],
     },
@@ -52,7 +52,7 @@ export const manifesto = {
     {
       heading: "Our first chapter",
       paragraphs: [
-        "SenseBook is the first expression of this philosophy: a small, screen-free companion that turns a printed book into a conversation. It is in development now. It will not be our last invention.",
+        "SenseBook is the first expression of this philosophy: a small, screen-free companion that turns a printed book into a conversation. It is in development now. It is our first invention, not our last.",
       ],
     },
   ],

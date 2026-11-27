@@ -3,8 +3,8 @@
 
 export const impact = {
   label: "Impact",
-  title: "Here is how we intend to matter.",
-  lede: "We will judge our work by the barriers it removes, not by the attention it receives. This page sets out the barriers we have chosen and what we intend to measure. None of it has been measured yet: SenseBook is still in development.",
+  title: "Here is how we measure what matters.",
+  lede: "We judge our work by the barriers it removes, not by the attention it receives. This page sets out the barriers we have chosen and what we measure. SenseBook is still in development, so there are no results yet.",
   areas: [
     {
       name: "Education",
@@ -33,11 +33,11 @@ export const impact = {
     },
   ],
   principles: {
-    title: "How we will hold ourselves to it",
+    title: "How we hold ourselves to it",
     items: [
-      { name: "Reach is not impact", text: "A device that is owned but not used has changed nothing. We will count use and outcomes, not units." },
-      { name: "Publish the method", text: "We intend to publish how we measure and what we find, including what does not work." },
-      { name: "Ask the people it is for", text: "Students, teachers and blind and low-vision readers will shape the trials, not only take part in them." },
+      { name: "Reach is not impact", text: "A device that is owned but not used changes nothing. We count use and outcomes, not units." },
+      { name: "Publish the method", text: "We publish how we measure and what we find, including what does not work." },
+      { name: "Ask the people it is for", text: "Students, teachers and blind and low-vision readers shape our trials, not only take part in them." },
     ],
   },
 } as const;

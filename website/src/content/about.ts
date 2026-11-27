@@ -16,7 +16,7 @@ export const about = {
   },
   problems: {
     title: "The problems we choose",
-    lede: "We will say no to most good ideas. A problem becomes ours when it meets all four tests.",
+    lede: "We say no to most good ideas. A problem becomes ours only when it meets all four tests.",
     items: [
       { name: "Real and widely shared", text: "A barrier that limits the learning, independence or opportunity of many people, in Bangladesh and far beyond it." },
       { name: "Answerable with technology", text: "A problem where a well-made tool, and not only policy or money, can change the outcome." },
@@ -29,7 +29,7 @@ export const about = {
     items: [
       { name: "Rigour", text: "We say what we know, mark what we estimate, and test what we claim." },
       { name: "Dignity", text: "We design for people as capable adults and curious children, never as cases." },
-      { name: "Openness", text: "Our designs are published under open licences, so others can check, repair and improve them." },
+      { name: "Candour", text: "We share what we learn, including what does not work." },
       { name: "Craft", text: "A tool for learning deserves the care of a well-made book." },
       { name: "Patience", text: "We choose problems worth decades, and we do not rush what should be done properly." },
     ],
@@ -41,7 +41,7 @@ export const about = {
       { name: "Let the object disappear into the task", text: "The best tool is the one you stop noticing. SenseBook has no screen because the book is the point." },
       { name: "Physical where it matters", text: "Controls you can feel, switches you can trust, objects that are calm to live with." },
       { name: "Design for the hardest case first", text: "A product that works fully without sight works better for everyone." },
-      { name: "Make it to last", text: "Parts that can be replaced, files that can be read, and designs that others can repair." },
+      { name: "Make it to last", text: "Parts that can be replaced and products that can be repaired, not thrown away." },
     ],
   },
 } as const;
