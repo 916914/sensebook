@@ -43,9 +43,10 @@ ROLE = {  # function key -> (what it is, how it is wired)
     "dot_warn": ("Status dot: battery / warning", "LED + 330 ohm to GND"),
     "light": ("Light ring, PWM", "gate of an N-MOSFET (AO3400-class), 100 ohm in series, 100 k to GND"),
     "amp_enable": ("Amp enable (MAX98357A SD)", "direct; low = amp off"),
-    "jack_detect": ("Headphone jack detect", "jack switch to GND when a plug is in, internal pull-up"),
+    "jack_detect": ("Headphone jack detect", "jack switch to GND when a plug is in, internal pull-up (needs a jack with a detect contact)"),
     "haptic": ("Vibration motor", "base of an NPN (or MOSFET gate) with 1 k, flyback diode across the motor"),
-    "hub_attached": ("Hub sensor", "detector switch to GND when the rear leg is deployed, internal pull-up"),
+    "hub_attached": ("Hub sensor", "detector switch to GND while the rear leg is folded away; open (pin high) when the leg is "
+                     "deployed; internal pull-up"),
 }
 COL = dict(power="#B03A2E", gnd="#3B4448", i2s="#1F6F78", i2c="#C98A1B", gpio="#2E4A52", led="#7D6608", box="#F4F6F5",
            ink="#1D2A2E", line="#B8C4C6")
@@ -84,8 +85,8 @@ def pinmap_md():
             "", "The MAX98357A is powered from 5 V (boost output), not from the Pi's 3.3 V pin. The light ring and the "
             "vibration motor also take their current from 5 V or the battery through their transistors, never from a GPIO pin.",
             "", "## Camera", "",
-            "22-pin 0.5 mm CSI connector on the Pi Zero 2 W to the camera board (15-pin 1 mm on a Camera Module 3 form "
-            "factor), using the Pi Zero camera cable.",
+            "22-pin 0.5 mm CSI connector on the Pi Zero 2 W to the 15-pin 1 mm connector on the camera board (Arducam B0310), "
+            "using a 150 mm Pi Zero camera cable. The route in the model is 79 mm; the rest is folded flat behind the Pi.",
             "", "## Things to watch on the bench", "",
             "- **GPIO 4** (battery / warning dot) has a pull-up at boot. The LED may glow faintly until the app starts. "
             "If it does, move the resistor to 1 k or add a 10 k pull-down.",
@@ -95,6 +96,15 @@ def pinmap_md():
             "- **GPIO 16** is the default shutdown pin of the `googlevoicehat-soundcard` overlay. Use the modified overlay "
             "from `prototype/software/docs/AUDIO.md`, or the mic-mute switch will fight the sound driver.",
             "- **GPIO 2 and 3** have fixed 1.8 k pull-ups on the board: do not add more on the fuel-gauge breakout.",
+            "- **Hub sensor polarity.** In the 3D model the detector switch (Alps SPVE110200) is pressed while the rear leg is folded "
+            "away, so GPIO 8 is low when the device is stowed and high when the leg is out. The software default "
+            "`hardware.hub_active_low: true` reads it the other way round: set it to `false` in `config.yaml` for this build, "
+            "and check on the bench that \"attached\" is announced when the leg swings out.",
+            "- **Headphone detect.** The DAC board drawn in the model (Adafruit 6250) carries its own 3.5 mm jack. We could not confirm "
+            "that this jack has a plug-detect contact. If it has none, GPIO 7 stays unconnected and headphones must be chosen another way, "
+            "or a switched jack is fitted instead (for example CUI SJ-3524-SMT).",
+            "- **Supply current.** The charger board drawn in the model (Adafruit 6106, bq25185) is listed at 1 A on its 5 V output. "
+            "Measure the peak draw with the speaker loud, the light ring on and the camera capturing (test B5 and B6) before trusting it.",
             "- The I2S clock lines go to four devices. Keep those wires short (under 8 cm) and twist each with a ground wire.",
             "", "![Wiring diagram](wiring_diagram.png)", ""]
     with open(os.path.join(HERE, "pinmap.md"), "w", encoding="utf-8", newline="\n") as fh:
@@ -166,7 +176,7 @@ def diagram():
     ax.text(5.0, 1.38, "CSI flex", fontsize=6.6, color="#8E6C1F")
 
     # ---------------- right side (even pins)
-    box(12.45, 9.05, 4.05, 1.4, "Power: charger + 5 V boost (USB-C)", ["2 x 102535 LiPo in parallel, each with protection",
+    box(12.45, 9.05, 4.05, 1.4, "Power: charger + 5 V boost (USB-C)", ["2 x LP902535 LiPo packs (800 mAh) in parallel, each with protection",
                                                                    "BAT+ / BAT- in, 5 V out; slide switch in BAT+",
                                                                    "5 V also feeds the amp, light ring and motor"], fc="#FBEFEA")
     wire(2, R, 10.15, COL["power"], "5 V")
@@ -187,13 +197,13 @@ def diagram():
     box(12.45, 5.1, 4.05, 1.1, "Side buttons", ["Volume + and Volume - : GPIO -> switch -> GND"])
     wire(pin_of("vol_up"), R, 5.80, COL["gpio"], f"Vol+  GPIO {PINS['vol_up']}")
     wire(pin_of("vol_down"), R, 5.45, COL["gpio"], f"Vol-  GPIO {PINS['vol_down']}")
-    box(12.45, 3.2, 4.05, 1.55, "Switches and sensors", ["hub sensor: closed to GND = rear leg deployed",
+    box(12.45, 3.2, 4.05, 1.55, "Switches and sensors", ["hub sensor: closed to GND = rear leg folded away",
                                                        "jack detect: closed to GND = plug in",
                                                        "mic mute: closed to GND = muted"])
     wire(pin_of("hub_attached"), R, 4.40, COL["gpio"], f"hub sensor  GPIO {PINS['hub_attached']}")
     wire(pin_of("jack_detect"), R, 4.00, COL["gpio"], f"jack detect  GPIO {PINS['jack_detect']}")
     wire(pin_of("mic_mute"), R, 3.45, COL["gpio"], f"mic mute  GPIO {PINS['mic_mute']}")
-    box(12.45, 1.45, 4.05, 1.4, "Light ring: 8 warm-white LEDs", ["GPIO -> 100 ohm -> N-MOSFET gate (100 k to GND)",
+    box(12.45, 1.45, 4.05, 1.4, "Light ring: 6 warm-white LEDs", ["GPIO -> 100 ohm -> N-MOSFET gate (100 k to GND)",
                                                                 "LEDs + resistors from 5 V, switched to GND",
                                                                 "about 1 to 1.5 W at full brightness (EST)"], fc="#FCF6E3")
     wire(pin_of("light"), R, 2.15, COL["led"], f"light PWM  GPIO {PINS['light']}")

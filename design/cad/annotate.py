@@ -15,6 +15,8 @@ import shutil
 
 from PIL import Image, ImageDraw, ImageFont
 
+import sb_params as SBP
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 RENDERS = os.path.normpath(os.path.join(HERE, "..", "renders"))
 RAW = os.path.join(HERE, "build", "raw")
@@ -151,9 +153,9 @@ def ortho(name, im, data, view):
     d = ImageDraw.Draw(canvas)
     f, fs = font(int(30 * k)), font(int(25 * k))
     P = {i["label"]: (i["x"] + pad, i["y"]) for i in data["items"]}
-    ppm = abs(P["stick_top"][1] - P["hub_top"][1]) / 90.0 if view != "top" else None      # pixels per mm
-    if view == "top":
-        ppm = abs(P["unit_hi"][0] - P["unit_lo"][0]) / 89.2
+    ppm = abs(P["stick_top"][1] - P["hub_top"][1]) / SBP.STICK_COLLAPSED if view != "top" else None      # pixels per mm
+    if view == "top":                                                   # seen from above: the stick axis is STICK_Y behind the top edge
+        ppm = abs(P["hub_top"][1] - P["origin"][1]) / abs(SBP.STICK_Y)
     mm = lambda px: abs(px) / ppm
     ulo, uhi, alo, ahi = P["unit_lo"], P["unit_hi"], P["all_lo"], P["all_hi"]
     xs = sorted((ulo[0], uhi[0]))
@@ -170,7 +172,9 @@ def ortho(name, im, data, view):
         dim(d, (axs[1], ays[0]), (axs[1], yt), f"{mm(yt - ays[0]):.0f} mm over the table", f, off=max(axs[1], xs[1]) + 70 * k,
             horizontal=False, k=k)
         lens = P["lens"]
-        dim(d, lens, (lens[0], y0), f"lens {mm(y0 - lens[1]):.0f} mm above the page", f, off=min(axs[0], xs[0]) - 60 * k,
+        tip0 = 10.5                                                     # the tilt used for the default pose (build_model.TIP0)
+        lens_h = SBP.unit_pose(SBP.STICK_COLLAPSED, tip0)["lens"][1] + SBP.CAM_LENS_RECESS * math.sin(math.radians(SBP.FACET_ANGLE + tip0))
+        dim(d, lens, (lens[0], y0), f"lens {lens_h:.0f} mm above the page", f, off=min(axs[0], xs[0]) - 60 * k,
             horizontal=False, k=k, side=-1)
     if view == "front":
         d.text((pad * 0.25, 40 * k), "Front (reader's view)", font=font(int(34 * k), True), fill=INK)

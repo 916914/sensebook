@@ -2,22 +2,7 @@
  "collisions": [],
  "tight_gaps": [
   {
-   "a": "camera_lens_m12",
-   "b": "camera_holder_m12",
-   "gap_mm": 0.02
-  },
-  {
-   "a": "camera_lens_m12",
-   "b": "camera_lens_glass",
-   "gap_mm": 0.04
-  },
-  {
    "a": "shell_front_tub",
-   "b": "status_dot_pipes",
-   "gap_mm": 0.05
-  },
-  {
-   "a": "status_leds",
    "b": "status_dot_pipes",
    "gap_mm": 0.05
   },
@@ -28,33 +13,13 @@
   },
   {
    "a": "hub_body",
-   "b": "torsion_spring",
-   "gap_mm": 0.05
-  },
-  {
-   "a": "hub_body",
    "b": "knuckle_pin",
    "gap_mm": 0.05
   },
   {
    "a": "shell_front_tub",
    "b": "light_ring_diffuser",
-   "gap_mm": 0.06
-  },
-  {
-   "a": "shell_front_tub",
-   "b": "light_ring_pcb",
-   "gap_mm": 0.06
-  },
-  {
-   "a": "shell_front_tub",
-   "b": "headphone_leads",
-   "gap_mm": 0.07
-  },
-  {
-   "a": "shell_back_cover",
-   "b": "pi_zero_2w_connectors",
-   "gap_mm": 0.08
+   "gap_mm": 0.1
   },
   {
    "a": "shell_front_tub",
@@ -63,52 +28,52 @@
   },
   {
    "a": "shell_front_tub",
-   "b": "mic_mute_switch",
-   "gap_mm": 0.1
-  },
-  {
-   "a": "shell_front_tub",
    "b": "haptic_motor",
    "gap_mm": 0.1
   },
   {
-   "a": "cover_screw_3",
-   "b": "harness_right",
+   "a": "status_leds",
+   "b": "status_dot_pipes",
    "gap_mm": 0.1
-  },
-  {
-   "a": "cover_screw_4",
-   "b": "harness_left",
-   "gap_mm": 0.1
-  },
-  {
-   "a": "lens_bezel",
-   "b": "camera_lens_m12",
-   "gap_mm": 0.11
-  },
-  {
-   "a": "shell_back_cover",
-   "b": "harness_left",
-   "gap_mm": 0.15
-  },
-  {
-   "a": "shell_back_cover",
-   "b": "harness_right",
-   "gap_mm": 0.15
-  },
-  {
-   "a": "cell_right",
-   "b": "headphone_leads",
-   "gap_mm": 0.18
-  },
-  {
-   "a": "cell_left",
-   "b": "headphone_leads",
-   "gap_mm": 0.18
   },
   {
    "a": "shell_front_tub",
-   "b": "pi_zero_2w_pcb",
+   "b": "mic_mute_slider",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "mic_mute_flag",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "pi_gpio_pads",
+   "b": "camera_flex",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "cell_foam_left",
+   "b": "camera_flex",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "mic_mute_slider",
+   "b": "mic_mute_flag",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "hub_body",
+   "b": "hub_sensor_lead",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "stick_outer_tube",
+   "b": "hub_sensor_lead",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "dac_jack",
    "gap_mm": 0.2
   },
   {
@@ -118,27 +83,22 @@
   },
   {
    "a": "shell_front_tub",
-   "b": "harness_left",
-   "gap_mm": 0.2
-  },
-  {
-   "a": "shell_front_tub",
-   "b": "harness_right",
-   "gap_mm": 0.2
-  },
-  {
-   "a": "shell_front_tub",
    "b": "tilt_joint_head",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "light_ring_diffuser",
+   "b": "light_ring_leds",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "pi_zero_2w_pcb",
+   "b": "hub_cord_tail",
    "gap_mm": 0.2
   },
   {
    "a": "pi_zero_2w_pcb",
    "b": "camera_flex",
-   "gap_mm": 0.2
-  },
-  {
-   "a": "hub_body",
-   "b": "hub_sensor_switch",
    "gap_mm": 0.2
   },
   {
@@ -162,28 +122,48 @@
    "gap_mm": 0.2
   },
   {
-   "a": "knuckle_pin",
-   "b": "blade_clamp_screw_right",
-   "gap_mm": 0.2
+   "a": "shell_front_tub",
+   "b": "camera_flex",
+   "gap_mm": 0.21
   },
   {
-   "a": "knuckle_pin",
-   "b": "blade_clamp_screw_left",
-   "gap_mm": 0.2
-  },
-  {
-   "a": "lens_window",
+   "a": "lens_bezel",
    "b": "camera_lens_m12",
+   "gap_mm": 0.22
+  },
+  {
+   "a": "pi_zero_2w_pcb",
+   "b": "microsd_card",
+   "gap_mm": 0.25
+  },
+  {
+   "a": "hub_body",
+   "b": "torsion_spring_right",
+   "gap_mm": 0.25
+  },
+  {
+   "a": "hub_body",
+   "b": "torsion_spring_left",
+   "gap_mm": 0.25
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "light_ring_pcb",
    "gap_mm": 0.3
   },
   {
-   "a": "light_ring_pcb",
-   "b": "camera_lens_m12",
+   "a": "shell_front_tub",
+   "b": "dac_board_pcm5102",
    "gap_mm": 0.3
   },
   {
-   "a": "button_ask",
-   "b": "button_play_pause",
+   "a": "shell_front_tub",
+   "b": "charger_board",
+   "gap_mm": 0.3
+  },
+  {
+   "a": "dac_board_pcm5102",
+   "b": "button_vol_down",
    "gap_mm": 0.3
   },
   {
@@ -192,9 +172,24 @@
    "gap_mm": 0.3
   },
   {
-   "a": "rear_leg",
-   "b": "torsion_spring",
+   "a": "stick_inner_tube",
+   "b": "hub_cord_riser",
    "gap_mm": 0.3
+  },
+  {
+   "a": "tilt_joint_head",
+   "b": "hub_cord_riser",
+   "gap_mm": 0.3
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "pi_zero_2w_pcb",
+   "gap_mm": 0.32
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "amp_board_max98357a",
+   "gap_mm": 0.32
   },
   {
    "a": "shell_front_tub",
@@ -202,53 +197,43 @@
    "gap_mm": 0.32
   },
   {
-   "a": "shell_front_tub",
-   "b": "amp_board_max98357a",
-   "gap_mm": 0.39
+   "a": "stick_outer_tube",
+   "b": "hub_sensor_switch",
+   "gap_mm": 0.33
   },
   {
    "a": "shell_front_tub",
    "b": "cell_right",
-   "gap_mm": 0.4
+   "gap_mm": 0.38
   },
   {
    "a": "shell_front_tub",
    "b": "cell_left",
+   "gap_mm": 0.38
+  },
+  {
+   "a": "light_ring_pcb",
+   "b": "camera_lens_m12",
    "gap_mm": 0.4
   },
   {
-   "a": "shell_front_tub",
-   "b": "mic_mute_slider",
-   "gap_mm": 0.4
-  },
-  {
-   "a": "shell_front_tub",
-   "b": "mic_mute_flag",
-   "gap_mm": 0.4
-  },
-  {
-   "a": "shell_back_cover",
+   "a": "camera_board_imx708",
    "b": "cell_right",
    "gap_mm": 0.4
   },
   {
-   "a": "shell_back_cover",
+   "a": "camera_board_imx708",
    "b": "cell_left",
    "gap_mm": 0.4
   },
   {
-   "a": "lens_window",
-   "b": "camera_lens_glass",
+   "a": "dac_board_pcm5102",
+   "b": "volume_board",
    "gap_mm": 0.4
   },
   {
-   "a": "light_ring_diffuser",
-   "b": "light_ring_leds",
-   "gap_mm": 0.4
-  },
-  {
-   "a": "top_button_board",
-   "b": "battery_leads",
+   "a": "dac_board_pcm5102",
+   "b": "mic_mute_switch",
    "gap_mm": 0.4
   },
   {
@@ -262,49 +247,1475 @@
    "gap_mm": 0.4
   },
   {
+   "a": "pi_gpio_pads",
+   "b": "cell_foam_right",
+   "gap_mm": 0.45
+  },
+  {
+   "a": "pi_gpio_pads",
+   "b": "cell_foam_left",
+   "gap_mm": 0.45
+  },
+  {
    "a": "shell_front_tub",
    "b": "status_leds",
-   "gap_mm": 0.43
+   "gap_mm": 0.5
+  },
+  {
+   "a": "light_ring_leds",
+   "b": "camera_lens_m12",
+   "gap_mm": 0.5
+  }
+ ],
+ "n_contacts": 37,
+ "contacts": [
+  [
+   "shell_front_tub",
+   "shell_back_cover"
+  ],
+  [
+   "shell_front_tub",
+   "camera_board_imx708"
+  ],
+  [
+   "shell_front_tub",
+   "mic_right"
+  ],
+  [
+   "shell_front_tub",
+   "mic_left"
+  ],
+  [
+   "shell_front_tub",
+   "button_ask"
+  ],
+  [
+   "shell_front_tub",
+   "button_play_pause"
+  ],
+  [
+   "shell_front_tub",
+   "button_back"
+  ],
+  [
+   "shell_front_tub",
+   "button_forward"
+  ],
+  [
+   "shell_front_tub",
+   "button_vol_up"
+  ],
+  [
+   "shell_front_tub",
+   "button_vol_down"
+  ],
+  [
+   "shell_front_tub",
+   "tilt_thumb_nut"
+  ],
+  [
+   "shell_back_cover",
+   "heat_spreader"
+  ],
+  [
+   "lens_bezel",
+   "light_ring_diffuser"
+  ],
+  [
+   "camera_holder_m12",
+   "camera_board_imx708"
+  ],
+  [
+   "camera_board_imx708",
+   "camera_connector"
+  ],
+  [
+   "pi_zero_2w_pcb",
+   "pi_zero_2w_chips"
+  ],
+  [
+   "pi_zero_2w_pcb",
+   "pi_zero_2w_connectors"
+  ],
+  [
+   "pi_zero_2w_pcb",
+   "pi_gpio_pads"
+  ],
+  [
+   "pi_zero_2w_chips",
+   "thermal_pad"
+  ],
+  [
+   "heat_spreader",
+   "thermal_pad"
+  ],
+  [
+   "cell_right",
+   "cell_pcm_right"
+  ],
+  [
+   "cell_right",
+   "cell_foam_right"
+  ],
+  [
+   "cell_left",
+   "cell_pcm_left"
+  ],
+  [
+   "cell_left",
+   "cell_foam_left"
+  ],
+  [
+   "amp_board_max98357a",
+   "amp_board_parts"
+  ],
+  [
+   "charger_board",
+   "charger_board_parts"
+  ],
+  [
+   "status_led_board",
+   "status_leds"
+  ],
+  [
+   "button_ask",
+   "ask_button_board"
+  ],
+  [
+   "button_play_pause",
+   "top_bar_switches"
+  ],
+  [
+   "button_back",
+   "top_bar_switches"
+  ],
+  [
+   "button_forward",
+   "top_bar_switches"
+  ],
+  [
+   "top_bar_board",
+   "top_bar_switches"
+  ],
+  [
+   "button_vol_up",
+   "volume_board"
+  ],
+  [
+   "button_vol_down",
+   "volume_board"
+  ],
+  [
+   "hub_body",
+   "stick_outer_tube"
+  ],
+  [
+   "hub_body",
+   "hub_sensor_switch"
+  ],
+  [
+   "rear_leg",
+   "rear_leg_pad"
+  ]
+ ],
+ "routes": {
+  "harness_left": {
+   "points": [
+    [
+     -10.5,
+     -28.299999999999997,
+     32.7
+    ],
+    [
+     -10.5,
+     -28.299999999999997,
+     37.800000000000004
+    ],
+    [
+     -10.5,
+     -12.5,
+     37.900000000000006
+    ],
+    [
+     -20.0,
+     -10.4,
+     36.5
+    ],
+    [
+     -28.0,
+     -10.2,
+     34.58
+    ],
+    [
+     -28.0,
+     -9.9,
+     33.48
+    ]
+   ],
+   "radius": 0.7,
+   "length": 40.1
+  },
+  "harness_right": {
+   "points": [
+    [
+     10.5,
+     -28.299999999999997,
+     32.7
+    ],
+    [
+     10.5,
+     -28.299999999999997,
+     37.800000000000004
+    ],
+    [
+     10.5,
+     -12.5,
+     37.900000000000006
+    ],
+    [
+     17.0,
+     -12.6,
+     34.050000000000004
+    ],
+    [
+     20.5,
+     -12.6,
+     32.050000000000004
+    ]
+   ],
+   "radius": 0.7,
+   "length": 32.5
+  },
+  "battery_leads": {
+   "points": [
+    [
+     -26.0,
+     -23.15,
+     40.5
+    ],
+    [
+     -26.0,
+     -31.199999999999996,
+     37.6
+    ],
+    [
+     26.0,
+     -31.199999999999996,
+     37.6
+    ],
+    [
+     26.0,
+     -23.15,
+     40.5
+    ],
+    [
+     26.0,
+     -17.5,
+     40.5
+    ],
+    [
+     26.0,
+     -15.499999999999998,
+     35.85
+    ],
+    [
+     26.0,
+     -11.999999999999998,
+     31.650000000000002
+    ]
+   ],
+   "radius": 0.7,
+   "length": 85.3
+  },
+  "speaker_leads": {
+   "points": [
+    [
+     -28.0,
+     -7.0,
+     33.08
+    ],
+    [
+     -12.5,
+     -2.8,
+     35.4
+    ],
+    [
+     12.5,
+     -2.8,
+     35.9
+    ],
+    [
+     13.7,
+     -4.3,
+     35.6
+    ]
+   ],
+   "radius": 0.45,
+   "length": 43.2
+  },
+  "hub_cord_tail": {
+   "points": [
+    [
+     0.0,
+     -23.27125959369123,
+     -9.945701024326997
+    ],
+    [
+     0.0,
+     -25.3,
+     -9.345701024326997
+    ],
+    [
+     0.0,
+     -25.6,
+     -2.0
+    ],
+    [
+     0.0,
+     -25.6,
+     6.0
+    ],
+    [
+     -9.0,
+     -27.6,
+     9.0
+    ],
+    [
+     -9.0,
+     -27.6,
+     30.500000000000004
+    ],
+    [
+     -9.0,
+     -28.499999999999996,
+     32.2
+    ]
+   ],
+   "radius": 0.45,
+   "length": 50.6
+  },
+  "camera_flex": {
+   "points": [],
+   "radius": 0.075,
+   "length": 78.9,
+   "stock_length": 150.0,
+   "width": 16.0
+  },
+  "hub_cord_riser": {
+   "points": [
+    [
+     2.3,
+     -40.0,
+     91.0
+    ],
+    [
+     0.0,
+     -40.0,
+     91.2
+    ],
+    [
+     0.0,
+     -40.0,
+     100.75
+    ],
+    [
+     0.0,
+     -44.3,
+     100.75
+    ]
+   ],
+   "radius": 0.45,
+   "length": 16.2
+  },
+  "hub_sensor_lead": {
+   "points": [
+    [
+     2.0,
+     -46.0,
+     3.0
+    ],
+    [
+     5.6,
+     -46.0,
+     3.0
+    ],
+    [
+     5.6,
+     -44.6,
+     3.0
+    ],
+    [
+     5.6,
+     -44.6,
+     -6.9
+    ],
+    [
+     5.6,
+     -41.3,
+     -6.9
+    ],
+    [
+     3.0,
+     -41.3,
+     -6.9
+    ],
+    [
+     2.3,
+     -40.0,
+     -6.9
+    ],
+    [
+     2.3,
+     -40.0,
+     -3.0
+    ]
+   ],
+   "radius": 0.45,
+   "length": 26.2
+  },
+  "hub_cord": {
+   "points": [],
+   "radius": 0.45,
+   "bends": null,
+   "coil_od": 5.5,
+   "bore": 7.0,
+   "turns": 20,
+   "length": 304.0,
+   "coil_len_collapsed": 94.0,
+   "coil_len_extended": 184.0
+  }
+ },
+ "pairs": [
+  {
+   "a": "shell_front_tub",
+   "b": "shell_back_cover",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "cover_screw_1",
+   "kind": "nested",
+   "overlap_mm3": 5.36
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "cover_screw_2",
+   "kind": "nested",
+   "overlap_mm3": 5.36
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "cover_screw_3",
+   "kind": "nested",
+   "overlap_mm3": 5.36
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "cover_screw_4",
+   "kind": "nested",
+   "overlap_mm3": 5.36
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "light_ring_diffuser",
+   "kind": "gap",
+   "gap_mm": 0.1
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "light_ring_pcb",
+   "kind": "gap",
+   "gap_mm": 0.3
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "camera_board_imx708",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "camera_screws",
+   "kind": "nested",
+   "overlap_mm3": 13.48
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "pi_zero_2w_pcb",
+   "kind": "gap",
+   "gap_mm": 0.324
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "cell_right",
+   "kind": "gap",
+   "gap_mm": 0.385
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "cell_left",
+   "kind": "gap",
+   "gap_mm": 0.385
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "speaker",
+   "kind": "gap",
+   "gap_mm": 0.1
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "amp_board_max98357a",
+   "kind": "gap",
+   "gap_mm": 0.321
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "dac_board_pcm5102",
+   "kind": "gap",
+   "gap_mm": 0.3
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "dac_jack",
+   "kind": "gap",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "mic_right",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "mic_left",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "charger_board",
+   "kind": "gap",
+   "gap_mm": 0.3
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "usb_c_receptacle",
+   "kind": "gap",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "fuel_gauge_max17048",
+   "kind": "gap",
+   "gap_mm": 0.321
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "status_leds",
+   "kind": "gap",
+   "gap_mm": 0.499
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "status_dot_pipes",
+   "kind": "gap",
+   "gap_mm": 0.05
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "button_ask",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "button_play_pause",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "button_back",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "button_forward",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "button_vol_up",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "button_vol_down",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "mic_mute_slider",
+   "kind": "gap",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "mic_mute_flag",
+   "kind": "gap",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "haptic_motor",
+   "kind": "gap",
+   "gap_mm": 0.1
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "camera_flex",
+   "kind": "gap",
+   "gap_mm": 0.213
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "tilt_joint_head",
+   "kind": "gap",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "tilt_pivot_screw",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_front_tub",
+   "b": "tilt_thumb_nut",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_back_cover",
+   "b": "cover_screw_1",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_back_cover",
+   "b": "cover_screw_2",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_back_cover",
+   "b": "cover_screw_3",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_back_cover",
+   "b": "cover_screw_4",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_back_cover",
+   "b": "pi_zero_2w_pcb",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "shell_back_cover",
+   "b": "heat_spreader",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "lens_bezel",
+   "b": "light_ring_diffuser",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "lens_bezel",
+   "b": "camera_lens_m12",
+   "kind": "gap",
+   "gap_mm": 0.215
   },
   {
    "a": "light_ring_diffuser",
-   "b": "fuel_gauge_max17048",
-   "gap_mm": 0.43
+   "b": "light_ring_leds",
+   "kind": "gap",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "light_ring_pcb",
+   "b": "light_ring_leds",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "light_ring_pcb",
+   "b": "camera_lens_m12",
+   "kind": "gap",
+   "gap_mm": 0.4
+  },
+  {
+   "a": "light_ring_leds",
+   "b": "camera_lens_m12",
+   "kind": "gap",
+   "gap_mm": 0.5
+  },
+  {
+   "a": "camera_lens_m12",
+   "b": "camera_lens_glass",
+   "kind": "gap",
+   "gap_mm": 0.04
+  },
+  {
+   "a": "camera_lens_m12",
+   "b": "camera_holder_m12",
+   "kind": "gap",
+   "gap_mm": 0.02
+  },
+  {
+   "a": "camera_holder_m12",
+   "b": "camera_board_imx708",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "camera_board_imx708",
+   "b": "camera_connector",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "camera_board_imx708",
+   "b": "camera_screws",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "camera_board_imx708",
+   "b": "cell_right",
+   "kind": "gap",
+   "gap_mm": 0.4
+  },
+  {
+   "a": "camera_board_imx708",
+   "b": "cell_left",
+   "kind": "gap",
+   "gap_mm": 0.4
+  },
+  {
+   "a": "camera_connector",
+   "b": "camera_flex",
+   "kind": "gap",
+   "gap_mm": 0.4
+  },
+  {
+   "a": "pi_zero_2w_pcb",
+   "b": "pi_zero_2w_chips",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "pi_zero_2w_pcb",
+   "b": "pi_zero_2w_connectors",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "pi_zero_2w_pcb",
+   "b": "pi_gpio_pads",
+   "kind": "contact",
+   "gap_mm": 0.0
   },
   {
    "a": "pi_zero_2w_pcb",
    "b": "microsd_card",
+   "kind": "gap",
+   "gap_mm": 0.25
+  },
+  {
+   "a": "pi_zero_2w_pcb",
+   "b": "harness_left",
+   "kind": "gap",
+   "gap_mm": 0.1
+  },
+  {
+   "a": "pi_zero_2w_pcb",
+   "b": "harness_right",
+   "kind": "gap",
+   "gap_mm": 0.1
+  },
+  {
+   "a": "pi_zero_2w_pcb",
+   "b": "hub_cord_tail",
+   "kind": "gap",
+   "gap_mm": 0.202
+  },
+  {
+   "a": "pi_zero_2w_pcb",
+   "b": "camera_flex",
+   "kind": "gap",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "pi_zero_2w_chips",
+   "b": "thermal_pad",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "pi_zero_2w_chips",
+   "b": "camera_flex",
+   "kind": "nested",
+   "overlap_mm3": 1.72
+  },
+  {
+   "a": "pi_gpio_pads",
+   "b": "cell_foam_right",
+   "kind": "gap",
    "gap_mm": 0.45
+  },
+  {
+   "a": "pi_gpio_pads",
+   "b": "cell_foam_left",
+   "kind": "gap",
+   "gap_mm": 0.45
+  },
+  {
+   "a": "pi_gpio_pads",
+   "b": "harness_left",
+   "kind": "gap",
+   "gap_mm": 0.05
+  },
+  {
+   "a": "pi_gpio_pads",
+   "b": "harness_right",
+   "kind": "gap",
+   "gap_mm": 0.05
+  },
+  {
+   "a": "pi_gpio_pads",
+   "b": "hub_cord_tail",
+   "kind": "gap",
+   "gap_mm": 0.152
+  },
+  {
+   "a": "pi_gpio_pads",
+   "b": "camera_flex",
+   "kind": "gap",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "heat_spreader",
+   "b": "thermal_pad",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "cell_right",
+   "b": "cell_pcm_right",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "cell_right",
+   "b": "cell_foam_right",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "cell_pcm_right",
+   "b": "battery_leads",
+   "kind": "nested",
+   "overlap_mm3": 2.53
   },
   {
    "a": "cell_left",
-   "b": "camera_flex",
-   "gap_mm": 0.45
+   "b": "cell_pcm_left",
+   "kind": "contact",
+   "gap_mm": 0.0
   },
   {
-   "a": "lens_window",
-   "b": "light_ring_diffuser",
+   "a": "cell_left",
+   "b": "cell_foam_left",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "cell_pcm_left",
+   "b": "battery_leads",
+   "kind": "nested",
+   "overlap_mm3": 2.53
+  },
+  {
+   "a": "cell_foam_left",
+   "b": "camera_flex",
+   "kind": "gap",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "speaker",
+   "b": "speaker_leads",
+   "kind": "gap",
+   "gap_mm": 0.446
+  },
+  {
+   "a": "amp_board_max98357a",
+   "b": "amp_board_parts",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "amp_board_max98357a",
+   "b": "speaker_leads",
+   "kind": "gap",
+   "gap_mm": 0.055
+  },
+  {
+   "a": "dac_board_pcm5102",
+   "b": "dac_jack",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "dac_board_pcm5102",
+   "b": "button_vol_down",
+   "kind": "gap",
+   "gap_mm": 0.3
+  },
+  {
+   "a": "dac_board_pcm5102",
+   "b": "volume_board",
+   "kind": "gap",
+   "gap_mm": 0.4
+  },
+  {
+   "a": "dac_board_pcm5102",
+   "b": "mic_mute_switch",
+   "kind": "gap",
+   "gap_mm": 0.4
+  },
+  {
+   "a": "charger_board",
+   "b": "charger_board_parts",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "charger_board",
+   "b": "usb_c_receptacle",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "status_led_board",
+   "b": "status_leds",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "status_leds",
+   "b": "status_dot_pipes",
+   "kind": "gap",
+   "gap_mm": 0.1
+  },
+  {
+   "a": "button_ask",
+   "b": "ask_button_board",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "button_play_pause",
+   "b": "top_bar_switches",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "button_back",
+   "b": "top_bar_switches",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "button_forward",
+   "b": "top_bar_switches",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "top_bar_board",
+   "b": "top_bar_switches",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "button_vol_up",
+   "b": "volume_board",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "button_vol_down",
+   "b": "volume_board",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "mic_mute_switch",
+   "b": "mic_mute_slider",
+   "kind": "gap",
+   "gap_mm": 0.18
+  },
+  {
+   "a": "mic_mute_slider",
+   "b": "mic_mute_flag",
+   "kind": "gap",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "hub_cord_tail",
+   "b": "hub_cord_riser",
+   "kind": "nested",
+   "overlap_mm3": 0.03
+  },
+  {
+   "a": "hub_body",
+   "b": "stick_outer_tube",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "hub_body",
+   "b": "hub_sensor_lead",
+   "kind": "gap",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "hub_body",
+   "b": "rear_leg",
+   "kind": "gap",
+   "gap_mm": 0.3
+  },
+  {
+   "a": "hub_body",
+   "b": "leg_pin",
+   "kind": "gap",
+   "gap_mm": 0.05
+  },
+  {
+   "a": "hub_body",
+   "b": "torsion_spring_right",
+   "kind": "gap",
+   "gap_mm": 0.25
+  },
+  {
+   "a": "hub_body",
+   "b": "torsion_spring_left",
+   "kind": "gap",
+   "gap_mm": 0.25
+  },
+  {
+   "a": "hub_body",
+   "b": "hub_sensor_switch",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "hub_body",
+   "b": "blade_right",
+   "kind": "gap",
+   "gap_mm": 0.4
+  },
+  {
+   "a": "hub_body",
+   "b": "blade_left",
+   "kind": "gap",
+   "gap_mm": 0.4
+  },
+  {
+   "a": "hub_body",
+   "b": "blade_knuckle_right",
+   "kind": "gap",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "hub_body",
+   "b": "blade_knuckle_left",
+   "kind": "gap",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "hub_body",
+   "b": "knuckle_pin",
+   "kind": "gap",
+   "gap_mm": 0.05
+  },
+  {
+   "a": "hub_body",
+   "b": "blade_clamp_screw_right",
+   "kind": "gap",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "hub_body",
+   "b": "blade_clamp_screw_left",
+   "kind": "gap",
+   "gap_mm": 0.2
+  },
+  {
+   "a": "stick_outer_tube",
+   "b": "stick_inner_tube",
+   "kind": "gap",
    "gap_mm": 0.5
+  },
+  {
+   "a": "stick_outer_tube",
+   "b": "stick_glide_bush",
+   "kind": "gap",
+   "gap_mm": 0.04
+  },
+  {
+   "a": "stick_outer_tube",
+   "b": "stick_collar",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "stick_outer_tube",
+   "b": "hub_sensor_lead",
+   "kind": "gap",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "stick_outer_tube",
+   "b": "hub_sensor_switch",
+   "kind": "gap",
+   "gap_mm": 0.33
+  },
+  {
+   "a": "stick_inner_tube",
+   "b": "stick_glide_bush",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "stick_inner_tube",
+   "b": "stick_collar",
+   "kind": "gap",
+   "gap_mm": 0.1
+  },
+  {
+   "a": "stick_inner_tube",
+   "b": "tilt_joint_head",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "stick_inner_tube",
+   "b": "hub_cord_riser",
+   "kind": "gap",
+   "gap_mm": 0.3
+  },
+  {
+   "a": "tilt_joint_head",
+   "b": "tilt_pivot_screw",
+   "kind": "gap",
+   "gap_mm": 0.05
+  },
+  {
+   "a": "tilt_joint_head",
+   "b": "hub_cord_riser",
+   "kind": "gap",
+   "gap_mm": 0.3
+  },
+  {
+   "a": "tilt_pivot_screw",
+   "b": "tilt_thumb_nut",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "hub_cord_riser",
+   "b": "hub_cord",
+   "kind": "nested",
+   "overlap_mm3": 0.12
+  },
+  {
+   "a": "hub_sensor_lead",
+   "b": "hub_cord",
+   "kind": "nested",
+   "overlap_mm3": 0.1
+  },
+  {
+   "a": "hub_sensor_lead",
+   "b": "hub_sensor_switch",
+   "kind": "contact",
+   "gap_mm": 0.0
   },
   {
    "a": "rear_leg",
-   "b": "hub_sensor_switch",
-   "gap_mm": 0.5
+   "b": "rear_leg_pad",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "rear_leg",
+   "b": "leg_pin",
+   "kind": "gap",
+   "gap_mm": 0.05
+  },
+  {
+   "a": "rear_leg",
+   "b": "torsion_spring_right",
+   "kind": "gap",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "rear_leg",
+   "b": "torsion_spring_left",
+   "kind": "gap",
+   "gap_mm": 0.15
+  },
+  {
+   "a": "blade_right",
+   "b": "blade_coat_right",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "blade_right",
+   "b": "blade_knuckle_right",
+   "kind": "gap",
+   "gap_mm": 0.03
+  },
+  {
+   "a": "blade_right",
+   "b": "blade_clamp_screw_right",
+   "kind": "gap",
+   "gap_mm": 0.1
+  },
+  {
+   "a": "blade_left",
+   "b": "blade_coat_left",
+   "kind": "contact",
+   "gap_mm": 0.0
+  },
+  {
+   "a": "blade_left",
+   "b": "blade_knuckle_left",
+   "kind": "gap",
+   "gap_mm": 0.03
+  },
+  {
+   "a": "blade_left",
+   "b": "blade_clamp_screw_left",
+   "kind": "gap",
+   "gap_mm": 0.1
+  },
+  {
+   "a": "blade_knuckle_right",
+   "b": "knuckle_pin",
+   "kind": "gap",
+   "gap_mm": 0.05
+  },
+  {
+   "a": "blade_knuckle_right",
+   "b": "blade_clamp_screw_right",
+   "kind": "nested",
+   "overlap_mm3": 0.94
+  },
+  {
+   "a": "blade_knuckle_left",
+   "b": "knuckle_pin",
+   "kind": "gap",
+   "gap_mm": 0.05
+  },
+  {
+   "a": "blade_knuckle_left",
+   "b": "blade_clamp_screw_left",
+   "kind": "nested",
+   "overlap_mm3": 0.94
   }
  ],
- "n_contacts": 235,
- "n_bodies": 88,
+ "printed": [
+  "shell_front_tub",
+  "shell_back_cover",
+  "light_ring_diffuser",
+  "status_dot_pipes",
+  "button_ask",
+  "button_play_pause",
+  "button_back",
+  "button_forward",
+  "button_vol_up",
+  "button_vol_down",
+  "mic_mute_slider",
+  "hub_body",
+  "stick_collar",
+  "tilt_joint_head",
+  "rear_leg",
+  "rear_leg_pad",
+  "blade_knuckle_right",
+  "blade_knuckle_left"
+ ],
+ "labels": {
+  "shell_front_tub": "Front shell (tub): front face, lens facet, top, sides, tilt lugs",
+  "shell_back_cover": "Back cover with Pi standoffs",
+  "cover_screw_1": "Cover screws, ST2.2 x 6.5 pan head tapping (4)",
+  "cover_screw_2": "Cover screws, ST2.2 x 6.5 pan head tapping (4)",
+  "cover_screw_3": "Cover screws, ST2.2 x 6.5 pan head tapping (4)",
+  "cover_screw_4": "Cover screws, ST2.2 x 6.5 pan head tapping (4)",
+  "lens_bezel": "Lens bezel ring (pale blue), chamfered so it does not shade the lens",
+  "light_ring_diffuser": "Light-ring diffuser (print in natural / clear PETG)",
+  "light_ring_pcb": "Light-ring LED board (6 warm-white LEDs, PWM on GPIO 12)",
+  "light_ring_leds": "Light-ring LEDs: 6 x 2835, 2700 K, CRI 90",
+  "camera_lens_m12": "M12 ultra-wide lens, 120 degrees across (on the Arducam B0310)",
+  "camera_lens_glass": "Lens front element",
+  "camera_holder_m12": "M12 lens holder (part of the camera)",
+  "camera_board_imx708": "Camera board, 12 MP IMX708 (Arducam B0310)",
+  "camera_connector": "Camera flex connector (15-pin)",
+  "camera_screws": "Camera screws, ST2.2 x 6.5 (2)",
+  "pi_zero_2w_pcb": "Raspberry Pi Zero 2 W",
+  "pi_zero_2w_chips": "Pi: RP3A0 SiP, radio can, camera connector",
+  "pi_zero_2w_connectors": "Pi: mini-HDMI, 2 micro-USB, microSD slot (not used in normal use)",
+  "pi_gpio_pads": "Pi GPIO pads (wires soldered here)",
+  "microsd_card": "microSD card, 32 GB (the part that sticks out)",
+  "heat_spreader": "Aluminium heat spreader, 40 x 21 x 1 mm, bonded to the cover",
+  "thermal_pad": "Thermal pad, 15 x 15 mm, fills the gap from the Pi's main chip to the spreader",
+  "cell_right": "LiPo cell pack LP902535, 800 mAh (right)",
+  "cell_pcm_right": "Cell protection board (top end of the pack)",
+  "cell_foam_right": "Foam pad, 0.7 mm, behind each cell",
+  "cell_left": "LiPo cell pack LP902535, 800 mAh (left)",
+  "cell_pcm_left": "Cell protection board (top end of the pack)",
+  "cell_foam_left": "Foam pad, 0.7 mm, behind each cell",
+  "speaker": "Enclosed micro speaker, 20 x 13 x 4.9 mm, 8 ohm 0.8 W",
+  "amp_board_max98357a": "MAX98357A I2S speaker amp breakout (Adafruit 3006)",
+  "amp_board_parts": "Amp parts",
+  "dac_board_pcm5102": "PCM5102 I2S DAC board with 3.5 mm jack (Adafruit 6250)",
+  "dac_jack": "3.5 mm headphone jack (on the DAC board) and DAC chip",
+  "mic_right": "I2S MEMS microphone breakout, SPH0645 (right)",
+  "mic_left": "I2S MEMS microphone breakout, SPH0645 (left)",
+  "charger_board": "bq25185 USB-C charger with 5 V boost (Adafruit 6106)",
+  "charger_board_parts": "Charger / boost parts (inductor, chip)",
+  "usb_c_receptacle": "USB-C socket (on the charger board): charging and power-bank use",
+  "fuel_gauge_max17048": "MAX17048 fuel gauge (Adafruit 5580, connectors removed)",
+  "status_led_board": "Status LED board (ready, listening, sending, battery)",
+  "status_leds": "Status LEDs: 4 x white 0603",
+  "status_dot_pipes": "Four status-dot light pipes (clear)",
+  "button_ask": "Ask button (concave, marigold, raised dot): hold to talk",
+  "button_play_pause": "Play / Pause (bar with a raised dot)",
+  "button_back": "Back (bar with an arrow pointing left)",
+  "button_forward": "Forward (bar with an arrow pointing right)",
+  "top_bar_board": "Button board: Back, Play/Pause, Forward",
+  "top_bar_switches": "Tactile switches (3)",
+  "ask_button_board": "Button board: Ask",
+  "button_vol_up": "Volume + (raised dot)",
+  "button_vol_down": "Volume -",
+  "volume_board": "Volume switch board (2 tactile switches)",
+  "mic_mute_switch": "Mic-mute slide switch MSK12C02 on its small board (GPIO 16, low = muted)",
+  "mic_mute_slider": "Mic-mute slider cap (grips the switch lever)",
+  "mic_mute_flag": "Orange flag: shows when the mic is muted",
+  "haptic_motor": "Coin vibration motor, 10 x 2.7 mm (GPIO 11 via transistor)",
+  "harness_left": "Harness, left: I2S to the amp and DAC, buttons, LEDs, motor",
+  "harness_right": "Harness, right: 5 V, I2C to the fuel gauge",
+  "battery_leads": "Battery leads: both packs in parallel to the charger board",
+  "speaker_leads": "Speaker leads from the amp",
+  "hub_cord_tail": "Hub-sensor cord: from the joint head into the unit, up to the Pi (GPIO 8 and ground)",
+  "camera_flex": "Camera flex, 22-pin to 15-pin, folded along the Pi and over the camera",
+  "hub_body": "Tri-grip hub (stick socket, leg hinge, blade knuckle seats)",
+  "stick_outer_tube": "Outer tube, 10 x 0.5 mm stainless",
+  "stick_inner_tube": "Inner tube, 8 x 0.5 mm stainless (pulls up to 18 cm)",
+  "stick_glide_bush": "Glide bush on the inner tube (friction fit)",
+  "stick_collar": "Twist-lock collar",
+  "tilt_joint_head": "Tilt-joint head (plugs into the inner tube)",
+  "tilt_pivot_screw": "Tilt pivot, M3 x 18 screw",
+  "tilt_thumb_nut": "Tilt thumb nut (sets the friction)",
+  "hub_cord_riser": "Hub-sensor cord: up through the joint head and out of its back",
+  "hub_sensor_lead": "Hub-sensor lead: from the sensor, down a groove in the hub, into the foot of the stick",
+  "hub_cord": "Coiled 2-wire cord to the hub sensor",
+  "rear_leg": "Rear leg with T-foot (presses on the spine, or rests on the table)",
+  "rear_leg_pad": "Soft TPU pad",
+  "leg_pin": "Leg hinge pin, 2.0 x 28.6 mm",
+  "torsion_spring_right": "Torsion spring, 1.0 mm wire, 6.5 coils, stock part (right); legs trimmed to fit",
+  "torsion_spring_left": "Torsion spring, 1.0 mm wire, 6.5 coils, stock part (left); legs trimmed to fit",
+  "hub_sensor_switch": "Hub sensor: detector switch SPVE110200, pressed when the rear leg is folded away (GPIO 8)",
+  "blade_right": "Blade, 0.4 x 8 mm 301 spring steel (right)",
+  "blade_left": "Blade, 0.4 x 8 mm 301 spring steel (left)",
+  "blade_coat_right": "Blade coating / sleeve (right)",
+  "blade_coat_left": "Blade coating / sleeve (left)",
+  "blade_knuckle_right": "Blade knuckle (right): pivots to fold the blade up",
+  "blade_knuckle_left": "Blade knuckle (left)",
+  "knuckle_pin": "Knuckle pin, 1.6 x 31 mm",
+  "blade_clamp_screw_right": "Blade clamp screw, M1.6 x 6",
+  "blade_clamp_screw_left": "Blade clamp screw, M1.6 x 6"
+ },
+ "source_key": {
+  "cover_screw_1": "st22",
+  "cover_screw_2": "st22",
+  "cover_screw_3": "st22",
+  "cover_screw_4": "st22",
+  "light_ring_leds": "led_ring",
+  "camera_lens_m12": "cam",
+  "camera_holder_m12": "cam",
+  "camera_board_imx708": "cam",
+  "camera_connector": "cam",
+  "camera_screws": "st22",
+  "pi_zero_2w_pcb": "pi",
+  "pi_zero_2w_chips": "pi",
+  "pi_zero_2w_connectors": "pi",
+  "pi_gpio_pads": "pi",
+  "microsd_card": "sd",
+  "cell_right": "cell",
+  "cell_pcm_right": "cell",
+  "cell_left": "cell",
+  "cell_pcm_left": "cell",
+  "speaker": "spk",
+  "amp_board_max98357a": "amp",
+  "amp_board_parts": "amp",
+  "dac_board_pcm5102": "dac",
+  "dac_jack": "dac",
+  "mic_right": "mic",
+  "mic_left": "mic",
+  "charger_board": "chg",
+  "charger_board_parts": "chg",
+  "usb_c_receptacle": "usbc",
+  "fuel_gauge_max17048": "gauge",
+  "status_leds": "led_dot",
+  "top_bar_switches": "tact",
+  "ask_button_board": "tact",
+  "volume_board": "tact",
+  "mic_mute_switch": "slide",
+  "haptic_motor": "motor",
+  "camera_flex": "fpc",
+  "torsion_spring_right": "spring",
+  "torsion_spring_left": "spring",
+  "hub_sensor_switch": "det"
+ },
+ "n_bodies": 89,
  "masses": [
   {
    "name": "shell_front_tub",
    "group": "unit",
    "budget": "unit_shells",
-   "mass_g": 20.42,
-   "volume_mm3": 16079.8,
+   "mass_g": 23.78,
+   "volume_mm3": 18724.6,
    "com": [
-    -0.06,
-    -28.8,
-    129.63
+    -0.22,
+    -29.19,
+    132.59
    ],
    "source": "petg"
   },
@@ -312,12 +1723,12 @@
    "name": "shell_back_cover",
    "group": "unit",
    "budget": "unit_shells",
-   "mass_g": 8.97,
-   "volume_mm3": 7063.8,
+   "mass_g": 10.97,
+   "volume_mm3": 8640.1,
    "com": [
-    -0.0,
-    -47.92,
-    132.0
+    0.0,
+    -50.35,
+    134.81
    ],
    "source": "petg"
   },
@@ -326,11 +1737,11 @@
    "group": "unit",
    "budget": "spreader_wiring",
    "mass_g": 0.15,
-   "volume_mm3": 29.5,
+   "volume_mm3": 44.8,
    "com": [
-    -40.0,
-    -45.71,
-    133.5
+    -9.0,
+    -46.14,
+    152.8
    ],
    "source": "est"
   },
@@ -339,11 +1750,11 @@
    "group": "unit",
    "budget": "spreader_wiring",
    "mass_g": 0.15,
-   "volume_mm3": 29.5,
+   "volume_mm3": 44.8,
    "com": [
-    40.0,
-    -45.71,
-    133.5
+    9.0,
+    -46.14,
+    152.8
    ],
    "source": "est"
   },
@@ -352,11 +1763,11 @@
    "group": "unit",
    "budget": "spreader_wiring",
    "mass_g": 0.15,
-   "volume_mm3": 29.5,
+   "volume_mm3": 44.8,
    "com": [
-    -9.0,
-    -43.16,
-    147.27
+    -30.0,
+    -52.88,
+    116.42
    ],
    "source": "est"
   },
@@ -365,37 +1776,24 @@
    "group": "unit",
    "budget": "spreader_wiring",
    "mass_g": 0.15,
-   "volume_mm3": 29.5,
+   "volume_mm3": 44.8,
    "com": [
-    9.0,
-    -43.16,
-    147.27
+    30.0,
+    -52.88,
+    116.42
    ],
    "source": "est"
-  },
-  {
-   "name": "lens_window",
-   "group": "unit",
-   "budget": "unit_shells",
-   "mass_g": 0.15,
-   "volume_mm3": 123.2,
-   "com": [
-    -0.0,
-    -26.81,
-    116.77
-   ],
-   "source": "pmma"
   },
   {
    "name": "lens_bezel",
    "group": "unit",
    "budget": "unit_shells",
-   "mass_g": 0.1,
-   "volume_mm3": 36.2,
+   "mass_g": 0.31,
+   "volume_mm3": 115.6,
    "com": [
     0.0,
-    -26.71,
-    116.62
+    -27.37,
+    117.59
    ],
    "source": "al"
   },
@@ -403,12 +1801,12 @@
    "name": "light_ring_diffuser",
    "group": "unit",
    "budget": "unit_shells",
-   "mass_g": 0.42,
-   "volume_mm3": 329.9,
+   "mass_g": 0.58,
+   "volume_mm3": 457.0,
    "com": [
     0.0,
-    -27.09,
-    117.18
+    -27.49,
+    117.77
    ],
    "source": "petg"
   },
@@ -416,12 +1814,12 @@
    "name": "light_ring_pcb",
    "group": "unit",
    "budget": "leds_buttons_motor",
-   "mass_g": 0.5,
-   "volume_mm3": 146.7,
+   "mass_g": 0.6,
+   "volume_mm3": 196.0,
    "com": [
     0.0,
-    -28.74,
-    119.57
+    -28.97,
+    119.91
    ],
    "source": "est"
   },
@@ -430,11 +1828,11 @@
    "group": "unit",
    "budget": "leds_buttons_motor",
    "mass_g": 0.2,
-   "volume_mm3": 26.9,
+   "volume_mm3": 41.2,
    "com": [
-    0.0,
-    -28.23,
-    118.83
+    -0.0,
+    -28.49,
+    119.21
    ],
    "source": "est"
   },
@@ -443,11 +1841,11 @@
    "group": "unit",
    "budget": "camera_m12",
    "mass_g": 5.0,
-   "volume_mm3": 1416.1,
+   "volume_mm3": 1987.7,
    "com": [
     -0.0,
-    -29.98,
-    121.38
+    -31.08,
+    122.99
    ],
    "source": "est"
   },
@@ -455,12 +1853,12 @@
    "name": "camera_lens_glass",
    "group": "unit",
    "budget": "camera_m12",
-   "mass_g": 0.2,
-   "volume_mm3": 33.9,
+   "mass_g": 0.3,
+   "volume_mm3": 147.7,
    "com": [
     -0.0,
-    -27.39,
-    117.62
+    -27.75,
+    118.14
    ],
    "source": "est"
   },
@@ -468,12 +1866,12 @@
    "name": "camera_holder_m12",
    "group": "unit",
    "budget": "camera_m12",
-   "mass_g": 1.8,
-   "volume_mm3": 1186.2,
+   "mass_g": 1.6,
+   "volume_mm3": 399.4,
    "com": [
     -0.0,
-    -33.91,
-    127.11
+    -33.66,
+    126.73
    ],
    "source": "est"
   },
@@ -481,12 +1879,12 @@
    "name": "camera_board_imx708",
    "group": "unit",
    "budget": "camera_m12",
-   "mass_g": 1.6,
-   "volume_mm3": 701.8,
+   "mass_g": 1.8,
+   "volume_mm3": 924.7,
    "com": [
-    0.0,
-    -32.26,
-    132.81
+    -0.0,
+    -32.09,
+    133.36
    ],
    "source": "est"
   },
@@ -494,12 +1892,12 @@
    "name": "camera_connector",
    "group": "unit",
    "budget": "camera_m12",
-   "mass_g": 0.4,
-   "volume_mm3": 168.6,
+   "mass_g": 0.3,
+   "volume_mm3": 187.6,
    "com": [
     -0.0,
-    -35.25,
-    132.37
+    -24.92,
+    140.5
    ],
    "source": "est"
   },
@@ -508,11 +1906,11 @@
    "group": "unit",
    "budget": "spreader_wiring",
    "mass_g": 0.3,
-   "volume_mm3": 74.2,
+   "volume_mm3": 85.8,
    "com": [
     0.0,
-    -34.9,
-    130.31
+    -29.81,
+    134.41
    ],
    "source": "est"
   },
@@ -520,12 +1918,12 @@
    "name": "pi_zero_2w_pcb",
    "group": "unit",
    "budget": "pi_zero_2w",
-   "mass_g": 10.4,
-   "volume_mm3": 1919.4,
+   "mass_g": 10.0,
+   "volume_mm3": 2302.2,
    "com": [
-    0.0,
-    -44.01,
-    129.93
+    -0.0,
+    -44.95,
+    132.55
    ],
    "source": "est"
   },
@@ -534,11 +1932,11 @@
    "group": "unit",
    "budget": "pi_zero_2w",
    "mass_g": 0.0,
-   "volume_mm3": 596.9,
+   "volume_mm3": 654.1,
    "com": [
-    9.38,
-    -45.04,
-    130.86
+    5.5,
+    -46.49,
+    131.78
    ],
    "source": "est"
   },
@@ -547,11 +1945,11 @@
    "group": "unit",
    "budget": "pi_zero_2w",
    "mass_g": 0.0,
-   "volume_mm3": 684.0,
+   "volume_mm3": 706.8,
    "com": [
-    -10.64,
-    -47.22,
-    122.21
+    -9.49,
+    -48.39,
+    124.45
    ],
    "source": "est"
   },
@@ -560,11 +1958,11 @@
    "group": "unit",
    "budget": "pi_zero_2w",
    "mass_g": 0.0,
-   "volume_mm3": 12.8,
+   "volume_mm3": 12.9,
    "com": [
-    0.0,
-    -41.36,
-    141.34
+    -0.0,
+    -42.23,
+    143.74
    ],
    "source": "est"
   },
@@ -573,11 +1971,11 @@
    "group": "unit",
    "budget": "pi_zero_2w",
    "mass_g": 0.3,
-   "volume_mm3": 20.2,
+   "volume_mm3": 20.9,
    "com": [
-    -33.65,
-    -44.97,
-    132.14
+    -33.45,
+    -45.93,
+    134.66
    ],
    "source": "est"
   },
@@ -588,9 +1986,9 @@
    "mass_g": 2.27,
    "volume_mm3": 840.0,
    "com": [
-    -5.0,
-    -46.67,
-    134.19
+    -5.15,
+    -49.21,
+    136.95
    ],
    "source": "al"
   },
@@ -598,64 +1996,90 @@
    "name": "thermal_pad",
    "group": "unit",
    "budget": "spreader_wiring",
-   "mass_g": 0.4,
-   "volume_mm3": 247.5,
+   "mass_g": 0.6,
+   "volume_mm3": 562.5,
    "com": [
-    -3.0,
-    -46.32,
-    130.36
+    -5.15,
+    -48.31,
+    132.2
    ],
    "source": "est"
   },
   {
    "name": "cell_right",
    "group": "unit",
-   "budget": "lipo_2x102535",
-   "mass_g": 17.0,
-   "volume_mm3": 8619.3,
+   "budget": "lipo_cells",
+   "mass_g": 16.0,
+   "volume_mm3": 8635.9,
    "com": [
-    -25.1,
-    -37.61,
-    129.86
-   ],
-   "source": "est"
-  },
-  {
-   "name": "cell_left",
-   "group": "unit",
-   "budget": "lipo_2x102535",
-   "mass_g": 17.0,
-   "volume_mm3": 8619.3,
-   "com": [
-    25.1,
-    -37.61,
-    129.86
+    -25.9,
+    -38.73,
+    130.12
    ],
    "source": "est"
   },
   {
    "name": "cell_pcm_right",
    "group": "unit",
-   "budget": "lipo_2x102535",
+   "budget": "lipo_cells",
    "mass_g": 0.0,
-   "volume_mm3": 72.0,
+   "volume_mm3": 345.0,
    "com": [
-    -25.1,
-    -29.97,
-    141.16
+    -25.9,
+    -35.32,
+    148.56
+   ],
+   "source": "est"
+  },
+  {
+   "name": "cell_foam_right",
+   "group": "unit",
+   "budget": "spreader_wiring",
+   "mass_g": 0.1,
+   "volume_mm3": 192.5,
+   "com": [
+    -19.9,
+    -43.75,
+    131.05
+   ],
+   "source": "est"
+  },
+  {
+   "name": "cell_left",
+   "group": "unit",
+   "budget": "lipo_cells",
+   "mass_g": 16.0,
+   "volume_mm3": 8635.9,
+   "com": [
+    25.9,
+    -38.73,
+    130.12
    ],
    "source": "est"
   },
   {
    "name": "cell_pcm_left",
    "group": "unit",
-   "budget": "lipo_2x102535",
+   "budget": "lipo_cells",
    "mass_g": 0.0,
-   "volume_mm3": 72.0,
+   "volume_mm3": 345.0,
    "com": [
-    25.1,
-    -29.97,
-    141.16
+    25.9,
+    -35.32,
+    148.56
+   ],
+   "source": "est"
+  },
+  {
+   "name": "cell_foam_left",
+   "group": "unit",
+   "budget": "spreader_wiring",
+   "mass_g": 0.1,
+   "volume_mm3": 192.5,
+   "com": [
+    19.9,
+    -43.75,
+    131.05
    ],
    "source": "est"
   },
@@ -663,12 +2087,12 @@
    "name": "speaker",
    "group": "unit",
    "budget": "speaker",
-   "mass_g": 2.8,
-   "volume_mm3": 1106.3,
+   "mass_g": 2.0,
+   "volume_mm3": 1285.6,
    "com": [
-    -26.0,
-    -18.52,
-    133.55
+    -21.0,
+    -18.51,
+    135.73
    ],
    "source": "est"
   },
@@ -676,12 +2100,12 @@
    "name": "amp_board_max98357a",
    "group": "unit",
    "budget": "audio_boards",
-   "mass_g": 1.4,
-   "volume_mm3": 324.0,
+   "mass_g": 1.2,
+   "volume_mm3": 526.2,
    "com": [
-    28.0,
-    -22.49,
-    129.71
+    28.13,
+    -22.17,
+    130.86
    ],
    "source": "est"
   },
@@ -689,12 +2113,12 @@
    "name": "amp_board_parts",
    "group": "unit",
    "budget": "audio_boards",
-   "mass_g": 0.2,
-   "volume_mm3": 56.2,
+   "mass_g": 0.0,
+   "volume_mm3": 35.0,
    "com": [
-    29.23,
-    -24.04,
-    128.43
+    30.75,
+    -23.42,
+    132.34
    ],
    "source": "est"
   },
@@ -702,25 +2126,25 @@
    "name": "dac_board_pcm5102",
    "group": "unit",
    "budget": "audio_boards",
-   "mass_g": 1.8,
-   "volume_mm3": 240.0,
+   "mass_g": 2.8,
+   "volume_mm3": 959.5,
    "com": [
-    27.0,
-    -28.5,
-    124.72
+    28.66,
+    -28.12,
+    127.86
    ],
    "source": "est"
   },
   {
-   "name": "dac_board_parts",
+   "name": "dac_jack",
    "group": "unit",
    "budget": "audio_boards",
-   "mass_g": 0.2,
-   "volume_mm3": 61.2,
+   "mass_g": 0.0,
+   "volume_mm3": 325.3,
    "com": [
-    25.65,
-    -29.85,
-    124.17
+    36.48,
+    -30.98,
+    128.31
    ],
    "source": "est"
   },
@@ -728,12 +2152,12 @@
    "name": "mic_right",
    "group": "unit",
    "budget": "audio_boards",
-   "mass_g": 0.5,
-   "volume_mm3": 70.1,
+   "mass_g": 0.4,
+   "volume_mm3": 176.4,
    "com": [
-    -32.0,
-    -20.88,
-    143.31
+    -28.65,
+    -28.32,
+    151.38
    ],
    "source": "est"
   },
@@ -741,38 +2165,38 @@
    "name": "mic_left",
    "group": "unit",
    "budget": "audio_boards",
-   "mass_g": 0.5,
-   "volume_mm3": 70.1,
-   "com": [
-    32.0,
-    -20.88,
-    143.31
-   ],
-   "source": "est"
-  },
-  {
-   "name": "power_board",
-   "group": "unit",
-   "budget": "power_boards",
-   "mass_g": 2.2,
-   "volume_mm3": 416.0,
-   "com": [
-    -28.0,
-    -28.02,
-    132.77
-   ],
-   "source": "est"
-  },
-  {
-   "name": "power_board_parts",
-   "group": "unit",
-   "budget": "power_boards",
    "mass_g": 0.4,
-   "volume_mm3": 86.8,
+   "volume_mm3": 176.4,
    "com": [
-    -25.44,
-    -29.54,
-    132.03
+    28.65,
+    -28.32,
+    151.38
+   ],
+   "source": "est"
+  },
+  {
+   "name": "charger_board",
+   "group": "unit",
+   "budget": "power_boards",
+   "mass_g": 3.0,
+   "volume_mm3": 858.9,
+   "com": [
+    -29.3,
+    -25.55,
+    129.08
+   ],
+   "source": "est"
+  },
+  {
+   "name": "charger_board_parts",
+   "group": "unit",
+   "budget": "power_boards",
+   "mass_g": 0.0,
+   "volume_mm3": 122.0,
+   "com": [
+    -26.3,
+    -28.14,
+    128.22
    ],
    "source": "est"
   },
@@ -780,12 +2204,12 @@
    "name": "usb_c_receptacle",
    "group": "unit",
    "budget": "power_boards",
-   "mass_g": 0.5,
-   "volume_mm3": 207.8,
+   "mass_g": 0.0,
+   "volume_mm3": 205.1,
    "com": [
-    -38.58,
-    -26.18,
-    130.9
+    -42.08,
+    -27.94,
+    129.52
    ],
    "source": "est"
   },
@@ -793,12 +2217,12 @@
    "name": "fuel_gauge_max17048",
    "group": "unit",
    "budget": "power_boards",
-   "mass_g": 0.7,
-   "volume_mm3": 109.0,
+   "mass_g": 2.6,
+   "volume_mm3": 836.6,
    "com": [
-    0.0,
-    -41.35,
-    113.11
+    -27.7,
+    -32.21,
+    125.06
    ],
    "source": "est"
   },
@@ -807,11 +2231,11 @@
    "group": "unit",
    "budget": "leds_buttons_motor",
    "mass_g": 0.4,
-   "volume_mm3": 120.0,
+   "volume_mm3": 88.3,
    "com": [
     25.0,
-    -16.73,
-    138.81
+    -15.36,
+    145.67
    ],
    "source": "est"
   },
@@ -820,11 +2244,11 @@
    "group": "unit",
    "budget": "leds_buttons_motor",
    "mass_g": 0.05,
-   "volume_mm3": 2.8,
+   "volume_mm3": 2.3,
    "com": [
     25.0,
-    -15.97,
-    138.67
+    -14.74,
+    145.56
    ],
    "source": "est"
   },
@@ -833,11 +2257,11 @@
    "group": "unit",
    "budget": "unit_shells",
    "mass_g": 0.05,
-   "volume_mm3": 36.2,
+   "volume_mm3": 37.1,
    "com": [
     25.0,
-    -14.67,
-    138.43
+    -13.42,
+    145.31
    ],
    "source": "petg"
   },
@@ -845,12 +2269,12 @@
    "name": "button_ask",
    "group": "unit",
    "budget": "unit_shells",
-   "mass_g": 0.63,
-   "volume_mm3": 495.3,
+   "mass_g": 0.56,
+   "volume_mm3": 437.7,
    "com": [
     -0.0,
-    -30.24,
-    147.71
+    -30.34,
+    152.62
    ],
    "source": "petg"
   },
@@ -859,11 +2283,11 @@
    "group": "unit",
    "budget": "unit_shells",
    "mass_g": 0.21,
-   "volume_mm3": 168.2,
+   "volume_mm3": 167.0,
    "com": [
     -0.0,
-    -19.6,
-    145.81
+    -18.5,
+    150.68
    ],
    "source": "petg"
   },
@@ -871,12 +2295,12 @@
    "name": "button_back",
    "group": "unit",
    "budget": "unit_shells",
-   "mass_g": 0.3,
-   "volume_mm3": 239.6,
+   "mass_g": 0.22,
+   "volume_mm3": 169.6,
    "com": [
-    23.99,
-    -23.34,
-    146.53
+    15.0,
+    -18.49,
+    150.71
    ],
    "source": "petg"
   },
@@ -884,64 +2308,51 @@
    "name": "button_forward",
    "group": "unit",
    "budget": "unit_shells",
-   "mass_g": 0.3,
-   "volume_mm3": 239.6,
+   "mass_g": 0.22,
+   "volume_mm3": 169.6,
    "com": [
-    -23.99,
-    -23.34,
-    146.53
+    -15.0,
+    -18.49,
+    150.71
    ],
    "source": "petg"
   },
   {
-   "name": "top_button_board",
+   "name": "top_bar_board",
    "group": "unit",
    "budget": "leds_buttons_motor",
-   "mass_g": 0.5,
-   "volume_mm3": 187.2,
+   "mass_g": 0.6,
+   "volume_mm3": 206.4,
    "com": [
-    -0.0,
-    -26.22,
-    143.31
+    0.0,
+    -19.24,
+    147.21
    ],
    "source": "est"
   },
   {
-   "name": "top_button_switches",
+   "name": "top_bar_switches",
    "group": "unit",
    "budget": "leds_buttons_motor",
    "mass_g": 0.1,
-   "volume_mm3": 51.2,
+   "volume_mm3": 121.7,
    "com": [
     -0.0,
-    -25.36,
-    144.37
+    -18.94,
+    148.32
    ],
    "source": "est"
   },
   {
-   "name": "back_button_board",
+   "name": "ask_button_board",
    "group": "unit",
    "budget": "leds_buttons_motor",
-   "mass_g": 0.25,
-   "volume_mm3": 70.4,
+   "mass_g": 0.3,
+   "volume_mm3": 175.8,
    "com": [
-    24.0,
-    -23.93,
-    143.33
-   ],
-   "source": "est"
-  },
-  {
-   "name": "forward_button_board",
-   "group": "unit",
-   "budget": "leds_buttons_motor",
-   "mass_g": 0.25,
-   "volume_mm3": 70.4,
-   "com": [
-    -24.0,
-    -23.93,
-    143.33
+    0.0,
+    -30.9,
+    149.64
    ],
    "source": "est"
   },
@@ -949,12 +2360,12 @@
    "name": "button_vol_up",
    "group": "unit",
    "budget": "unit_shells",
-   "mass_g": 0.14,
-   "volume_mm3": 107.8,
+   "mass_g": 0.1,
+   "volume_mm3": 76.0,
    "com": [
-    42.76,
-    -23.44,
-    134.97
+    44.8,
+    -21.06,
+    140.12
    ],
    "source": "petg"
   },
@@ -962,12 +2373,12 @@
    "name": "button_vol_down",
    "group": "unit",
    "budget": "unit_shells",
-   "mass_g": 0.14,
-   "volume_mm3": 106.8,
+   "mass_g": 0.1,
+   "volume_mm3": 75.0,
    "com": [
-    42.74,
-    -24.72,
-    128.09
+    44.77,
+    -22.34,
+    133.24
    ],
    "source": "petg"
   },
@@ -976,11 +2387,11 @@
    "group": "unit",
    "budget": "leds_buttons_motor",
    "mass_g": 0.5,
-   "volume_mm3": 147.2,
+   "volume_mm3": 159.5,
    "com": [
-    39.62,
-    -24.08,
-    131.53
+    41.88,
+    -21.7,
+    136.68
    ],
    "source": "est"
   },
@@ -989,11 +2400,11 @@
    "group": "unit",
    "budget": "leds_buttons_motor",
    "mass_g": 0.4,
-   "volume_mm3": 68.5,
+   "volume_mm3": 62.2,
    "com": [
-    40.4,
-    -28.98,
-    121.55
+    41.06,
+    -22.79,
+    127.11
    ],
    "source": "est"
   },
@@ -1002,11 +2413,11 @@
    "group": "unit",
    "budget": "unit_shells",
    "mass_g": 0.02,
-   "volume_mm3": 17.2,
+   "volume_mm3": 19.5,
    "com": [
-    43.6,
-    -30.55,
-    121.84
+    45.71,
+    -23.46,
+    127.75
    ],
    "source": "petg"
   },
@@ -1015,24 +2426,11 @@
    "group": "unit",
    "budget": "unit_shells",
    "mass_g": 0.02,
-   "volume_mm3": 3.1,
+   "volume_mm3": 1.6,
    "com": [
-    43.5,
-    -27.21,
-    121.22
-   ],
-   "source": "est"
-  },
-  {
-   "name": "headphone_jack",
-   "group": "unit",
-   "budget": "leds_buttons_motor",
-   "mass_g": 1.2,
-   "volume_mm3": 308.5,
-   "com": [
-    -36.14,
-    -28.98,
-    121.55
+    45.5,
+    -20.83,
+    127.26
    ],
    "source": "est"
   },
@@ -1043,9 +2441,9 @@
    "mass_g": 0.9,
    "volume_mm3": 212.1,
    "com": [
-    27.0,
-    -18.43,
-    130.48
+    24.0,
+    -17.79,
+    133.92
    ],
    "source": "est"
   },
@@ -1053,12 +2451,12 @@
    "name": "harness_left",
    "group": "unit",
    "budget": "spreader_wiring",
-   "mass_g": 0.8,
-   "volume_mm3": 116.3,
+   "mass_g": 0.9,
+   "volume_mm3": 61.5,
    "com": [
-    26.52,
-    -38.68,
-    143.3
+    14.93,
+    -29.46,
+    145.52
    ],
    "source": "est"
   },
@@ -1066,12 +2464,12 @@
    "name": "harness_right",
    "group": "unit",
    "budget": "spreader_wiring",
-   "mass_g": 0.8,
-   "volume_mm3": 100.9,
+   "mass_g": 0.7,
+   "volume_mm3": 49.8,
    "com": [
-    -25.73,
-    -40.77,
-    143.58
+    -12.28,
+    -31.5,
+    145.52
    ],
    "source": "est"
   },
@@ -1079,12 +2477,12 @@
    "name": "battery_leads",
    "group": "unit",
    "budget": "spreader_wiring",
-   "mass_g": 0.4,
-   "volume_mm3": 42.1,
+   "mass_g": 1.6,
+   "volume_mm3": 131.1,
    "com": [
-    -1.66,
-    -28.59,
-    142.23
+    -4.93,
+    -39.92,
+    148.57
    ],
    "source": "est"
   },
@@ -1093,24 +2491,11 @@
    "group": "unit",
    "budget": "spreader_wiring",
    "mass_g": 0.2,
-   "volume_mm3": 35.1,
+   "volume_mm3": 27.5,
    "com": [
-    1.26,
-    -16.6,
-    142.09
-   ],
-   "source": "est"
-  },
-  {
-   "name": "headphone_leads",
-   "group": "unit",
-   "budget": "spreader_wiring",
-   "mass_g": 0.2,
-   "volume_mm3": 35.9,
-   "com": [
-    -0.99,
-    -36.04,
-    117.76
+    7.02,
+    -16.77,
+    141.49
    ],
    "source": "est"
   },
@@ -1119,11 +2504,11 @@
    "group": "unit",
    "budget": "stick_tubes_cord",
    "mass_g": 0.3,
-   "volume_mm3": 28.3,
+   "volume_mm3": 32.1,
    "com": [
-    8.24,
-    -43.8,
-    106.08
+    5.03,
+    -43.97,
+    121.1
    ],
    "source": "est"
   },
@@ -1131,12 +2516,12 @@
    "name": "camera_flex",
    "group": "unit",
    "budget": "spreader_wiring",
-   "mass_g": 0.5,
-   "volume_mm3": 107.8,
+   "mass_g": 0.8,
+   "volume_mm3": 162.2,
    "com": [
-    12.78,
-    -41.94,
-    130.93
+    8.4,
+    -39.48,
+    138.47
    ],
    "source": "est"
   },
@@ -1144,12 +2529,12 @@
    "name": "hub_body",
    "group": "hub",
    "budget": "hub_spring",
-   "mass_g": 8.97,
-   "volume_mm3": 7061.3,
+   "mass_g": 10.67,
+   "volume_mm3": 8403.5,
    "com": [
-    0.04,
-    -41.6,
-    -0.25
+    0.02,
+    -42.16,
+    -0.39
    ],
    "source": "petg"
   },
@@ -1158,11 +2543,11 @@
    "group": "stick_outer",
    "budget": "stick_tubes_cord",
    "mass_g": 12.2,
-   "volume_mm3": 1544.5,
+   "volume_mm3": 1543.7,
    "com": [
-    -0.0,
+    0.0,
     -40.0,
-    44.25
+    44.27
    ],
    "source": "steel"
   },
@@ -1170,12 +2555,12 @@
    "name": "stick_inner_tube",
    "group": "stick_inner",
    "budget": "stick_tubes_cord",
-   "mass_g": 9.91,
-   "volume_mm3": 1254.7,
+   "mass_g": 9.82,
+   "volume_mm3": 1242.9,
    "com": [
-    0.0,
+    -0.0,
     -40.0,
-    46.75
+    47.25
    ],
    "source": "steel"
   },
@@ -1188,7 +2573,7 @@
    "com": [
     0.0,
     -40.0,
-    -3.5
+    -2.5
    ],
    "source": "est"
   },
@@ -1209,12 +2594,12 @@
    "name": "tilt_joint_head",
    "group": "stick_inner",
    "budget": "tilt_joint",
-   "mass_g": 0.78,
-   "volume_mm3": 616.4,
+   "mass_g": 0.74,
+   "volume_mm3": 586.4,
    "com": [
-    -0.0,
-    -40.0,
-    100.12
+    0.0,
+    -39.97,
+    100.24
    ],
    "source": "petg"
   },
@@ -1245,6 +2630,32 @@
    "source": "brass"
   },
   {
+   "name": "hub_cord_riser",
+   "group": "stick_inner",
+   "budget": "stick_tubes_cord",
+   "mass_g": 0.05,
+   "volume_mm3": 10.2,
+   "com": [
+    -0.16,
+    -40.57,
+    96.55
+   ],
+   "source": "est"
+  },
+  {
+   "name": "hub_sensor_lead",
+   "group": "hub",
+   "budget": "stick_tubes_cord",
+   "mass_g": 0.1,
+   "volume_mm3": 16.5,
+   "com": [
+    -4.57,
+    -43.39,
+    -2.85
+   ],
+   "source": "est"
+  },
+  {
    "name": "hub_cord",
    "group": "cord",
    "budget": "stick_tubes_cord",
@@ -1261,11 +2672,11 @@
    "name": "rear_leg",
    "group": "leg",
    "budget": "rear_leg_pad",
-   "mass_g": 4.09,
-   "volume_mm3": 3223.2,
+   "mass_g": 4.1,
+   "volume_mm3": 3225.8,
    "com": [
-    -0.0,
-    -89.84,
+    0.0,
+    -89.79,
     -10.59
    ],
    "source": "petg"
@@ -1287,8 +2698,8 @@
    "name": "leg_pin",
    "group": "hub",
    "budget": "hub_spring",
-   "mass_g": 0.64,
-   "volume_mm3": 80.4,
+   "mass_g": 0.71,
+   "volume_mm3": 89.8,
    "com": [
     -0.0,
     -50.0,
@@ -1297,15 +2708,28 @@
    "source": "steel"
   },
   {
-   "name": "torsion_spring",
+   "name": "torsion_spring_right",
    "group": "hub",
    "budget": "hub_spring",
-   "mass_g": 0.8,
-   "volume_mm3": 80.1,
+   "mass_g": 0.9,
+   "volume_mm3": 104.2,
    "com": [
-    -7.75,
-    -49.74,
-    -7.99
+    -8.65,
+    -49.84,
+    -8.0
+   ],
+   "source": "est"
+  },
+  {
+   "name": "torsion_spring_left",
+   "group": "hub",
+   "budget": "hub_spring",
+   "mass_g": 0.9,
+   "volume_mm3": 104.2,
+   "com": [
+    8.65,
+    -49.84,
+    -8.0
    ],
    "source": "est"
   },
@@ -1313,12 +2737,12 @@
    "name": "hub_sensor_switch",
    "group": "hub",
    "budget": "hub_spring",
-   "mass_g": 0.3,
-   "volume_mm3": 97.0,
+   "mass_g": 0.2,
+   "volume_mm3": 32.7,
    "com": [
-    7.95,
-    -49.0,
-    -3.05
+    -0.0,
+    -46.8,
+    3.0
    ],
    "source": "est"
   },
@@ -1326,12 +2750,12 @@
    "name": "blade_right",
    "group": "blade_r",
    "budget": "blades",
-   "mass_g": 2.67,
-   "volume_mm3": 338.3,
+   "mass_g": 2.68,
+   "volume_mm3": 338.8,
    "com": [
-    -19.42,
-    13.06,
-    -8.73
+    -19.41,
+    13.0,
+    -8.72
    ],
    "source": "steel"
   },
@@ -1339,12 +2763,12 @@
    "name": "blade_left",
    "group": "blade_l",
    "budget": "blades",
-   "mass_g": 2.67,
-   "volume_mm3": 338.3,
+   "mass_g": 2.68,
+   "volume_mm3": 338.8,
    "com": [
-    19.42,
-    13.06,
-    -8.73
+    19.41,
+    13.0,
+    -8.72
    ],
    "source": "steel"
   },
@@ -1378,12 +2802,12 @@
    "name": "blade_knuckle_right",
    "group": "blade_r",
    "budget": "hub_spring",
-   "mass_g": 0.5,
-   "volume_mm3": 396.8,
+   "mass_g": 0.52,
+   "volume_mm3": 405.7,
    "com": [
     -11.0,
-    -32.76,
-    -2.1
+    -32.75,
+    -2.11
    ],
    "source": "petg"
   },
@@ -1391,12 +2815,12 @@
    "name": "blade_knuckle_left",
    "group": "blade_l",
    "budget": "hub_spring",
-   "mass_g": 0.5,
-   "volume_mm3": 396.8,
+   "mass_g": 0.52,
+   "volume_mm3": 405.7,
    "com": [
     11.0,
-    -32.76,
-    -2.1
+    -32.75,
+    -2.11
    ],
    "source": "petg"
   },
@@ -1418,11 +2842,11 @@
    "group": "blade_r",
    "budget": "hub_spring",
    "mass_g": 0.15,
-   "volume_mm3": 33.8,
+   "volume_mm3": 20.7,
    "com": [
     -11.0,
-    -31.2,
-    -0.74
+    -30.5,
+    -0.87
    ],
    "source": "est"
   },
@@ -1431,11 +2855,11 @@
    "group": "blade_l",
    "budget": "hub_spring",
    "mass_g": 0.15,
-   "volume_mm3": 33.8,
+   "volume_mm3": 20.7,
    "com": [
     11.0,
-    -31.2,
-    -0.74
+    -30.5,
+    -0.87
    ],
    "source": "est"
   }
@@ -1443,15 +2867,15 @@
  "budget": [
   {
    "key": "unit_shells",
-   "model_g": 31.9,
-   "params_g": 24.0,
-   "diff_g": 7.9
+   "model_g": 37.1,
+   "params_g": 37.1,
+   "diff_g": 0.0
   },
   {
    "key": "pi_zero_2w",
-   "model_g": 10.7,
-   "params_g": 11.0,
-   "diff_g": -0.3
+   "model_g": 10.3,
+   "params_g": 10.3,
+   "diff_g": 0.0
   },
   {
    "key": "camera_m12",
@@ -1460,228 +2884,228 @@
    "diff_g": 0.0
   },
   {
-   "key": "lipo_2x102535",
-   "model_g": 34.0,
-   "params_g": 34.0,
+   "key": "lipo_cells",
+   "model_g": 32.0,
+   "params_g": 32.0,
    "diff_g": 0.0
   },
   {
    "key": "speaker",
-   "model_g": 2.8,
-   "params_g": 4.0,
-   "diff_g": -1.2
+   "model_g": 2.0,
+   "params_g": 2.0,
+   "diff_g": 0.0
   },
   {
    "key": "audio_boards",
-   "model_g": 4.6,
-   "params_g": 6.0,
-   "diff_g": -1.4
+   "model_g": 4.8,
+   "params_g": 4.8,
+   "diff_g": 0.0
   },
   {
    "key": "power_boards",
-   "model_g": 3.8,
-   "params_g": 4.0,
-   "diff_g": -0.2
+   "model_g": 5.6,
+   "params_g": 5.6,
+   "diff_g": 0.0
   },
   {
    "key": "leds_buttons_motor",
-   "model_g": 5.2,
-   "params_g": 6.0,
-   "diff_g": -0.8
+   "model_g": 4.0,
+   "params_g": 4.0,
+   "diff_g": 0.0
   },
   {
    "key": "spreader_wiring",
-   "model_g": 6.5,
-   "params_g": 6.0,
-   "diff_g": 0.5
+   "model_g": 8.2,
+   "params_g": 8.2,
+   "diff_g": -0.0
   },
   {
    "key": "tilt_joint",
    "model_g": 3.1,
-   "params_g": 5.0,
-   "diff_g": -1.9
+   "params_g": 3.1,
+   "diff_g": -0.0
   },
   {
    "key": "stick_tubes_cord",
-   "model_g": 24.3,
-   "params_g": 13.0,
-   "diff_g": 11.3
+   "model_g": 24.4,
+   "params_g": 24.4,
+   "diff_g": -0.0
   },
   {
    "key": "hub_spring",
-   "model_g": 12.5,
-   "params_g": 9.0,
-   "diff_g": 3.5
+   "model_g": 15.2,
+   "params_g": 15.2,
+   "diff_g": 0.0
   },
   {
    "key": "blades",
-   "model_g": 5.8,
-   "params_g": 2.0,
-   "diff_g": 3.8
+   "model_g": 5.9,
+   "params_g": 5.9,
+   "diff_g": -0.0
   },
   {
    "key": "rear_leg_pad",
    "model_g": 5.8,
-   "params_g": 4.0,
-   "diff_g": 1.8
+   "params_g": 5.8,
+   "diff_g": -0.0
   }
  ],
- "mass_total_g": 160.0,
- "mass_unit_g": 108.8,
- "params_total_g": 137.0,
- "params_unit_g": 104.0,
+ "mass_total_g": 167.3,
+ "mass_unit_g": 113.4,
+ "params_total_g": 167.4,
+ "params_unit_g": 113.0,
  "com_book": [
-  -0.3,
-  -36.7,
-  96.6
+  -0.2,
+  -37.3,
+  97.2
  ],
  "com_unit_book": [
   -0.3,
-  -35.0,
-  130.2
+  -35.8,
+  132.1
  ],
  "com_unit_in_unit_frame": [
   -0.3,
-  -19.5,
-  20.7
+  -20.6,
+  22.5
  ],
  "poses": {
   "table_hardcover": {
    "com": [
-    -0.3,
-    -36.7,
-    96.6
+    -0.2,
+    -37.3,
+    97.2
    ],
-   "mass_g": 160.0,
+   "mass_g": 167.3,
    "bbox_min": [
-    -44.0,
+    -46.0,
     -113.9,
     -15.0
    ],
    "bbox_max": [
-    45.2,
+    47.2,
     64.5,
-    151.2
+    156.6
    ],
    "size_mm": [
-    89.2,
+    93.2,
     178.3,
-    166.2
+    171.6
    ]
   },
   "table_paperback": {
    "com": [
-    -0.3,
-    -36.7,
-    107.2
+    -0.2,
+    -37.3,
+    107.8
    ],
-   "mass_g": 160.0,
+   "mass_g": 167.3,
    "bbox_min": [
-    -44.0,
+    -46.0,
     -113.9,
     -4.4
    ],
    "bbox_max": [
-    45.2,
+    47.2,
     64.5,
-    161.8
+    167.2
    ],
    "size_mm": [
-    89.2,
+    93.2,
     178.3,
-    166.2
+    171.6
    ]
   },
   "tripod_no_book": {
    "com": [
-    -0.3,
-    -36.7,
-    96.6
+    -0.2,
+    -37.3,
+    97.2
    ],
-   "mass_g": 160.0,
+   "mass_g": 167.3,
    "bbox_min": [
-    -44.0,
+    -46.0,
     -113.9,
     -15.0
    ],
    "bbox_max": [
-    45.2,
+    47.2,
     64.5,
-    151.2
+    156.6
    ],
    "size_mm": [
-    89.2,
+    93.2,
     178.3,
-    166.2
+    171.6
    ]
   },
   "in_hand": {
    "com": [
-    -0.3,
-    -33.5,
-    96.4
+    -0.2,
+    -34.2,
+    97.1
    ],
-   "mass_g": 160.0,
+   "mass_g": 167.3,
    "bbox_min": [
-    -44.0,
-    -55.6,
+    -46.0,
+    -56.2,
     -21.3
    ],
    "bbox_max": [
-    45.2,
+    47.2,
     64.5,
-    151.2
+    156.6
    ],
    "size_mm": [
-    89.2,
-    120.1,
-    172.4
+    93.2,
+    120.7,
+    177.9
    ]
   },
   "extended": {
    "com": [
-    -0.3,
-    -35.4,
-    164.4
+    -0.2,
+    -36.0,
+    164.5
    ],
-   "mass_g": 160.0,
+   "mass_g": 167.3,
    "bbox_min": [
-    -44.0,
+    -46.0,
     -109.8,
     -35.1
    ],
    "bbox_max": [
-    45.2,
+    47.2,
     64.5,
-    241.2
+    246.8
    ],
    "size_mm": [
-    89.2,
+    93.2,
     174.2,
-    276.3
+    281.9
    ]
   },
   "stowed": {
    "com": [
-    -0.3,
-    -39.6,
-    100.7
+    -0.2,
+    -40.5,
+    101.1
    ],
-   "mass_g": 160.0,
+   "mass_g": 167.3,
    "bbox_min": [
-    -44.0,
-    -55.6,
+    -46.0,
+    -57.6,
     -13.6
    ],
    "bbox_max": [
-    45.2,
+    47.2,
     -20.0,
-    151.4
+    156.4
    ],
    "size_mm": [
-    89.2,
-    35.6,
-    165.0
+    93.2,
+    37.6,
+    170.0
    ]
   }
  },

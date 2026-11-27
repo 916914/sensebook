@@ -32,7 +32,7 @@ MAN = json.load(open(os.path.join(BUILD, "manifest.json")))
 PRM = MAN["params"]
 U0 = np.array(MAN["unit_matrix"])
 DRAFT = "--draft" in sys.argv
-SAMPLES = 24 if DRAFT else 110
+SAMPLES = int(os.environ.get("SB_SAMPLES", 24 if DRAFT else 110))     # SB_SAMPLES=56 halves the time on a slow machine
 RES = (900, 600) if DRAFT else (1800, 1200)
 LIGHT = 0.11                                    # global light calibration
 
@@ -70,7 +70,7 @@ MATS = {
     "flex_amber": dict(c="#C98A33", r=0.35), "screw_black": dict(c="#1F1F22", r=0.35, m=1.0),
     "screw_steel": dict(c="#B5B7BA", r=0.3, m=1.0), "steel_brushed": dict(c="#C2C4C7", r=0.30, m=1.0, aniso=0.6),
     "spring_steel": dict(c="#A3A7AD", r=0.24, m=1.0), "silicone": dict(c="#D5D8DA", r=0.55),
-    "tpu_dark": dict(c="#222427", r=0.8),
+    "tpu_dark": dict(c="#222427", r=0.8), "foam": dict(c="#2B2C2E", r=0.95),
     # scene props
     "paper_edge": dict(c="#E9E1CE", r=0.8, stripes=True), "cover_cloth": dict(c="#27425C", r=0.85, bump=0.6),
     "cover_card": dict(c="#B9573A", r=0.55), "sweep": dict(c="#DADBD6", r=0.9), "clay": dict(c="#C9B9A6", r=0.7),
@@ -577,25 +577,26 @@ def cut_objects(objs, plane_co, plane_no, cap_mat="cut_face"):
 
 # ------------------------------------------------------------------ label sets
 SHORT = {
-    "shell_front_tub": "Front shell (tub)", "shell_back_cover": "Back cover", "lens_window": "Lens window", "lens_bezel": "Lens bezel",
+    "shell_front_tub": "Front shell (tub)", "shell_back_cover": "Back cover", "lens_bezel": "Lens bezel", "camera_lens_glass": "Lens front",
     "light_ring_diffuser": "Light-ring diffuser", "light_ring_pcb": "Light-ring LED board", "camera_lens_m12": "M12 ultra-wide lens",
     "camera_holder_m12": "M12 lens holder", "camera_board_imx708": "Camera board (IMX708)", "pi_zero_2w_pcb": "Raspberry Pi Zero 2 W",
-    "microsd_card": "microSD card", "heat_spreader": "Heat spreader", "thermal_pad": "Thermal pad", "cell_right": "LiPo cell 102535",
-    "cell_left": "LiPo cell 102535", "speaker": "Speaker", "amp_board_max98357a": "Speaker amp (MAX98357A)",
-    "dac_board_pcm5102": "Headphone DAC", "mic_right": "Microphone", "mic_left": "Microphone", "power_board": "Charger + 5 V boost",
+    "microsd_card": "microSD card", "heat_spreader": "Heat spreader", "thermal_pad": "Thermal pad", "cell_right": "LiPo cell pack, 800 mAh",
+    "cell_left": "LiPo cell pack, 800 mAh", "cell_foam_right": "Foam pad", "light_ring_leds": "Light-ring LEDs", "speaker": "Speaker", "amp_board_max98357a": "Speaker amp (MAX98357A)",
+    "dac_board_pcm5102": "Headphone DAC", "mic_right": "Microphone", "mic_left": "Microphone", "charger_board": "Charger + 5 V boost",
     "usb_c_receptacle": "USB-C", "fuel_gauge_max17048": "Fuel gauge (MAX17048)", "status_led_board": "Status LED board",
     "status_dot_pipes": "Status dots", "button_ask": "Ask button", "button_play_pause": "Play / Pause", "button_back": "Back",
-    "button_forward": "Forward", "top_button_board": "Button board", "button_vol_up": "Volume +", "button_vol_down": "Volume -",
-    "volume_board": "Volume switches", "mic_mute_switch": "Mic-mute switch", "headphone_jack": "Headphone jack",
+    "button_forward": "Forward", "top_bar_board": "Button board", "ask_button_board": "Ask switch board", "button_vol_up": "Volume +", "button_vol_down": "Volume -",
+    "volume_board": "Volume switches", "mic_mute_switch": "Mic-mute switch", "dac_jack": "Headphone jack",
     "haptic_motor": "Vibration motor", "harness_left": "Wiring harness", "harness_right": "Wiring harness",
     "battery_leads": "Battery leads", "camera_flex": "Camera flex", "hub_body": "Hub", "stick_outer_tube": "Outer tube",
     "stick_inner_tube": "Inner tube", "stick_collar": "Twist-lock collar", "stick_glide_bush": "Glide bush",
     "tilt_joint_head": "Tilt-joint head", "tilt_pivot_screw": "Pivot screw (M3)", "tilt_thumb_nut": "Thumb nut",
     "hub_cord": "Coiled cord (hub sensor)", "rear_leg": "Rear leg", "rear_leg_pad": "Soft TPU pad", "leg_pin": "Leg hinge pin",
-    "torsion_spring": "Torsion spring", "hub_sensor_switch": "Hub sensor switch", "blade_right": "Blade (spring steel)",
+    "torsion_spring_right": "Torsion springs (2)", "hub_sensor_switch": "Hub sensor switch", "blade_right": "Blade (spring steel)",
     "blade_left": "Blade (spring steel)", "blade_coat_right": "Blade coating", "blade_knuckle_right": "Blade knuckle",
     "blade_knuckle_left": "Blade knuckle", "knuckle_pin": "Knuckle pin", "cell_pcm_right": "Cell protection board",
-    "speaker_leads": "Speaker leads", "headphone_leads": "Headphone leads", "cover_screw_1": "Cover screws (4)",
+    "speaker_leads": "Speaker leads", "hub_sensor_lead": "Sensor lead (in a groove)", "hub_cord_riser": "Cord through the joint",
+    "camera_connector": "Camera connector", "status_leds": "Status LEDs", "cover_screw_1": "Cover screws (4)",
     "camera_screws": "Camera screws", "mic_mute_slider": "Mic-mute slider", "hub_cord_tail": "Hub cord",
     "blade_clamp_screw_right": "Blade clamp screw",
 }
@@ -673,15 +674,15 @@ def sc_top():
 def sc_exploded_unit():
     reset(transparent=True, world=1.0, res=(2000, 1500) if not DRAFT else (1000, 750))
     objs = assemble("table_hardcover", explode=1.0, groups=("unit",), unit_frame=True, hide=("hub_cord_tail",))
-    c = (0, -0.028, 0.022)
+    c = (0, -0.006, -0.015)
     soft_lights(c, power=1.25, front=(0.5, 0.5, 0.5))
-    cam = camera((0.47, 0.50, 0.36), c, lens=158)
-    names = ["shell_front_tub", "shell_back_cover", "lens_window", "lens_bezel", "light_ring_diffuser", "light_ring_pcb",
+    cam = camera((0.47, 0.50, 0.36), c, lens=106)
+    names = ["shell_front_tub", "shell_back_cover", "lens_bezel", "light_ring_diffuser", "light_ring_pcb",
              "camera_lens_m12", "camera_holder_m12", "camera_board_imx708", "pi_zero_2w_pcb", "microsd_card", "heat_spreader",
              "thermal_pad", "cell_right", "cell_left", "speaker", "amp_board_max98357a", "dac_board_pcm5102", "mic_right",
-             "power_board", "usb_c_receptacle", "fuel_gauge_max17048", "status_led_board", "status_dot_pipes", "button_ask",
-             "button_play_pause", "button_back", "button_forward", "top_button_board", "button_vol_up",
-             "volume_board", "mic_mute_switch", "headphone_jack", "haptic_motor", "harness_left", "camera_flex",
+             "charger_board", "usb_c_receptacle", "fuel_gauge_max17048", "status_led_board", "status_dot_pipes", "button_ask",
+             "button_play_pause", "button_back", "button_forward", "top_bar_board", "button_vol_up",
+             "volume_board", "mic_mute_switch", "dac_jack", "haptic_motor", "harness_left", "camera_flex",
              "cover_screw_1"]
     anchors("05_exploded_unit", label_items(objs, names), cam)
     render("05_exploded_unit")
@@ -694,7 +695,7 @@ def sc_exploded_mech():
     soft_lights(c, power=2.6, front=(0.6, 0.6, 0.6))
     cam = camera((0.74, 0.74, 0.52), c, lens=88)
     names = ["tilt_joint_head", "tilt_pivot_screw", "tilt_thumb_nut", "stick_inner_tube", "stick_glide_bush", "stick_collar",
-             "stick_outer_tube", "hub_cord", "hub_body", "torsion_spring", "leg_pin", "hub_sensor_switch", "rear_leg", "rear_leg_pad",
+             "stick_outer_tube", "hub_cord", "hub_body", "torsion_spring_right", "leg_pin", "hub_sensor_switch", "rear_leg", "rear_leg_pad",
              "blade_knuckle_right", "knuckle_pin", "blade_right", "blade_coat_right", "blade_clamp_screw_right"]
     anchors("06_exploded_tri_grip", label_items(objs, names), cam)
     render("06_exploded_tri_grip")
@@ -709,10 +710,10 @@ def sc_cutaway():
     area("fill", (0.5, -0.35, 0.10), c, 0.8, 22)
     area("top", (0.25, 0.0, 0.5), c, 0.7, 20)
     cam = camera((0.50, 0.075, 0.085), c, ortho=0.086)
-    names = ["shell_front_tub", "shell_back_cover", "lens_window", "light_ring_diffuser", "light_ring_pcb", "camera_lens_m12",
+    names = ["shell_front_tub", "shell_back_cover", "lens_bezel", "light_ring_diffuser", "light_ring_pcb", "camera_lens_m12",
              "camera_holder_m12", "camera_board_imx708", "pi_zero_2w_pcb", "heat_spreader", "thermal_pad", "cell_right",
-             "button_ask", "button_play_pause", "top_button_board", "fuel_gauge_max17048", "camera_flex", "power_board",
-             "speaker", "headphone_jack", "mic_right", "harness_right"]
+             "button_ask", "button_play_pause", "top_bar_board", "fuel_gauge_max17048", "camera_flex", "charger_board",
+             "speaker", "mic_right", "harness_right"]
     anchors("07_cutaway_side", label_items(objs, names), cam)
     render("07_cutaway_side")
 
@@ -720,16 +721,16 @@ def sc_cutaway():
 def sc_internals_front():
     reset(transparent=True, world=1.0, res=(2000, 1300) if not DRAFT else (1000, 650))
     objs = assemble("table_hardcover", groups=("unit",), unit_frame=True,
-                    hide=("shell_front_tub", "button_", "status_dot_pipes", "lens_window", "lens_bezel", "light_ring_diffuser",
+                    hide=("shell_front_tub", "button_", "status_dot_pipes", "lens_bezel", "light_ring_diffuser",
                           "mic_mute_slider", "mic_mute_flag", "hub_cord_tail"))
     c = (0, -0.016, 0.019)
     soft_lights(c, power=0.9, front=(0.3, 0.6, 0.45))
     cam = camera((0.085, 0.345, 0.155), c, lens=105)
     names = ["shell_back_cover", "pi_zero_2w_pcb", "cell_right", "cell_left", "cell_pcm_right", "camera_lens_m12", "camera_holder_m12",
-             "camera_board_imx708", "light_ring_pcb", "speaker", "power_board", "usb_c_receptacle", "headphone_jack",
+             "camera_board_imx708", "light_ring_pcb", "speaker", "charger_board", "usb_c_receptacle", "dac_jack",
              "amp_board_max98357a", "dac_board_pcm5102", "haptic_motor", "status_led_board", "volume_board", "mic_mute_switch",
-             "mic_right", "mic_left", "top_button_board", "fuel_gauge_max17048", "harness_left", "battery_leads",
-             "speaker_leads", "headphone_leads"]
+             "mic_right", "mic_left", "top_bar_board", "fuel_gauge_max17048", "harness_left", "battery_leads",
+             "speaker_leads"]
     anchors("08_internals_front", label_items(objs, names), cam)
     render("08_internals_front")
 

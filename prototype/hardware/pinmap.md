@@ -18,8 +18,8 @@ Board: Raspberry Pi Zero 2 W, 40-pin header (solder wires to the pads; no pin he
 | 18 | 24 | Volume - (hold = slower) | switch to GND, internal pull-up | `vol_down` |
 | 22 | 25 | Amp enable (MAX98357A SD) | direct; low = amp off | `amp_enable` |
 | 23 | 11 | Vibration motor | base of an NPN (or MOSFET gate) with 1 k, flyback diode across the motor | `haptic` |
-| 24 | 8 | Hub sensor | detector switch to GND when the rear leg is deployed, internal pull-up | `hub_attached` |
-| 26 | 7 | Headphone jack detect | jack switch to GND when a plug is in, internal pull-up | `jack_detect` |
+| 24 | 8 | Hub sensor | detector switch to GND while the rear leg is folded away; open (pin high) when the leg is deployed; internal pull-up | `hub_attached` |
+| 26 | 7 | Headphone jack detect | jack switch to GND when a plug is in, internal pull-up (needs a jack with a detect contact) | `jack_detect` |
 | 29 | 5 | Ask button (hold to talk) | switch to GND, internal pull-up | `ask` |
 | 31 | 6 | Play / Pause (hold = where am I) | switch to GND, internal pull-up | `play_pause` |
 | 32 | 12 | Light ring, PWM | gate of an N-MOSFET (AO3400-class), 100 ohm in series, 100 k to GND | `light` |
@@ -42,7 +42,7 @@ The MAX98357A is powered from 5 V (boost output), not from the Pi's 3.3 V pin. T
 
 ## Camera
 
-22-pin 0.5 mm CSI connector on the Pi Zero 2 W to the camera board (15-pin 1 mm on a Camera Module 3 form factor), using the Pi Zero camera cable.
+22-pin 0.5 mm CSI connector on the Pi Zero 2 W to the 15-pin 1 mm connector on the camera board (Arducam B0310), using a 150 mm Pi Zero camera cable. The route in the model is 79 mm; the rest is folded flat behind the Pi.
 
 ## Things to watch on the bench
 
@@ -51,6 +51,9 @@ The MAX98357A is powered from 5 V (boost output), not from the Pi's 3.3 V pin. T
 - **GPIO 12** is PWM0, also used by the Pi's analogue audio. `dtparam=audio=off` is required (it is in the audio set-up).
 - **GPIO 16** is the default shutdown pin of the `googlevoicehat-soundcard` overlay. Use the modified overlay from `prototype/software/docs/AUDIO.md`, or the mic-mute switch will fight the sound driver.
 - **GPIO 2 and 3** have fixed 1.8 k pull-ups on the board: do not add more on the fuel-gauge breakout.
+- **Hub sensor polarity.** In the 3D model the detector switch (Alps SPVE110200) is pressed while the rear leg is folded away, so GPIO 8 is low when the device is stowed and high when the leg is out. The software default `hardware.hub_active_low: true` reads it the other way round: set it to `false` in `config.yaml` for this build, and check on the bench that "attached" is announced when the leg swings out.
+- **Headphone detect.** The DAC board drawn in the model (Adafruit 6250) carries its own 3.5 mm jack. We could not confirm that this jack has a plug-detect contact. If it has none, GPIO 7 stays unconnected and headphones must be chosen another way, or a switched jack is fitted instead (for example CUI SJ-3524-SMT).
+- **Supply current.** The charger board drawn in the model (Adafruit 6106, bq25185) is listed at 1 A on its 5 V output. Measure the peak draw with the speaker loud, the light ring on and the camera capturing (test B5 and B6) before trusting it.
 - The I2S clock lines go to four devices. Keep those wires short (under 8 cm) and twist each with a ground wire.
 
 ![Wiring diagram](wiring_diagram.png)

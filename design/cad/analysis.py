@@ -115,9 +115,9 @@ def clearance(pose):
 def com_and_masses(stick, tip):
     pose = P.unit_pose(stick, tip)
     piv_y, piv_z = pose["pivot"]
-    # unit CoM ~ centroid of profile, slightly low/back because cells+Pi sit back (EST)
-    uy = np.mean([p[0] for p in pose["outline"]]) - 1.5
-    uz = np.mean([p[1] for p in pose["outline"]]) - 1.0
+    # unit centre of mass: taken from the 3D model (sb_params.UNIT_COM, unit frame), moved into the book frame
+    dy, dz = P.rot_tip(P.UNIT_COM[0] - P.PIVOT_Y, P.UNIT_COM[1] - P.PIVOT_Z, tip)
+    uy, uz = piv_y + dy, piv_z + dz
     items = [
         ("unit", P.unit_mass(), uy, uz),
         ("tilt joint", P.MASS["tilt_joint"], piv_y, piv_z),
@@ -209,21 +209,28 @@ def in_hand(stick, tip, beta_deg):
 
 
 def spring_check():
-    # torsion spring: 1.0 mm music wire, 5 coils, 6 mm ID; rear-leg pad lever 45 mm
-    d, Dm, N, E = 1.0, 7.0, 5, 207000.0
-    k_rad = E * d ** 4 / (64 * Dm * N)          # N*mm/rad
-    k_deg = k_rad * math.pi / 180
-    pre = 135.0                                  # N*mm preload at closed (thin book)
-    lever = 45.0
+    """Two stock torsion springs (sb_params.PARTS["spring"]) side by side on the leg barrel.
+    They act only in the clamp range: a stop in the hub holds each one wound by SPRING_PRELOAD_DEG until the leg
+    reaches SPRING_ENGAGE_DEG, then the leg winds them further as it closes on the book."""
+    k1 = P.PD("spring", "max_torque_nmm") / P.PD("spring", "max_angle_deg")      # N*mm per degree, one spring (maker's limit point)
+    lim = P.PD("spring", "max_angle_deg")
     out = []
-    for open_deg in (0, 20, 40, 60):
-        T = pre + k_deg * open_deg
-        out.append(dict(open_deg=open_deg, torque_Nmm=round(T), pad_force_N=round(T / lever, 1)))
-    return dict(k_Nmm_per_deg=round(k_deg, 2), table=out,
-                squeeze_force_at_pads_N=round((pre + k_deg * 40) / 18.0, 1))
+    for name, cover, block in (("thin paperback", P.COVER_SOFT, P.BLOCK_SOFT), ("hardcover", P.COVER_HARD, P.BLOCK_HARD),
+                               ("thick book", P.COVER_THICK, P.BLOCK_THICK)):
+        sn = (cover + block + P.PAD[2] + 1.3 + P.LEG_PIVOT[1]) / P.LEG_CHORD
+        leg = 180.0 - math.degrees(math.asin(sn))
+        wind = P.SPRING_PRELOAD_DEG + leg - P.SPRING_ENGAGE_DEG
+        T = 2 * k1 * wind
+        out.append(dict(book=name, thickness_mm=round(cover + block, 1), leg_deg=round(leg, 1), wind_deg=round(wind, 1),
+                        torque_Nmm=round(T, 1), pad_force_N=round(T / P.LEG_CHORD, 2), share_of_spring_limit_pct=round(100 * wind / lim)))
+    return dict(springs=2, k_Nmm_per_deg_each=round(k1, 3), limit_torque_Nmm_each=P.PD("spring", "max_torque_nmm"),
+                limit_angle_deg=lim, preload_deg=P.SPRING_PRELOAD_DEG, engage_leg_deg=P.SPRING_ENGAGE_DEG,
+                torque_at_engage_Nmm=round(2 * k1 * P.SPRING_PRELOAD_DEG, 1), table=out,
+                note="Rate taken from the maker's limit point (torque / angle). The spring legs and their seats in the hub and on "
+                     "the leg are not drawn yet: trim and bend on the first build.")
 
 
-# ------------------------------------------------------------------ diagrams
+
 def diagrams(res):
     import matplotlib
     matplotlib.use("Agg")
