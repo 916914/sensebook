@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-label="SenseBook on an open book (illustration)"><title>SenseBook on an open book (illustration)</title><defs><linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE9E8" stop-opacity=".0"/>
+<stop offset="1" stop-color="#1F5560" stop-opacity=".10"/></linearGradient></defs>
+<ellipse cx="400" cy="498" rx="350" ry="18" fill="#133B42" opacity=".10"/>
+<path d="M400 224C320 196 190 194 70 220L52 476C180 452 310 456 400 482z" fill="#E9E1D2"/>
+<path d="M400 224C480 196 610 194 730 220L748 476C620 452 490 456 400 482z" fill="#E9E1D2"/>
+<path d="M400 216C322 188 194 186 78 212L62 466C186 442 314 446 400 472z" fill="#FFFDF8"/>
+<path d="M400 216C478 188 606 186 722 212L738 466C614 442 486 446 400 472z" fill="#FFFDF8"/>
+<path d="M400 216V472" stroke="#133B42" stroke-opacity=".18" stroke-width="2"/>
+<rect x="148" y="252" width="218" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="140" y="274" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="140" y="296" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="210" y="318" width="156" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="140" y="340" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="140" y="362" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="140" y="384" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="210" y="406" width="156" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="140" y="428" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="434" y="252" width="218" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="434" y="274" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="434" y="296" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="434" y="318" width="156" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="434" y="340" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="434" y="362" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="434" y="384" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="434" y="406" width="156" height="7" rx="3.5" fill="#133B42" opacity=".16"/><rect x="434" y="428" width="226" height="7" rx="3.5" fill="#133B42" opacity=".16"/>
+<path d="M400 124 92 214 66 462 400 470 734 462 708 214z" fill="url(#cone)"/>
+<path d="M391 205 378 226M409 205 422 226" stroke="#8a9aa0" stroke-width="3" stroke-linecap="round"/>
+<rect x="395" y="126" width="10" height="84" rx="5" fill="#133B42"/>
+<circle cx="400" cy="206" r="9" fill="#133B42"/>
+<rect x="334" y="58" width="132" height="70" rx="20" fill="#133B42"/>
+<path d="M336 104h128v4c0 11-9 20-20 20H356c-11 0-20-9-20-20z" fill="#0E2D33"/>
+<ellipse cx="400" cy="57" rx="15" ry="4.5" fill="#E8A317"/>
+<circle cx="354" cy="76" r="2.6" fill="#fff"/><circle cx="364" cy="76" r="2.6" fill="#fff"/><circle cx="374" cy="76" r="2.6" fill="#fff"/><circle cx="384" cy="76" r="2.6" fill="#fff"/>
+<circle cx="400" cy="112" r="11" fill="#cfe3e6" opacity=".55"/><circle cx="400" cy="112" r="7" fill="#9ec3cf"/><circle cx="400" cy="112" r="3.4" fill="#0b2328"/></svg>

@@ -1,0 +1,168 @@
+{
+  "palette": [
+    {
+      "token": "spine",
+      "name": "Spine",
+      "name_bn": "মলাট",
+      "hex": "#133B42",
+      "role": "Primary. The device colour. Text, logo, dark backgrounds.",
+      "rgb": [
+        19,
+        59,
+        66
+      ]
+    },
+    {
+      "token": "teal",
+      "name": "Teal",
+      "name_bn": "নদী",
+      "hex": "#1F5560",
+      "role": "Secondary. Links, headings on paper, secondary fills.",
+      "rgb": [
+        31,
+        85,
+        96
+      ]
+    },
+    {
+      "token": "mist",
+      "name": "Mist",
+      "name_bn": "কুয়াশা",
+      "hex": "#DCE9E8",
+      "role": "Light tint. Panels and cards on paper.",
+      "rgb": [
+        220,
+        233,
+        232
+      ]
+    },
+    {
+      "token": "marigold",
+      "name": "Marigold",
+      "name_bn": "গাঁদা",
+      "hex": "#E8A317",
+      "role": "Accent. The Ask button and the dot. Fill or on dark only, never text on light.",
+      "rgb": [
+        232,
+        163,
+        23
+      ]
+    },
+    {
+      "token": "paper",
+      "name": "Paper",
+      "name_bn": "কাগজ",
+      "hex": "#F7F2E8",
+      "role": "Background. Warm, like a printed page.",
+      "rgb": [
+        247,
+        242,
+        232
+      ]
+    },
+    {
+      "token": "ink",
+      "name": "Ink",
+      "name_bn": "কালি",
+      "hex": "#161B1C",
+      "role": "Body text and one-colour print.",
+      "rgb": [
+        22,
+        27,
+        28
+      ]
+    },
+    {
+      "token": "brick",
+      "name": "Brick",
+      "name_bn": "ইট",
+      "hex": "#A63D2A",
+      "role": "Errors and warnings only.",
+      "rgb": [
+        166,
+        61,
+        42
+      ]
+    },
+    {
+      "token": "leaf",
+      "name": "Leaf",
+      "name_bn": "পাতা",
+      "hex": "#2E6B4A",
+      "role": "Success and 'ready' only.",
+      "rgb": [
+        46,
+        107,
+        74
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "text": "ink",
+      "background": "paper",
+      "ratio": 15.58,
+      "wcag": "AAA"
+    },
+    {
+      "text": "spine",
+      "background": "paper",
+      "ratio": 10.87,
+      "wcag": "AAA"
+    },
+    {
+      "text": "teal",
+      "background": "paper",
+      "ratio": 7.45,
+      "wcag": "AAA"
+    },
+    {
+      "text": "paper",
+      "background": "spine",
+      "ratio": 10.87,
+      "wcag": "AAA"
+    },
+    {
+      "text": "marigold",
+      "background": "spine",
+      "ratio": 5.59,
+      "wcag": "AA"
+    },
+    {
+      "text": "marigold",
+      "background": "ink",
+      "ratio": 8.02,
+      "wcag": "AAA"
+    },
+    {
+      "text": "ink",
+      "background": "marigold",
+      "ratio": 8.02,
+      "wcag": "AAA"
+    },
+    {
+      "text": "ink",
+      "background": "mist",
+      "ratio": 13.96,
+      "wcag": "AAA"
+    },
+    {
+      "text": "brick",
+      "background": "paper",
+      "ratio": 5.66,
+      "wcag": "AA"
+    },
+    {
+      "text": "leaf",
+      "background": "paper",
+      "ratio": 5.67,
+      "wcag": "AA"
+    },
+    {
+      "text": "marigold",
+      "background": "paper",
+      "ratio": 1.94,
+      "wcag": "fail"
+    }
+  ]
+}
