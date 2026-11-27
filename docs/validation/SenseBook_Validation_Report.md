@@ -155,6 +155,8 @@ Scores are our judgement from the evidence: ●●●●● strong, ●○○○
 
 **Takeaway: SenseBook clearly wins on price against every dedicated reader for blind people, and on "no screen, no aiming" against phones. It doesn't win on raw capability: free phone tools use the same AI, every NCTB book is a free PDF, and Bangla AI tablets have already reached the same parents.**
 
+![What reading help costs, in taka, log scale (approximate conversions)](figures/prices.svg)
+
 | Alternative | Price (Tk unless stated) | Reach in Bangladesh | Where it beats SenseBook | Where SenseBook beats it |
 |---|---|---|---|---|
 | Private tutor or coaching | 1,100–3,000 a month nationally (2022); 4,000–8,000 in Dhaka (2026) | About 3 in 4 secondary students | Human judgement, motivation, exam tips, accountability | Any evening, every page, a fraction of the monthly cost (subscription) |
@@ -282,6 +284,18 @@ At Year 3's fixed costs (about Tk 2.68 crore), break-even is about 12,400 device
 - **Listening:** children's spoken Bangla is the weakest link (13–70% character error depending on the route; section 2.2).
 - A Bangladeshi accessibility expert writes that Bangla screen readers still mispronounce academic terms and Bangla OCR "mostly remain[s] in labs or pilot projects" ([TBS, 27 Nov 2025](https://www.tbsnews.net/node/1296496)).
 - **Verdict:** open risk. Bench tests T1–T3 settle it for about Tk 5,000–10,000.
+
+**What the camera sees:** resolution across a textbook spread, from `design/cad/out/analysis_results.json`.
+
+![Camera resolution across a textbook spread](figures/dpi.svg)
+
+**How well AI reads Bangla:** character error on scanned Bengali pages, [IndicVisionBench, Nov 2025](https://arxiv.org/html/2511.04727).
+
+![Bangla OCR character error by model](figures/ocr.svg)
+
+**How well AI hears Bangla:** character error on 1,001 clips including children, [Riverborn benchmark, Sep 2026](https://github.com/riverbornai/bangla-speech-to-text-benchmark/tree/main). The highlighted bars are Gemini, the plan's provider.
+
+![Bangla speech recognition character error by service](figures/asr.svg)
 
 ### 5.3 The AI provider: Google's terms rule out children
 **This is the most urgent finding.** Google's [Gemini API Additional Terms](https://aistudio.google.com/docs/terms) (effective 23 March 2026, checked 27 November 2026) say "You must be 18 years of age or older to use the APIs". They also bar any service "directed towards or is likely to be accessed by individuals under the age of 18".
