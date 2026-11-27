@@ -19,6 +19,8 @@ prototype/software/data/
 *.db
 captures/
 *.wav
+# ...except the brand's own sound identity files
+!brand/audio/*.wav
 
 # Built site (rebuilt from sources by tools/build_site.py)
 site/
