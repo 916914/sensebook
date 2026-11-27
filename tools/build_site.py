@@ -69,24 +69,33 @@ def page(title, body):
 def inline(s):
     s = html.escape(s, quote=False)
     s = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", lambda m: f'<img alt="{m.group(1)}" src="{fix_link(m.group(2))}">', s)
-    s = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", lambda m: f'<a href="{fix_link(m.group(2))}">{m.group(1)}</a>', s)
+    s = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", lambda m: link(m.group(1), fix_link(m.group(2))), s)
     s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
     s = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", s)
     s = re.sub(r"(?<![*\w])\*([^*]+)\*(?!\w)", r"<em>\1</em>", s)
     return s
 
 
+CURRENT_SRC = ""          # the Markdown file being converted, so relative links can be resolved
+
+
+def link(text, href):
+    """A link, or plain text when the target is a repository file that the hub does not carry."""
+    return f'<a href="{href}">{text}</a>' if href else text
+
+
 def fix_link(href):
     """Point image links at the copied renders and document links at their hub pages; leave web links alone."""
-    if href.startswith(("http://", "https://", "#", "/")):
+    if href.startswith(("http://", "https://", "#", "/", "mailto:")):
         return href
     name = os.path.basename(href)
     if name.lower().endswith((".png", ".jpg", ".jpeg", ".svg")):
         return "/renders/" + name
+    target = os.path.normpath(os.path.join(os.path.dirname(CURRENT_SRC), href.split("#")[0])).replace("\\", "/")
     for slug, _title, src, _group in PAGES:                 # a link to another Markdown document that has a hub page
-        if name and name == os.path.basename(src) and href.replace("\\", "/").split("#")[0].endswith(name):
+        if target == src:
             return f"/{slug}/"
-    return href
+    return None
 
 
 def md_to_html(md):
@@ -193,6 +202,8 @@ def main():
             p = os.path.join(ROOT, src)
             if not os.path.isfile(p):
                 continue
+            global CURRENT_SRC
+            CURRENT_SRC = src
             with open(p, encoding="utf-8") as fh:
                 art = md_to_html(fh.read())
             os.makedirs(os.path.join(OUT, slug), exist_ok=True)
