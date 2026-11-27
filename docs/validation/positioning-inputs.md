@@ -1,6 +1,6 @@
 # Positioning inputs from validation
 
-For the positioning and brand chat. These are the facts and limits the positioning should rest on. They come from desk research on 27 November 2026; nobody has been interviewed and no SenseBook hardware has been tested. Sources are linked; full detail is in the [validation report](SenseBook_Validation_Report.md).
+For whoever writes SenseBook's positioning. These are the facts and limits the positioning should rest on. They come from desk research on 27 November 2026; nobody has been interviewed and no SenseBook hardware has been tested. Sources are linked; full detail is in the [validation report](SenseBook_Validation_Report.md).
 
 **Version:** 1.2 (27 Nov 2026). All evidence is in, including the legal points (NCTB rights, children's data, the AI provider's age terms), which are in section 5 of the report.
 
