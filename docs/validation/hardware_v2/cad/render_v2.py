@@ -130,12 +130,30 @@ SCENES = {
     # inside the head: shell and cover hidden
     "v2_inside_A": lambda: (show("A", hide_prefix=("shell_front_tub", "shell_back_cover", "book_", "zone_", "view_")),
                             camera((-0.12, 0.11, 0.045), (0.0, -0.04, 0.105), 58)),
-    # what each camera reads: the four page zones
-    "v2_zones": lambda: (show("A", hide_groups=()), camera((0.0, 0.55, 0.62), (0.0, 0.11, 0.0), 32)),
+    # what each camera reads: the page areas and the view lines to their corners
+    "v2_zones": lambda: (show("A", hide_groups=()), camera((-0.04, 0.50, 0.50), (0.0, 0.10, 0.02), 30)),
+    # front, side and top
+    "v2_front_A": lambda: (show("A"), camera((0.0, 0.60, 0.27), (0.0, -0.03, 0.105), 95)),
+    "v2_side_A": lambda: (show("A", hide_groups=()), camera((0.66, 0.09, 0.30), (0.0, 0.085, 0.06), 45)),
+    "v2_top_A": lambda: (show("A"), camera((0.0, 0.05, 0.62), (0.0, -0.035, 0.11), 80)),
+    # pulled apart (each part moved by its own explode offset from the model)
+    "v2_exploded_A": lambda: (show("A", hide_prefix=("book_",)), explode(1.0), camera((-0.30, 0.33, 0.28), (0.0, -0.03, 0.105), 58)),
+    # inside from the back: cover hidden, main board and cells
+    "v2_inside_back_A": lambda: (show("A", hide_prefix=("shell_back_cover", "thermal_pad", "heat_spreader", "cover_screw")),
+                                 camera((0.10, -0.34, 0.24), (0.0, -0.04, 0.105), 62)),
+    # Option B close-up: hub wings and keys at the top edge of the book
+    "v2_wings_B": lambda: (show("B"), camera((-0.13, 0.13, 0.11), (0.0, -0.045, 0.0), 50)),
 }
 
+
+def explode(k):
+    for o in objs():
+        e = prop(o, "explode", None)
+        if e is not None and len(e) == 3 and not o.hide_render:
+            o.location = Vector((e[0], e[1], e[2])) * k
+
 if __name__ == "__main__":
-    want = [a for a in sys.argv[1:] if not a.startswith("--")] or [k for k in SCENES if k != "v2_zones"]
+    want = [a for a in sys.argv[1:] if not a.startswith("--")] or list(SCENES)
     for nm in want:
         reset()
         SCENES[nm]()

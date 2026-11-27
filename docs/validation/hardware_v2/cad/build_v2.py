@@ -332,7 +332,7 @@ add("main_board", pcb, "unit", "pcb_green", mass=6.0, label="v2 main board, 65 x
 for key, lab, x0, x1, zz0, zz1, h, ms in Q.BOARD_PARTS:
     mat = "metal_tin" if key in ("wifi_bt",) else ("ic_black" if not key.startswith("conn") else "plastic_black")
     add(f"mb_{key}", box(x0, x1, yt - h, yt, zz0, zz1), "unit", mat, mass=ms, label=lab, explode=(0, -22, 0))
-add("antenna_flex", box(P.UNIT_W / 2 - P.WALL - 0.25, P.UNIT_W / 2 - P.WALL - 0.05, -27.0, -16.0, 26.0, 31.0), "unit", "flex_amber",
+add("antenna_flex", box(P.UNIT_W / 2 - P.WALL - 0.05 - Q.ANTENNA[2], P.UNIT_W / 2 - P.WALL - 0.05, -27.0, -27.0 + Q.ANTENNA[0], 26.0, 26.0 + Q.ANTENNA[1]), "unit", "flex_amber",
     mass=0.1, label="Flex antenna, Wi-Fi 6 + Bluetooth, on the right inner wall (away from the steel stick)", explode=(14, 0, 0))
 
 # cells: stepped pouch cells in parallel, sized around the camera modules
@@ -409,8 +409,24 @@ flex.append(("flex_tof", [tuple(tb), (0.0, Y_DROP, float(tb[2])), (0.0, Y_DROP, 
              "Flex: ToF sensor to the board"))
 flex.append(("flex_top", [(0.0, -5.5, 31.0), (0.0, -5.5, 34.4), (5.8, -8.0, 34.4), (5.8, -27.4, 34.4), (5.8, -30.0, 34.4), (3.2, -30.3, 32.4)],
              "Flex: speaker, front mic, status LEDs, top keys, haptic to the board"))
+# light bars: two jumpers behind the facet and one flex to the far-left connector (LED driver on the main board)
+vb = sum(Q.LIGHT_BOTTOM["v"]) / 2
+vt = sum(Q.LIGHT_TOP["v"]) / 2
+uj = fx["light_jumper_u"]
+xin_b = Q.LIGHT_BOTTOM["u"][0][1] + 0.4                 # inner ends of the lower strips
+ptl = tuple(fpt(3.4, -uj, vt))
+flex.append(("flex_light_jumper_bottom", [tuple(fpt(3.4, xin_b, vb)), tuple(fpt(3.4, -xin_b, vb))],
+             "Flex jumper: joins the two lower light strips across the middle"))
+flex.append(("flex_light_jumper_left", [tuple(fpt(3.4, -uj, vb)), ptl], "Flex jumper: lower-left light strip to the top strip"))
+# The light lines join the far-left camera flex where it drops (one two-in-one flex to the far-left connector):
+# under the board there is no free path beside the camera flex (the back cover's lip and the camera flex fill it).
+xl = -fx["light_drop"]
+far_pts = dict((nm, pts) for nm, pts, _ in flex)["flex_far_left"]
+zj = (far_pts[1][2] + far_pts[2][2]) / 2                 # halfway down the far-left flex's drop
+flex.append(("flex_light_main", [ptl, (xl, ptl[1], ptl[2]), (xl, Y_DROP, ptl[2]), (xl, Y_DROP, zj), (far_pts[1][0] - 0.6, Y_DROP, zj)],
+             "Flex: light bars; joins the far-left camera flex, which carries the LED lines to the driver on the main board"))
 for nm, pts, lab in flex:
-    add(nm, wire(pts, 0.4), "unit", "flex_amber", mass=0.3, label=lab, explode=(0, -6, 6))
+    add(nm, wire(pts, 0.4), "unit", "flex_amber", mass=0.3 if not nm.startswith("flex_light_jumper") else 0.1, label=lab, explode=(0, -6, 6))
 
 
 # =====================================================================================
@@ -508,7 +524,7 @@ ALLOWED = bm.ALLOWED + [("window_", "shell_"), ("light_optic", "shell_"), ("tof_
                         ("light_leds", "light_board"), ("tof_sensor", "tof_board"), ("mb_", "main_board"), ("main_board", "shell_back_cover"),
                         ("hub_wing", "hub_body"), ("wing_key", "hub_wing"), ("hub_wing_board", "hub_wing"), ("haptic_motor_wing", "hub_wing"),
                         ("clicker_", "clicker_"), ("book_", "book_"), ("zone_", ""), ("view_", ""), ("thermal_pad", "mb_soc"),
-                        ("usb_board", "usb_c"), ("flex_top", "speaker_box")]
+                        ("usb_board", "usb_c"), ("flex_top", "speaker_box"), ("flex_light", "light_board"), ("flex_light", "flex_light"), ("flex_light_main", "flex_far_left")]
 
 
 def allowed(a, b):
@@ -591,6 +607,9 @@ def pose_hits(opt):
     return out
 
 
+PARTS_MASS = {}
+
+
 def mass_report(opt):
     rows = []
     for b in config_bodies(opt):
@@ -600,6 +619,7 @@ def mass_report(opt):
         v, c = bm.vol_centroid(s)
         m = b["mass"] if b["mass"] is not None else v / 1000.0 * P.RHO[b["rho"]]
         rows.append(dict(name=b["name"], group=b["group"], mass_g=round(m, 2), com=[round(float(x), 2) for x in c]))
+    PARTS_MASS[opt] = [dict(name=r["name"], group=r["group"], mass_g=r["mass_g"]) for r in rows]
     tot = sum(r["mass_g"] for r in rows)
     com = sum(r["mass_g"] * np.array(r["com"]) for r in rows) / tot
     unit = [r for r in rows if r["group"] == "unit"]
@@ -715,6 +735,7 @@ for opt in ("A", "B"):
     hits, tight = collisions(opt)
     report[f"option_{opt}"] = dict(collisions=hits, tight_gaps=tight[:20], mass=mass_report(opt), head_envelope_mm=head_envelope(opt),
                                    v1_head_envelope_mm=V1_HEAD_ENV)
+    report[f"option_{opt}"]["parts_mass_g"] = PARTS_MASS[opt]
     print(f"Option {opt}: collisions {len(hits)}, tight {len(tight)}, mass {report[f'option_{opt}']['mass']}, head {report[f'option_{opt}']['head_envelope_mm']}")
     for h in hits:
         print("   HIT", h)

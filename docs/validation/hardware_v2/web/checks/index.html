@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Model checks · SenseBook v2</title><style>
+:root{--bg:#f6f7f6;--surface:#ffffff;--ink:#1d2a2e;--muted:#5b6b70;--line:#d9e1e2;--teal:#1f4e57;--teal-soft:#e3eef0;--marigold:#9a6408;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111a1c;--surface:#172427;--ink:#e6eeef;--muted:#9fb1b5;--line:#2a3b3f;--teal:#8cc7d1;--teal-soft:#1d3236;--marigold:#f0b14a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111a1c;--surface:#172427;--ink:#e6eeef;--muted:#9fb1b5;--line:#2a3b3f;--teal:#8cc7d1;--teal-soft:#1d3236;--marigold:#f0b14a;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Nirmala UI",sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:28px}
+header.top a.brand{font-weight:700;font-size:22px;color:var(--teal);text-decoration:none;letter-spacing:.2px}
+header.top span{color:var(--muted);font-size:13px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px;text-wrap:balance}h2{font-size:20px;margin:36px 0 12px;color:var(--teal)}h3{font-size:16px;margin:24px 0 8px}
+p.lead{font-size:17px;color:var(--muted);max-width:68ch;margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0}
+.card h3{margin:0 0 6px}.card p{margin:0 0 10px;color:var(--muted);font-size:14px}
+.links a{display:inline-block;margin-right:12px;font-weight:600;color:var(--teal)}
+.tag{display:inline-block;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--marigold);font-weight:700;margin-bottom:6px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:0 0 8px}
+.tile{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:8px;padding:10px 12px}
+.tile .n{font-size:22px;font-weight:700;color:var(--teal);line-height:1.15}.tile .l{font-size:13px;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.gallery figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.gallery img{width:100%;height:auto;display:block}.gallery figcaption{padding:8px 12px;font-size:13px;color:var(--muted)}
+article{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;min-width:0}
+article p,article li{max-width:80ch}
+.table-wrap{overflow-x:auto;margin:12px 0}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--teal-soft)}
+td.n{white-space:nowrap;font-variant-numeric:tabular-nums}td.src{font-size:12.5px;color:var(--muted)}
+code,pre{font-family:ui-monospace,Consolas,monospace;font-size:13px}pre{background:var(--teal-soft);padding:10px;border-radius:8px;overflow-x:auto;margin:0;white-space:pre-wrap}
+a{color:var(--teal)}a:focus-visible{outline:2px solid var(--marigold);outline-offset:2px}
+.note{font-size:13px;color:var(--muted);margin-top:40px}
+</style></head>
+<body><div class="wrap"><header class="top"><a class="brand" href="/">SenseBook</a><span>Hardware v2 hub · built 27 Nov 2026</span></header>
+<p><a href="/">← Hardware v2 hub</a></p><h1>Model checks</h1>
+<p class="lead">What the v2 model was checked for, how, and the result. Every number comes from <code>out/model_report_v2.json</code>,
+written by <code>cad/build_v2.py</code> each time the model is built.</p>
+<article>
+<h2 style="margin-top:0">Summary</h2>
+<div class="table-wrap"><table><thead><tr><th>Check</th><th>Option A</th><th>Option B</th></tr></thead><tbody><tr><td>Parts overlapping each other (more than 0.02 mm³)</td><td class=n>0</td><td class=n>0</td></tr><tr><td>Overlaps in every v1 pose (stick lengths, tilt, blade and leg positions)</td><td class=n>0</td><td class=n>0</td></tr><tr><td>Camera sight lines blocked by a part (rays to every page point each camera reads)</td><td class=n>0 of 3626</td><td class=n>0 of 3626</td></tr><tr><td>Everything in the head, bounding box (mm), buttons and hinge included</td><td class=n>89.2 × 34.0 × 53.5</td><td class=n>89.2 × 34.0 × 52.1</td></tr><tr><td>Same, v1 parts (for comparison)</td><td class=n>89.2 × 34.0 × 53.5</td><td class=n></td></tr><tr><td>Front shell bounding box (mm)</td><td class=n>88.0 × 30.0 × 48.3</td><td class=n>v1: 88.0 × 30.0 × 48.3</td></tr><tr><td>Mass, whole device without the book (g)</td><td class=n>160.7</td><td class=n>166.6 (clicker not included)</td></tr><tr><td>Mass of the head (g)</td><td class=n>109.5</td><td class=n>106.7  (v1: 108.8)</td></tr></tbody></table></div>
+<h2>How each check works</h2>
+<ul>
+<li><b>Overlapping parts:</b> every pair of parts whose boxes come within 0.3 mm is intersected as solids (OpenCascade); any shared volume above 0.02 mm³ counts.
+Pairs that touch by design (a window in its shell opening, a chip on its board, a flex in its connector) are listed in the build script and skipped.</li>
+<li><b>Poses:</b> v1's six poses (hardcover, paperback, tripod without a book, in the hand, stick extended, stowed) move each part group as v1 does, and the overlap check runs again.</li>
+<li><b>Sight lines:</b> a ray from each camera to every point of the page it reads best (3626 rays per option) is tested against every opaque part.</li>
+<li><b>Resolution:</b> each camera is a pinhole model with its sensor (8160 × 6144 px), field of view and barrel distortion.
+The dpi at a point is the smaller of the two directions, by central differences over 0.5 mm, on a 28 × 16 grid over the printed text (120 × 80 in the chart script).</li>
+<li><b>Aims:</b> every aim in 1° steps (30–65° down, 0–40° outward) with each module within 10.5° of the facet; the aim with the highest
+worst-case dpi wins, the flattest among near-equals.</li>
+<li><b>Light:</b> each LED is a beam aimed at its own patch of the page; a linear program finds the least light that keeps every point of the printed text between
+300 and 750 lux.</li>
+<li><b>Size:</b> the bounding box of everything in the head is compared with v1's.</li>
+</ul>
+<h2>Cameras</h2>
+<div class="table-wrap"><table><thead><tr><th>Camera</th><th>Lens position (mm: across, along the page, height)</th><th>Aim</th><th>Tilt from the facet</th><th>View</th><th>Distortion (EST)</th><th>Lowest dpi where best</th></tr></thead><tbody><tr><td>Wide camera, left</td><td class=n>-13.0, -27.3, 117.4</td><td>56° down, 2° out</td><td class=n>1.2°</td><td class=n>108° × 92°</td><td class=n>10%</td><td class=n>331</td></tr><tr><td>Wide camera, right</td><td class=n>13.0, -27.3, 117.4</td><td>56° down, 2° out</td><td class=n>1.2°</td><td class=n>108° × 92°</td><td class=n>10%</td><td class=n>331</td></tr><tr><td>Page camera, left</td><td class=n>-25.0, -27.4, 117.7</td><td>47° down, 7° out</td><td class=n>9.6°</td><td class=n>60° × 47°</td><td class=n>2%</td><td class=n>315</td></tr><tr><td>Page camera, right</td><td class=n>25.0, -27.4, 117.7</td><td>47° down, 7° out</td><td class=n>9.6°</td><td class=n>60° × 47°</td><td class=n>2%</td><td class=n>315</td></tr></tbody></table></div>
+<p>Lowest dpi on the printed text: <b>315</b> with the best of all four cameras; 301 using only the two cameras on each page's side.
+Whole page seen: yes. v1: 82 dpi.</p>
+<h2>Light</h2>
+<p>20 LEDs; 300 to 753 lux on the printed text (solved for 300–750 on a 41 × 31 grid; 753 is the brightest point on the finer chart grid); about 71 lm, 0.59 W from the battery (EST: ~160 lm/W LEDs, 85% optic, 88% driver).</p>
+<h2>Battery</h2>
+<div class="table-wrap"><table><thead><tr><th>Cell</th><th>Volume (cm³, EST)</th></tr></thead><tbody><tr><td>right upper</td><td class=n>4.38</td></tr><tr><td>right lower</td><td class=n>1.92</td></tr><tr><td>left upper</td><td class=n>4.38</td></tr><tr><td>left lower</td><td class=n>1.92</td></tr><tr><td>center upper</td><td class=n>2.32</td></tr><tr><td>center lower</td><td class=n>0.97</td></tr><tr><td>front</td><td class=n>8.63</td></tr></tbody></table></div>
+<p>Total 24.54 cm³ (v1: 17.5 cm³).</p>
+<div class="table-wrap"><table><thead><tr><th>Cell type</th><th>Wh</th><th>Light off</th><th>10 h met?</th><th>Light on</th><th>8 h met?</th></tr></thead><tbody><tr><td>Standard Li-po (460 Wh/L)</td><td class=n>11.3</td><td class=n>16.0 to 29.7 h</td><td>yes, even in the worst case</td><td class=n>6.5 to 10.9 h</td><td>only in the better cases</td></tr><tr><td>4.45 V cell (600 Wh/L, EST)</td><td class=n>14.7</td><td class=n>20.8 to 38.7 h</td><td>yes, even in the worst case</td><td class=n>8.5 to 14.3 h</td><td>yes, even in the worst case</td></tr><tr><td>Silicon-carbon cell (800 Wh/L, phone grade)</td><td class=n>19.6</td><td class=n>27.8 to 51.6 h</td><td>yes, even in the worst case</td><td class=n>11.3 to 19.0 h</td><td>yes, even in the worst case</td></tr></tbody></table></div>
+<h2>Closest gaps (Option A, under 0.25 mm)</h2>
+<p>Parts that do not overlap but sit close. Most are v1 parts that touch by design (light pipes, pins, springs).</p>
+<div class="table-wrap"><table><thead><tr><th>Part</th><th>Part</th><th>Gap (mm)</th></tr></thead><tbody><tr><td>status_leds</td><td>status_dot_pipes</td><td class=n>0.05</td></tr><tr><td>status_dot_pipes</td><td>shell_front_tub</td><td class=n>0.05</td></tr><tr><td>hub_body</td><td>leg_pin</td><td class=n>0.05</td></tr><tr><td>hub_body</td><td>torsion_spring</td><td class=n>0.05</td></tr><tr><td>hub_body</td><td>knuckle_pin</td><td class=n>0.05</td></tr><tr><td>blade_coat_right</td><td>book_cover_right</td><td class=n>0.05</td></tr><tr><td>blade_coat_left</td><td>book_cover_left</td><td class=n>0.05</td></tr><tr><td>shell_front_tub</td><td>antenna_flex</td><td class=n>0.05</td></tr><tr><td>blade_right</td><td>book_pages_right</td><td class=n>0.089</td></tr><tr><td>blade_left</td><td>book_pages_left</td><td class=n>0.089</td></tr><tr><td>shell_front_tub</td><td>mic_front</td><td class=n>0.09</td></tr><tr><td>mic_mute_switch</td><td>shell_front_tub</td><td class=n>0.1</td></tr><tr><td>light_optic_top</td><td>light_leds_top</td><td class=n>0.1</td></tr><tr><td>light_optic_bottom_left</td><td>light_leds_bottom_left</td><td class=n>0.1</td></tr><tr><td>light_optic_bottom_right</td><td>light_leds_bottom_right</td><td class=n>0.1</td></tr><tr><td>cell_front</td><td>flex_top</td><td class=n>0.1</td></tr><tr><td>shell_front_tub</td><td>light_board_bottom_left</td><td class=n>0.124</td></tr><tr><td>shell_front_tub</td><td>light_board_bottom_right</td><td class=n>0.124</td></tr><tr><td>shell_front_tub</td><td>speaker_box</td><td class=n>0.15</td></tr><tr><td>main_board</td><td>cell_bus</td><td class=n>0.15</td></tr></tbody></table></div>
+<h2>Not checked</h2>
+<p>Heat, drop strength, radio range, sound level, real lens sharpness and focus, cable bending, assembly order. These need a prototype.</p>
+</article>
+<p class="note">A design proposal: nothing here has been built or measured. EST marks our estimates. Hardware design files CERN-OHL-W-2.0; text, figures, renders and data CC BY 4.0; code Apache-2.0.</p></div></body></html>

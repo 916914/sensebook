@@ -226,10 +226,10 @@
    }
   ],
   "mass": {
-   "total_g": 160.2,
-   "head_g": 109.0,
+   "total_g": 160.7,
+   "head_g": 109.5,
    "com_book": [
-    0.0,
+    0.1,
     -36.0,
     97.4
    ]
@@ -243,6 +243,608 @@
    89.2,
    34.0,
    53.5
+  ],
+  "parts_mass_g": [
+   {
+    "name": "shell_back_cover",
+    "group": "unit",
+    "mass_g": 8.97
+   },
+   {
+    "name": "cover_screw_1",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "cover_screw_2",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "cover_screw_3",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "cover_screw_4",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "heat_spreader",
+    "group": "unit",
+    "mass_g": 2.27
+   },
+   {
+    "name": "thermal_pad",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "mic_right",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "mic_left",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "usb_c_receptacle",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "status_led_board",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "status_leds",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "status_dot_pipes",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "button_ask",
+    "group": "unit",
+    "mass_g": 0.63
+   },
+   {
+    "name": "button_play_pause",
+    "group": "unit",
+    "mass_g": 0.21
+   },
+   {
+    "name": "button_back",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "button_forward",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "top_button_board",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "top_button_switches",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "back_button_board",
+    "group": "unit",
+    "mass_g": 0.25
+   },
+   {
+    "name": "forward_button_board",
+    "group": "unit",
+    "mass_g": 0.25
+   },
+   {
+    "name": "button_vol_up",
+    "group": "unit",
+    "mass_g": 0.14
+   },
+   {
+    "name": "button_vol_down",
+    "group": "unit",
+    "mass_g": 0.14
+   },
+   {
+    "name": "volume_board",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "mic_mute_switch",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "mic_mute_slider",
+    "group": "unit",
+    "mass_g": 0.02
+   },
+   {
+    "name": "mic_mute_flag",
+    "group": "unit",
+    "mass_g": 0.02
+   },
+   {
+    "name": "headphone_jack",
+    "group": "unit",
+    "mass_g": 1.2
+   },
+   {
+    "name": "hub_cord_tail",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "hub_body",
+    "group": "hub",
+    "mass_g": 8.97
+   },
+   {
+    "name": "stick_outer_tube",
+    "group": "stick_outer",
+    "mass_g": 12.2
+   },
+   {
+    "name": "stick_inner_tube",
+    "group": "stick_inner",
+    "mass_g": 9.91
+   },
+   {
+    "name": "stick_glide_bush",
+    "group": "stick_inner",
+    "mass_g": 0.15
+   },
+   {
+    "name": "stick_collar",
+    "group": "stick_outer",
+    "mass_g": 0.53
+   },
+   {
+    "name": "tilt_joint_head",
+    "group": "stick_inner",
+    "mass_g": 0.78
+   },
+   {
+    "name": "tilt_pivot_screw",
+    "group": "stick_inner",
+    "mass_g": 1.38
+   },
+   {
+    "name": "tilt_thumb_nut",
+    "group": "stick_inner",
+    "mass_g": 0.96
+   },
+   {
+    "name": "hub_cord",
+    "group": "cord",
+    "mass_g": 1.2
+   },
+   {
+    "name": "rear_leg",
+    "group": "leg",
+    "mass_g": 4.09
+   },
+   {
+    "name": "rear_leg_pad",
+    "group": "leg",
+    "mass_g": 1.68
+   },
+   {
+    "name": "leg_pin",
+    "group": "hub",
+    "mass_g": 0.64
+   },
+   {
+    "name": "torsion_spring",
+    "group": "hub",
+    "mass_g": 0.8
+   },
+   {
+    "name": "hub_sensor_switch",
+    "group": "hub",
+    "mass_g": 0.3
+   },
+   {
+    "name": "blade_right",
+    "group": "blade_r",
+    "mass_g": 2.67
+   },
+   {
+    "name": "blade_left",
+    "group": "blade_l",
+    "mass_g": 2.67
+   },
+   {
+    "name": "blade_coat_right",
+    "group": "blade_r",
+    "mass_g": 0.25
+   },
+   {
+    "name": "blade_coat_left",
+    "group": "blade_l",
+    "mass_g": 0.25
+   },
+   {
+    "name": "blade_knuckle_right",
+    "group": "blade_r",
+    "mass_g": 0.5
+   },
+   {
+    "name": "blade_knuckle_left",
+    "group": "blade_l",
+    "mass_g": 0.5
+   },
+   {
+    "name": "knuckle_pin",
+    "group": "hub",
+    "mass_g": 0.49
+   },
+   {
+    "name": "blade_clamp_screw_right",
+    "group": "blade_r",
+    "mass_g": 0.15
+   },
+   {
+    "name": "blade_clamp_screw_left",
+    "group": "blade_l",
+    "mass_g": 0.15
+   },
+   {
+    "name": "shell_front_tub",
+    "group": "unit",
+    "mass_g": 18.18
+   },
+   {
+    "name": "camera_near_left_lens",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "camera_near_left_module",
+    "group": "unit",
+    "mass_g": 0.7
+   },
+   {
+    "name": "camera_near_left_stiffener",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "camera_near_right_lens",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "camera_near_right_module",
+    "group": "unit",
+    "mass_g": 0.7
+   },
+   {
+    "name": "camera_near_right_stiffener",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "camera_far_left_lens",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "camera_far_left_module",
+    "group": "unit",
+    "mass_g": 0.7
+   },
+   {
+    "name": "camera_far_left_stiffener",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "camera_far_right_lens",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "camera_far_right_module",
+    "group": "unit",
+    "mass_g": 0.7
+   },
+   {
+    "name": "camera_far_right_stiffener",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "window_left",
+    "group": "unit",
+    "mass_g": 0.26
+   },
+   {
+    "name": "window_right",
+    "group": "unit",
+    "mass_g": 0.26
+   },
+   {
+    "name": "light_optic_top",
+    "group": "unit",
+    "mass_g": 0.45
+   },
+   {
+    "name": "light_board_top",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "light_leds_top",
+    "group": "unit",
+    "mass_g": 0.6
+   },
+   {
+    "name": "light_optic_bottom_left",
+    "group": "unit",
+    "mass_g": 0.13
+   },
+   {
+    "name": "light_board_bottom_left",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "light_leds_bottom_left",
+    "group": "unit",
+    "mass_g": 0.2
+   },
+   {
+    "name": "light_optic_bottom_right",
+    "group": "unit",
+    "mass_g": 0.13
+   },
+   {
+    "name": "light_board_bottom_right",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "light_leds_bottom_right",
+    "group": "unit",
+    "mass_g": 0.2
+   },
+   {
+    "name": "tof_window",
+    "group": "unit",
+    "mass_g": 0.03
+   },
+   {
+    "name": "tof_sensor",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "tof_board",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "main_board",
+    "group": "unit",
+    "mass_g": 6.0
+   },
+   {
+    "name": "mb_soc_rk3576",
+    "group": "unit",
+    "mass_g": 0.9
+   },
+   {
+    "name": "mb_ram_lpddr4x",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "mb_emmc",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "mb_pmic",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "mb_wifi_bt",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "mb_bt_audio",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_charger",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_usb_pd",
+    "group": "unit",
+    "mass_g": 0.02
+   },
+   {
+    "name": "mb_fuel_gauge",
+    "group": "unit",
+    "mass_g": 0.01
+   },
+   {
+    "name": "mb_smart_amp",
+    "group": "unit",
+    "mass_g": 0.01
+   },
+   {
+    "name": "mb_imu",
+    "group": "unit",
+    "mass_g": 0.01
+   },
+   {
+    "name": "mb_led_driver",
+    "group": "unit",
+    "mass_g": 0.02
+   },
+   {
+    "name": "mb_conn_far_left",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_near_left",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_tof",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_near_right",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_far_right",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_top",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "antenna_flex",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "cell_right_upper",
+    "group": "unit",
+    "mass_g": 8.8
+   },
+   {
+    "name": "cell_right_lower",
+    "group": "unit",
+    "mass_g": 3.8
+   },
+   {
+    "name": "cell_left_upper",
+    "group": "unit",
+    "mass_g": 8.8
+   },
+   {
+    "name": "cell_left_lower",
+    "group": "unit",
+    "mass_g": 3.8
+   },
+   {
+    "name": "cell_center_upper",
+    "group": "unit",
+    "mass_g": 4.6
+   },
+   {
+    "name": "cell_center_lower",
+    "group": "unit",
+    "mass_g": 1.9
+   },
+   {
+    "name": "cell_front",
+    "group": "unit",
+    "mass_g": 17.3
+   },
+   {
+    "name": "cell_bus",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "usb_board",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "speaker_box",
+    "group": "unit",
+    "mass_g": 2.0
+   },
+   {
+    "name": "mic_front",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "haptic_motor_head",
+    "group": "unit",
+    "mass_g": 0.9
+   },
+   {
+    "name": "flex_near_left",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_near_right",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_far_left",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_far_right",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_tof",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_top",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_light_jumper_bottom",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "flex_light_jumper_left",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "flex_light_main",
+    "group": "unit",
+    "mass_g": 0.3
+   }
   ],
   "pose_collisions": {
    "table_hardcover": [],
@@ -376,12 +978,12 @@
    }
   ],
   "mass": {
-   "total_g": 166.1,
-   "head_g": 106.2,
+   "total_g": 166.6,
+   "head_g": 106.7,
    "com_book": [
-    -0.1,
+    -0.0,
     -36.5,
-    91.7
+    91.8
    ]
   },
   "head_envelope_mm": [
@@ -393,6 +995,608 @@
    89.2,
    34.0,
    53.5
+  ],
+  "parts_mass_g": [
+   {
+    "name": "shell_back_cover",
+    "group": "unit",
+    "mass_g": 8.97
+   },
+   {
+    "name": "cover_screw_1",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "cover_screw_2",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "cover_screw_3",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "cover_screw_4",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "heat_spreader",
+    "group": "unit",
+    "mass_g": 2.27
+   },
+   {
+    "name": "thermal_pad",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "mic_right",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "mic_left",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "usb_c_receptacle",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "status_led_board",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "status_leds",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "status_dot_pipes",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "button_vol_up",
+    "group": "unit",
+    "mass_g": 0.14
+   },
+   {
+    "name": "button_vol_down",
+    "group": "unit",
+    "mass_g": 0.14
+   },
+   {
+    "name": "volume_board",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "mic_mute_switch",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "mic_mute_slider",
+    "group": "unit",
+    "mass_g": 0.02
+   },
+   {
+    "name": "mic_mute_flag",
+    "group": "unit",
+    "mass_g": 0.02
+   },
+   {
+    "name": "headphone_jack",
+    "group": "unit",
+    "mass_g": 1.2
+   },
+   {
+    "name": "hub_cord_tail",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "hub_body",
+    "group": "hub",
+    "mass_g": 8.97
+   },
+   {
+    "name": "stick_outer_tube",
+    "group": "stick_outer",
+    "mass_g": 12.2
+   },
+   {
+    "name": "stick_inner_tube",
+    "group": "stick_inner",
+    "mass_g": 9.91
+   },
+   {
+    "name": "stick_glide_bush",
+    "group": "stick_inner",
+    "mass_g": 0.15
+   },
+   {
+    "name": "stick_collar",
+    "group": "stick_outer",
+    "mass_g": 0.53
+   },
+   {
+    "name": "tilt_joint_head",
+    "group": "stick_inner",
+    "mass_g": 0.78
+   },
+   {
+    "name": "tilt_pivot_screw",
+    "group": "stick_inner",
+    "mass_g": 1.38
+   },
+   {
+    "name": "tilt_thumb_nut",
+    "group": "stick_inner",
+    "mass_g": 0.96
+   },
+   {
+    "name": "hub_cord",
+    "group": "cord",
+    "mass_g": 1.2
+   },
+   {
+    "name": "rear_leg",
+    "group": "leg",
+    "mass_g": 4.09
+   },
+   {
+    "name": "rear_leg_pad",
+    "group": "leg",
+    "mass_g": 1.68
+   },
+   {
+    "name": "leg_pin",
+    "group": "hub",
+    "mass_g": 0.64
+   },
+   {
+    "name": "torsion_spring",
+    "group": "hub",
+    "mass_g": 0.8
+   },
+   {
+    "name": "hub_sensor_switch",
+    "group": "hub",
+    "mass_g": 0.3
+   },
+   {
+    "name": "blade_right",
+    "group": "blade_r",
+    "mass_g": 2.67
+   },
+   {
+    "name": "blade_left",
+    "group": "blade_l",
+    "mass_g": 2.67
+   },
+   {
+    "name": "blade_coat_right",
+    "group": "blade_r",
+    "mass_g": 0.25
+   },
+   {
+    "name": "blade_coat_left",
+    "group": "blade_l",
+    "mass_g": 0.25
+   },
+   {
+    "name": "blade_knuckle_right",
+    "group": "blade_r",
+    "mass_g": 0.5
+   },
+   {
+    "name": "blade_knuckle_left",
+    "group": "blade_l",
+    "mass_g": 0.5
+   },
+   {
+    "name": "knuckle_pin",
+    "group": "hub",
+    "mass_g": 0.49
+   },
+   {
+    "name": "blade_clamp_screw_right",
+    "group": "blade_r",
+    "mass_g": 0.15
+   },
+   {
+    "name": "blade_clamp_screw_left",
+    "group": "blade_l",
+    "mass_g": 0.15
+   },
+   {
+    "name": "shell_front_tub_b",
+    "group": "unit",
+    "mass_g": 18.88
+   },
+   {
+    "name": "camera_near_left_lens",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "camera_near_left_module",
+    "group": "unit",
+    "mass_g": 0.7
+   },
+   {
+    "name": "camera_near_left_stiffener",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "camera_near_right_lens",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "camera_near_right_module",
+    "group": "unit",
+    "mass_g": 0.7
+   },
+   {
+    "name": "camera_near_right_stiffener",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "camera_far_left_lens",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "camera_far_left_module",
+    "group": "unit",
+    "mass_g": 0.7
+   },
+   {
+    "name": "camera_far_left_stiffener",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "camera_far_right_lens",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "camera_far_right_module",
+    "group": "unit",
+    "mass_g": 0.7
+   },
+   {
+    "name": "camera_far_right_stiffener",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "window_left",
+    "group": "unit",
+    "mass_g": 0.26
+   },
+   {
+    "name": "window_right",
+    "group": "unit",
+    "mass_g": 0.26
+   },
+   {
+    "name": "light_optic_top",
+    "group": "unit",
+    "mass_g": 0.45
+   },
+   {
+    "name": "light_board_top",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "light_leds_top",
+    "group": "unit",
+    "mass_g": 0.6
+   },
+   {
+    "name": "light_optic_bottom_left",
+    "group": "unit",
+    "mass_g": 0.13
+   },
+   {
+    "name": "light_board_bottom_left",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "light_leds_bottom_left",
+    "group": "unit",
+    "mass_g": 0.2
+   },
+   {
+    "name": "light_optic_bottom_right",
+    "group": "unit",
+    "mass_g": 0.13
+   },
+   {
+    "name": "light_board_bottom_right",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "light_leds_bottom_right",
+    "group": "unit",
+    "mass_g": 0.2
+   },
+   {
+    "name": "tof_window",
+    "group": "unit",
+    "mass_g": 0.03
+   },
+   {
+    "name": "tof_sensor",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "tof_board",
+    "group": "unit",
+    "mass_g": 0.15
+   },
+   {
+    "name": "main_board",
+    "group": "unit",
+    "mass_g": 6.0
+   },
+   {
+    "name": "mb_soc_rk3576",
+    "group": "unit",
+    "mass_g": 0.9
+   },
+   {
+    "name": "mb_ram_lpddr4x",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "mb_emmc",
+    "group": "unit",
+    "mass_g": 0.4
+   },
+   {
+    "name": "mb_pmic",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "mb_wifi_bt",
+    "group": "unit",
+    "mass_g": 0.5
+   },
+   {
+    "name": "mb_bt_audio",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_charger",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_usb_pd",
+    "group": "unit",
+    "mass_g": 0.02
+   },
+   {
+    "name": "mb_fuel_gauge",
+    "group": "unit",
+    "mass_g": 0.01
+   },
+   {
+    "name": "mb_smart_amp",
+    "group": "unit",
+    "mass_g": 0.01
+   },
+   {
+    "name": "mb_imu",
+    "group": "unit",
+    "mass_g": 0.01
+   },
+   {
+    "name": "mb_led_driver",
+    "group": "unit",
+    "mass_g": 0.02
+   },
+   {
+    "name": "mb_conn_far_left",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_near_left",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_tof",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_near_right",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_far_right",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "mb_conn_top",
+    "group": "unit",
+    "mass_g": 0.05
+   },
+   {
+    "name": "antenna_flex",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "cell_right_upper",
+    "group": "unit",
+    "mass_g": 8.8
+   },
+   {
+    "name": "cell_right_lower",
+    "group": "unit",
+    "mass_g": 3.8
+   },
+   {
+    "name": "cell_left_upper",
+    "group": "unit",
+    "mass_g": 8.8
+   },
+   {
+    "name": "cell_left_lower",
+    "group": "unit",
+    "mass_g": 3.8
+   },
+   {
+    "name": "cell_center_upper",
+    "group": "unit",
+    "mass_g": 4.6
+   },
+   {
+    "name": "cell_center_lower",
+    "group": "unit",
+    "mass_g": 1.9
+   },
+   {
+    "name": "cell_front",
+    "group": "unit",
+    "mass_g": 17.3
+   },
+   {
+    "name": "cell_bus",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "usb_board",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "speaker_box",
+    "group": "unit",
+    "mass_g": 2.0
+   },
+   {
+    "name": "mic_front",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_near_left",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_near_right",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_far_left",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_far_right",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_tof",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_top",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "flex_light_jumper_bottom",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "flex_light_jumper_left",
+    "group": "unit",
+    "mass_g": 0.1
+   },
+   {
+    "name": "flex_light_main",
+    "group": "unit",
+    "mass_g": 0.3
+   },
+   {
+    "name": "hub_wing_left",
+    "group": "hub",
+    "mass_g": 3.26
+   },
+   {
+    "name": "hub_wing_board_left",
+    "group": "hub",
+    "mass_g": 0.4
+   },
+   {
+    "name": "hub_wing_right",
+    "group": "hub",
+    "mass_g": 3.26
+   },
+   {
+    "name": "hub_wing_board_right",
+    "group": "hub",
+    "mass_g": 0.4
+   },
+   {
+    "name": "wing_key_ask",
+    "group": "hub",
+    "mass_g": 0.35
+   },
+   {
+    "name": "wing_key_forward",
+    "group": "hub",
+    "mass_g": 0.08
+   },
+   {
+    "name": "wing_key_back",
+    "group": "hub",
+    "mass_g": 0.08
+   },
+   {
+    "name": "wing_key_play_pause",
+    "group": "hub",
+    "mass_g": 0.06
+   },
+   {
+    "name": "haptic_motor_wing",
+    "group": "hub",
+    "mass_g": 0.8
+   }
   ],
   "pose_collisions": {
    "table_hardcover": [],

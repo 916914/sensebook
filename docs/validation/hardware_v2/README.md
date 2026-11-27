@@ -7,7 +7,7 @@ an RK3576 computer, Wi-Fi 6 and Bluetooth 5.4, a sealed speaker with a smart amp
 **Status: design proposal.** Nothing has been built or measured. Numbers come from the 3D model below and from
 datasheets and listings checked on 27 Nov 2026. EST = our estimate.
 
-- 3D model and proposal page: `web/index.html` and `web/proposal.html`, published at https://sensebook-hardware-v2.vercel.app (proposal: `/proposal.html`).
+- Hub: `web/` (home page, 3D viewer at `/viewer/`, proposal, checks, specifications, parts, cost, renders, CAD downloads), published at https://sensebook-hardware-v2.vercel.app
 - Built on the build chat's v1 model at commit `598d0f3` (read from git, never edited).
 
 ## The numbers
@@ -18,7 +18,7 @@ datasheets and listings checked on 27 Nov 2026. EST = our estimate.
 | Light on the printed text | ring light | 300–753 lux, about 0.59 W (EST) |
 | Battery cells | 17.5 cm³ | 24.5 cm³ |
 | Head (mm) | 88 × 40 × 34 | 88 × 40 × 34 (same shell; every part inside it) |
-| Head mass (g) | 108.8 | 109.0 (A), 106.2 (B) |
+| Head mass (g) | 108.8 | 109.5 (A), 106.7 (B) |
 | Parts cost per unit at 1,000 | $52.30 (venture plan) | $149–259 (EST, `data/bom_v2_estimate.csv`) |
 
 ### Battery (EST)
@@ -39,8 +39,8 @@ datasheets and listings checked on 27 Nov 2026. EST = our estimate.
 | Everything in the head, bounding box (mm), buttons and hinge included | 89.2 × 34.0 × 53.5 | 89.2 × 34.0 × 52.1 |
 | Same, v1 parts (for comparison) | 89.2 × 34.0 × 53.5 |  |
 | Front shell bounding box (mm) | 88.0 × 30.0 × 48.3 | v1: 88.0 × 30.0 × 48.3 |
-| Mass, whole device without the book (g) | 160.2 | 166.1 (clicker not included) |
-| Mass of the head (g) | 109.0 | 106.2  (v1: 108.8) |
+| Mass, whole device without the book (g) | 160.7 | 166.6 (clicker not included) |
+| Mass of the head (g) | 109.5 | 106.7  (v1: 108.8) |
 
 ## Files
 
@@ -48,7 +48,7 @@ datasheets and listings checked on 27 Nov 2026. EST = our estimate.
 - `cad/build_v2.py`: builds the model on top of v1, runs the checks, writes `out/model_report_v2.json`, the GLB, STEP (A and B) and STL.
 - `cad/figures_v2.py`: redraws the dpi, light, battery and cost charts from the model's saved cameras and LEDs (a second check).
 - `cad/render_v2.py`: Blender renders (`out/renders/`, web copies in `web/renders/`).
-- `cad/make_site.py`: writes this README, `web/proposal.html` and `web/facts.json` from the report.
+- `cad/make_site.py`: writes this README and every hub page in `web/` from the report, the parameters and the cost table.
 - `cad/publish_v2.py`: publishes `web/` to its own Vercel project through the REST API (token from `VERCEL_TOKEN`, never stored).
 - `data/bom_v2_estimate.csv`: parts cost estimate with a source or note on every line.
 

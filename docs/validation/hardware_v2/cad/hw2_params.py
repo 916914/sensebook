@@ -20,7 +20,7 @@ EST = our estimate, not from a datasheet. Nothing has been built or measured.
 # Sensor: Samsung S5KJN1-class 50 MP, 8160 x 6144 px, 1/2.76" [R2]. Module size EST 8.5-9.5 mm square [R2].
 SENSOR_PX = (8160, 6144)
 # All four cameras sit on v1's sloped lens facet (it already faces the page), in one row:
-#   far-left, near-left, ToF sensor, near-right, far-right. Facet coords (u, v); lens front at depth CAM_A.
+#   far-left, near-left, ToF sensor, near-right, far-right. Facet coords (u, v); lens front at depth NEAR_A / FAR_A.
 NEAR_HFOV = 108.0              # typical phone "120 deg" ultra-wide gives about 108 deg horizontal [R2]
 FAR_HFOV = 60.0                # 50 MP S5KJN1 with a ~4.5 mm lens (EST: the listed module has 4.15 mm = 64 deg [R2]).
                                # 64 deg gave 298 dpi at the far text corners once lens distortion is counted; 60 deg gives ~315.
@@ -39,8 +39,8 @@ CAM_STIFF = 0.5                # module stiffener plate thickness (EST)
 CAM_MASS = 1.0                 # g per module (EST)
 WINDOW_T = 0.8                 # clear window thickness (PMMA), set inside the wall
 WINDOW_MARGIN_DEG = 4.0        # window opening = field of view + this margin on every side
-# Aims: build_v2.py searches yaw/pitch; among aims that reach TARGET_DPI it takes the one closest to the facet normal
-# (less tilt = the module sits flatter behind the facet). Facet normal = 55.5 deg below horizontal at the 9 cm stick [D1].
+# Aims: build_v2.py tries every aim in 1 deg steps; within MAX_TILT it keeps the one with the highest worst-case dpi on the
+# printed text, the flattest among near-equals. Facet normal = 55.5 deg below horizontal at the 9 cm stick [D1].
 SEARCH_DOWN = [30.0 + i for i in range(36)]              # 30 .. 65 deg below horizontal (book frame), 1 deg steps
 SEARCH_YAW = [1.0 * i for i in range(41)]                # 0 .. 40 deg outward, 1 deg steps
 MAX_TILT = 10.5                # no module may tilt more than this from the facet normal, or it hits the shell and the light strips
@@ -90,9 +90,10 @@ BOARD_PARTS = [
     ("conn_far_right", "FPC connector: far-right camera", 18.5, 24.5, 4.2, 7.4, 1.0, 0.05),
     ("conn_top", "Board-to-board connector: buttons, speaker, mics, status LEDs, haptic", 0.0, 6.0, 30.2, 33.4, 1.0, 0.05),
 ]
-ANTENNA = (30.0, 5.0, 0.2)     # flex antenna on the inside of the top wall, at the back, away from the steel stick (EST)
+ANTENNA = (11.0, 5.0, 0.2)     # flex antenna on the inside of the right wall, at the back, away from the steel stick:
+                               # length along y, height, thickness (EST)
 
-# ------------------------------------------------------------------ cells: three pouch cells in parallel, filling the space the Pi-era parts used
+# ------------------------------------------------------------------ cells: seven stepped pouch cells in parallel, in the space the Pi-era parts used
 CELL_R = 1.5
 # Stepped cells: an upper cell at full depth above the camera row, a thinner lower cell behind the cameras.
 # The step height and the lower cells' front face are computed in build_v2.py from the camera modules (0.7 mm gap).
@@ -132,4 +133,7 @@ POWER_W = dict(
 )
 
 # ------------------------------------------------------------------ flex cable routes (x where each flex runs back under the cells)
-FLEX_X = dict(near=7.0, far=21.5, tof=0.0, far_drop=33.0)
+FLEX_X = dict(near=7.0, far=21.5, tof=0.0, far_drop=33.0, light_drop=34.2, light_jumper_u=31.0)
+# The three light-bar boards are joined by two short jumpers behind the facet (lower-left to lower-right across the middle gap,
+# lower-left to the top strip at the left end); one flex from the top strip's left end joins the far-left camera flex,
+# which carries the LED lines to the far-left connector (no free path under the board for a separate one).
