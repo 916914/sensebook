@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import { ButtonLink, TextLink } from "@/components/button-link";
 import { Container } from "@/components/container";
+import { FieldsGrid } from "@/components/fields-grid";
 import { HeroHeadline } from "@/components/home/hero-headline";
 import { HeroStage } from "@/components/home/hero-stage";
 import { HorizonLine } from "@/components/home/horizon-line";
@@ -121,20 +122,9 @@ export default function Home() {
           </Reveal>
           <p className="lede text-mist lg:col-span-4 lg:col-start-9 lg:self-end">{institution.text}</p>
         </div>
-        <ol className="mt-20 grid gap-px overflow-hidden bg-graphite lg:mt-28 lg:grid-cols-3">
-          {institution.pillars.map((p) => (
-            <li key={p.name} className="bg-night py-10 lg:px-10 lg:py-12 lg:first:pl-0">
-              <h3 className="display display-s">
-                {p.name.split(" ").map((w) => (
-                  <span key={w} className="block">
-                    {w}
-                  </span>
-                ))}
-              </h3>
-              <p className="mt-5 max-w-[30ch] text-mist">{p.text}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="mt-20 lg:mt-28">
+          <FieldsGrid />
+        </div>
         <div className="mt-14">
           <TextLink href={institution.cta.href} className="text-stone">
             {institution.cta.label}

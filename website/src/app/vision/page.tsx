@@ -4,11 +4,13 @@ import { ButtonLink } from "@/components/button-link";
 import { PageIntro } from "@/components/page-intro";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
+import { fields } from "@/content/fields";
 import { vision } from "@/content/vision";
 
 export const metadata: Metadata = {
   title: "Vision",
-  description: "Three pillars of human potential: Human Intelligence, Human Independence and Human Opportunity, and the kinds of invention each leads to.",
+  description:
+    "Five fields of work: intellectual advancement, physical independence, economic opportunity, health and wellbeing, and societal infrastructure.",
 };
 
 export default function VisionPage() {
@@ -16,41 +18,63 @@ export default function VisionPage() {
     <>
       <PageIntro label={vision.label} title={vision.title} lede={<p>{vision.lede}</p>} />
 
-      {vision.pillars.map((p, i) => {
-        const tone = i % 2 === 0 ? "stone" : "night";
-        const id = `pillar-${i}`;
+      {fields.map((f, i) => {
+        const night = i % 2 === 1;
+        const id = `field-${i}`;
+        const muted = night ? "text-mist" : "text-quiet";
+        const rule = night ? "border-graphite" : "border-rule";
         return (
-          <Section key={p.name} tone={tone} labelledBy={id}>
+          <Section key={f.name} tone={night ? "night" : "stone"} labelledBy={id}>
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
               <div className="lg:col-span-5">
                 <Reveal>
-                  <h2 id={id} className="display display-l">
-                    {p.name.split(" ").map((w) => (
-                      <span key={w} className="block">
-                        {w}
-                      </span>
-                    ))}
+                  <h2 id={id} className="display display-l max-w-[12ch]">
+                    {f.name}
                   </h2>
                 </Reveal>
-                <p className="display display-s mt-8 max-w-[24ch]">{p.statement}</p>
+                <p className="display display-s mt-8 max-w-[24ch]">{f.text}</p>
+                <div className="mt-10">
+                  <h3 className={`text-sm ${muted}`}>Programmes</h3>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {f.programmes.map((p) => (
+                      <li
+                        key={p.name}
+                        className={`inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[0.9375rem] ring-1 ring-inset ${
+                          p.status ? "ring-marigold" : night ? "ring-graphite" : "ring-rule"
+                        }`}
+                      >
+                        {p.status && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-marigold" />}
+                        <span className={p.status ? "font-medium" : muted}>{p.name}</span>
+                        <span className={p.status ? `text-sm ${night ? "text-marigold" : "text-marigold-deep"}` : "sr-only"}>
+                          {p.status ?? "(proposed)"}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className={`mt-3 text-sm ${muted}`}>
+                    {f.programmes.some((p) => p.status) ? "Others proposed, not yet built." : "Proposed, not yet built."}
+                  </p>
+                </div>
               </div>
               <div className="lg:col-span-6 lg:col-start-7 lg:pt-4">
-                <h3 className={`text-sm ${tone === "night" ? "text-mist" : "text-quiet"}`}>Kinds of invention</h3>
+                <h3 className={`text-sm ${muted}`}>Kinds of invention</h3>
                 <ul className="mt-4">
-                  {p.categories.map((c) => (
-                    <li key={c.name} className={`border-t py-6 ${tone === "night" ? "border-graphite" : "border-rule"}`}>
+                  {f.categories.map((c) => (
+                    <li key={c.name} className={`border-t py-6 ${rule}`}>
                       <h4 className="text-lg font-semibold">{c.name}</h4>
-                      <p className={`mt-2 ${tone === "night" ? "text-mist" : "text-quiet"}`}>{c.text}</p>
+                      <p className={`mt-2 ${muted}`}>{c.text}</p>
                     </li>
                   ))}
                 </ul>
-                <p className={`mt-2 flex gap-3 border-t pt-6 text-sm ${tone === "night" ? "border-graphite text-mist" : "border-rule text-quiet"}`}>
-                  <span aria-hidden="true" className="mt-2 h-[2px] w-5 shrink-0 bg-marigold" />
-                  <span>
-                    <span className={`font-semibold ${tone === "night" ? "text-stone" : "text-ink"}`}>Where SenseBook fits. </span>
-                    {p.sensebook}
-                  </span>
-                </p>
+                {i === 0 && (
+                  <p className={`flex gap-3 border-t pt-6 text-sm ${rule} ${muted}`}>
+                    <span aria-hidden="true" className="mt-2 h-[2px] w-5 shrink-0 bg-marigold" />
+                    <span>
+                      <span className="font-semibold text-ink">Where SenseBook fits. </span>
+                      {vision.sensebookNote}
+                    </span>
+                  </p>
+                )}
               </div>
             </div>
           </Section>

@@ -49,17 +49,7 @@ export const home = {
   institution: {
     title: "One invention. A much larger purpose.",
     text: "SenseBook is our first step. Our ambition extends further: to build technologies that expand learning, independence and opportunity.",
-    pillars: [
-      { name: "Human Intelligence", text: "Technologies that deepen how people learn, reason and understand." },
-      {
-        name: "Human Independence",
-        text: "Technologies that let people do for themselves what circumstance or disability has made them depend on others to do.",
-      },
-      {
-        name: "Human Opportunity",
-        text: "Technologies that widen access to the skills, tools and work through which people shape their own lives.",
-      },
-    ],
+    // The five fields shown under this section live in src/content/fields.ts.
     cta: { label: "See our vision", href: "/vision" },
   },
   bangladesh: {
