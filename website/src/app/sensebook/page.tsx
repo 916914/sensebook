@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
+import { PhotoFigure } from "@/components/photo-figure";
 import { RenderFigure } from "@/components/render-figure";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
@@ -18,30 +19,103 @@ export default function SenseBookPage() {
   const s = sensebook;
   return (
     <>
-      {/* Hero: the product in its own studio light */}
-      <section aria-labelledby="page-title" className="bg-stone text-ink">
-        <Container className="pt-12 sm:pt-16 lg:pt-20">
-          <div className="grid gap-8 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              <p className="text-quiet">Our first invention</p>
-              <h1 id="page-title" className="display display-xl mt-4">
-                {s.hero.title}
-              </h1>
-            </div>
-            <div className="lg:col-span-5 lg:self-end">
-              <p className="display display-s">{s.hero.subtitle}</p>
-              <p className="mt-5 text-quiet">{s.hero.text}</p>
+      {/* Header: what it is, what it does, and who it is for, in one view */}
+      <section aria-labelledby="page-title" className="bg-night text-stone">
+        <Container className="pt-8 pb-16 sm:pt-12 lg:pt-14 lg:pb-24">
+          {/* The name, then (below it, set to the right) what it is and the way in */}
+          <p className="text-mist">Our first invention</p>
+          <h1 id="page-title" className="display display-xl mt-4">
+            {s.hero.title}
+          </h1>
+          <div className="mt-8 grid lg:mt-6 lg:grid-cols-12">
+            <div className="lg:col-span-6 lg:col-start-7">
+              <p className="display display-s text-stone">{s.hero.subtitle}</p>
+              <p className="mt-5 text-mist">{s.hero.text}</p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <ButtonLink href={s.hero.primary.href}>{s.hero.primary.label}</ButtonLink>
+                <ButtonLink href={s.hero.secondary.href} variant="secondary">
+                  {s.hero.secondary.label}
+                </ButtonLink>
+              </div>
             </div>
           </div>
-        </Container>
-        <Container className="pt-12 pb-16 lg:pt-16 lg:pb-24">
-          <RenderFigure id="hero" sizes="(min-width: 1344px) 1248px, 100vw" priority parallax={3} aspect="16 / 8.2" position="60% 35%" caption={false} />
-          <p className="mt-5 inline-flex items-start gap-3 text-sm text-quiet">
+
+          {/* The header picture, full width */}
+          <PhotoFigure id="header" tone="night" aspect="2 / 1" position="50% 35%" priority sizes="(min-width: 1344px) 1248px, 100vw" className="mt-12 lg:mt-16" />
+
+          {/* What it does, in four facts */}
+          <ul className="mt-14 grid gap-x-8 gap-y-8 border-t border-graphite pt-8 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+            {s.hero.facts.map((f) => (
+              <li key={f.name}>
+                <p className="flex items-center gap-3 font-semibold text-stone">
+                  <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-marigold" />
+                  {f.name}
+                </p>
+                <p className="mt-2 pl-5 text-[0.9375rem] text-mist">{f.text}</p>
+              </li>
+            ))}
+          </ul>
+
+          {/* Who it is for */}
+          <div className="mt-16 lg:mt-20">
+            <div className="flex flex-wrap items-baseline justify-between gap-4">
+              <h2 className="display display-s">{s.hero.madeFor}</h2>
+              <a href="#lives" className="link-draw text-[0.9375rem] font-medium text-stone">
+                Read their stories
+              </a>
+            </div>
+            <ul className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+              {s.lives.stories.map((story) => (
+                <li key={story.name}>
+                  <a href="#lives" className="group block rounded-sm">
+                    <PhotoFigure
+                      id={story.photo}
+                      tone="night"
+                      aspect="4 / 5"
+                      position={story.crop}
+                      caption={false}
+                      sizes="(min-width: 1024px) 22vw, 50vw"
+                      className="transition-opacity duration-300 group-hover:opacity-90"
+                    />
+                    <p className="mt-3 text-[0.9375rem] font-medium text-stone">{story.short}</p>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="mt-10 inline-flex items-start gap-3 text-sm text-dim">
             <span aria-hidden="true" className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-marigold" />
             {s.hero.status}
           </p>
         </Container>
       </section>
+
+      {/* Six ways SenseBook could change society (owner, 27 Nov): near the top, by the owner's request */}
+      <Section tone="stone" labelledBy="society-title">
+        <div className="grid gap-8 lg:grid-cols-12">
+          <Reveal className="lg:col-span-7">
+            <h2 id="society-title" className="display display-l max-w-[16ch]">
+              {s.society.title}
+            </h2>
+          </Reveal>
+          <p className="lede lg:col-span-4 lg:col-start-9 lg:self-end">{s.society.lede}</p>
+        </div>
+        <ol className="mt-16 grid gap-x-10 gap-y-16 md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+          {s.society.ways.map((w, i) => (
+            <li key={w.name} className="flex flex-col">
+              <PhotoFigure id={w.photo} aspect="3 / 2" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 46vw, 100vw" />
+              <span aria-hidden="true" className="mt-6 font-display text-xl font-light text-quiet">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-2 text-xl font-semibold tracking-[-0.01em]">{w.name}</h3>
+              <p className="mt-3 text-quiet">{w.text}</p>
+              <span aria-hidden="true" className="mt-6 block h-[2px] w-8 bg-marigold" />
+              <p className="mt-4 font-display text-[1.375rem] leading-snug font-light">{w.line}</p>
+            </li>
+          ))}
+        </ol>
+      </Section>
 
       {/* What it is */}
       <Section tone="stone" labelledBy="what-title" className="border-t border-rule">
@@ -63,7 +137,7 @@ export default function SenseBookPage() {
       </Section>
 
       {/* How it works: a real sequence, so the steps are numbered */}
-      <Section tone="night" labelledBy="how-title">
+      <Section tone="night" id="how" labelledBy="how-title" className="scroll-mt-4">
         <Reveal>
           <h2 id="how-title" className="display display-l">
             {s.howItWorks.title}
@@ -102,7 +176,7 @@ export default function SenseBookPage() {
       </Section>
 
       {/* Who it serves: one product, four lives (illustrative) */}
-      <Section tone="stone" labelledBy="lives-title">
+      <Section tone="stone" id="lives" labelledBy="lives-title" className="scroll-mt-4">
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <p className="text-quiet">{s.lives.label}</p>
@@ -117,14 +191,7 @@ export default function SenseBookPage() {
         <ul className="mt-16 lg:mt-24">
           {s.lives.stories.map((story) => (
             <li key={story.name} className="grid gap-8 border-t border-rule py-12 md:grid-cols-12 md:gap-10 lg:py-16">
-              <RenderFigure
-                note={false}
-                caption={false}
-                id={story.render}
-                sizes="(min-width: 768px) 40vw, 100vw"
-                aspect="4 / 3"
-                className="md:col-span-5"
-              />
+              <PhotoFigure id={story.photo} aspect="4 / 3" sizes="(min-width: 768px) 40vw, 100vw" className="md:col-span-5" />
               <div className="md:col-span-7 md:pt-2 lg:col-span-6 lg:col-start-7">
                 <h3 className="text-xl font-semibold tracking-[-0.01em]">{story.name}</h3>
                 <p className="mt-3 max-w-xl text-quiet">{story.situation}</p>
@@ -191,7 +258,7 @@ export default function SenseBookPage() {
       </Section>
 
       {/* Product visuals and the 3D model */}
-      <Section tone="stone" labelledBy="design-title">
+      <Section tone="stone" id="design" labelledBy="design-title" className="scroll-mt-4">
         <div className="grid gap-8 lg:grid-cols-12">
           <h2 id="design-title" className="display display-l lg:col-span-6">
             {s.visuals.title}
@@ -217,33 +284,8 @@ export default function SenseBookPage() {
         </div>
       </Section>
 
-      {/* Six ways SenseBook could change society (owner, 27 Nov) */}
-      <Section tone="night" labelledBy="society-title">
-        <div className="grid gap-8 lg:grid-cols-12">
-          <Reveal className="lg:col-span-7">
-            <h2 id="society-title" className="display display-l max-w-[16ch]">
-              {s.society.title}
-            </h2>
-          </Reveal>
-          <p className="lede text-mist lg:col-span-4 lg:col-start-9 lg:self-end">{s.society.lede}</p>
-        </div>
-        <ol className="mt-16 grid gap-px overflow-hidden bg-graphite md:grid-cols-2 lg:mt-24 lg:grid-cols-3">
-          {s.society.ways.map((w, i) => (
-            <li key={w.name} className="flex flex-col bg-night py-10 md:px-8 md:odd:pl-0 lg:px-10 lg:py-12 lg:odd:pl-10 lg:[&:nth-child(3n+1)]:pl-0">
-              <span aria-hidden="true" className="font-display text-xl font-light text-dim">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-stone">{w.name}</h3>
-              <p className="mt-3 text-mist">{w.text}</p>
-              <span aria-hidden="true" className="mt-8 block h-[2px] w-8 bg-marigold" />
-              <p className="mt-5 font-display text-[1.375rem] leading-snug font-light text-stone">{w.line}</p>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
       {/* Roadmap */}
-      <Section tone="night" labelledBy="roadmap-title" className="border-t border-graphite">
+      <Section tone="night" labelledBy="roadmap-title">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <h2 id="roadmap-title" className="display display-l">

@@ -5,9 +5,18 @@
 export const sensebook = {
   hero: {
     title: "SenseBook",
-    subtitle: "A screen-free AI learning companion for printed books.",
-    text: "It clips onto a book, sees the page, and answers your questions aloud. The book stays at the centre.",
-    status: "In development. Every image on this page is a render of the current prototype design, made from its CAD model.",
+    subtitle: "A screen-free AI learning companion.",
+    text: "It clips onto any printed book, sees the page, and answers your questions aloud. The book stays at the centre, and the same device serves every reader.",
+    primary: { label: "See how it works", href: "#how" },
+    secondary: { label: "Who it serves", href: "#lives" },
+    facts: [
+      { name: "Clips onto any printed book", text: "A light spring grip holds anything from a thin booklet to a thick hardcover." },
+      { name: "Reads the page aloud", text: "A camera above the book sees both open pages at once." },
+      { name: "Answers your questions", text: "Press the marigold Ask button and talk about what you are reading." },
+      { name: "No screen. Works without sight.", text: "Physical buttons, spoken feedback and a headphone socket." },
+    ],
+    madeFor: "Made for every reader",
+    status: "In development. Pictures of people are illustrations. Product images are renders of the prototype design.",
   },
   whatItIs: {
     title: "What it is",
@@ -40,6 +49,7 @@ export const sensebook = {
     note: "These steps describe the prototype design. They have not yet been tested with readers.",
   },
   // Who it serves (owner, 27 Nov): one product, four lives. Illustrative, not testimonials.
+  // crop: where to centre each picture when the header strip shows it in a tall 4:5 frame.
   lives: {
     label: "Who it serves",
     title: "One product. Different lives.",
@@ -49,28 +59,36 @@ export const sensebook = {
         name: "The student in a remote village",
         situation: "She is studying physics at night. Her teacher is not available, and her family cannot afford a private tutor for every subject.",
         outcome: "She does not have to skip the chapter because she cannot understand it.",
-        render: "paperback",
+        photo: "life-village",
+        crop: "55% 50%",
+        short: "Students in remote villages",
       },
       {
         name: "The university student",
         situation: "He is studying a difficult engineering theory and wants to understand how it is used in the real world.",
         outcome: "Instead of switching between five different resources, he has an intellectual conversation while he keeps reading.",
-        render: "extended",
+        photo: "life-university",
+        crop: "50% 50%",
+        short: "University students",
       },
       {
         name: "The student who is blind",
         situation: "She wants to study from the same textbook as her classmates.",
         outcome: "She uses the same SenseBook, with the same features and intelligence, to pursue the same academic ambitions.",
-        render: "held",
+        photo: "life-blind",
+        crop: "75% 50%",
+        short: "Blind and low-vision students",
       },
       {
         name: "The lifelong learner",
         situation: "He left university years ago, but he wants to understand economics, psychology, technology and business.",
         outcome: "His education does not end with his graduation.",
-        render: "tripod",
+        photo: "life-lifelong",
+        crop: "45% 50%",
+        short: "Lifelong learners",
       },
     ],
-    note: "These are illustrative future experiences, not existing users or testimonials. The pictures are renders of the prototype design.",
+    note: "These are illustrative future experiences, not existing users or testimonials. The pictures are illustrations: SenseBook is in development.",
   },
   // Six ways SenseBook could change society (owner, 27 Nov). Possibilities, stated as such.
   society: {
@@ -79,31 +97,37 @@ export const sensebook = {
     ways: [
       {
         name: "Democratising personalised education",
+        photo: "way-1",
         text: "Give students in remote villages on-demand explanations, discussion and academic guidance that would otherwise need a knowledgeable person to be there.",
         line: "Geography should not determine how deeply someone can learn.",
       },
       {
         name: "Reducing educational inequality",
+        photo: "way-2",
         text: "Supplement private tutoring, and reduce families’ dependence on extra paid instruction, where SenseBook proves effective.",
         line: "A family’s financial circumstances should not determine how many questions their child can afford to ask.",
       },
       {
         name: "Normalising inclusive education",
+        photo: "way-3",
         text: "A blind student and a sighted student use the same commercially desirable technology to study the same subject.",
         line: "Accessibility becomes an ordinary feature of modern education, instead of something that needs visibly separate equipment.",
       },
       {
         name: "Developing a generation of independent thinkers",
+        photo: "way-4",
         text: "Move students beyond memorisation by encouraging questioning, reasoning, debating, connecting concepts and applying knowledge.",
         line: "Imagine students preparing for examinations by defending their understanding in conversation, rather than memorising model answers.",
       },
       {
         name: "Creating a lifelong learning society",
+        photo: "way-5",
         text: "A farmer studying modern agricultural techniques, a technician understanding machinery, an entrepreneur studying economics and an adult learning English could all benefit.",
         line: "Education no longer has to end when someone leaves an academic institution.",
       },
       {
         name: "Building Bangladesh’s technological capabilities",
+        photo: "way-6",
         text: "Develop locally engineered consumer hardware, Bangla AI learning systems, accessible digital content, electronics manufacturing expertise and, in time, intellectual capabilities Bangladesh can export.",
         line: "The technology Bangladesh learns with can also be designed, engineered and made in Bangladesh.",
       },

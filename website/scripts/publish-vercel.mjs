@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Publishes the website to Vercel production. Run only on the owner's yes.
 //
-//   VERCEL_TOKEN=... node scripts/publish-vercel.mjs [--dry-run]
+//   VERCEL_TOKEN=... node scripts/publish-vercel.mjs [--project <name>] [--dry-run]
 //
 // - Token: VERCEL_TOKEN from the environment only. It is never written to disk or printed.
 // - Gets or creates the Vercel project "human-advancement" (framework: Next.js).
@@ -16,7 +16,13 @@ import { tmpdir } from "node:os";
 import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const PROJECT = "human-advancement";
+// Project name: "human-advancement" unless given as --project <name> (a separate project gets its own link).
+const projectArg = process.argv.indexOf("--project");
+const PROJECT = projectArg > -1 && process.argv[projectArg + 1] ? process.argv[projectArg + 1] : "human-advancement";
+if (!/^[a-z0-9-]{3,52}$/.test(PROJECT)) {
+  console.error("Project name must be lowercase letters, digits and hyphens.");
+  process.exit(1);
+}
 const VERCEL_CLI = ["--yes", "vercel@62.5.0"];
 const API = "https://api.vercel.com";
 const site = resolve(dirname(fileURLToPath(import.meta.url)), "..");
