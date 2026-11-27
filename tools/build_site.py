@@ -9,6 +9,14 @@ from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "site")
+# Two versions of the hub (owner's request, 27 Nov 2026):
+#   python -I tools/build_site.py                      -> site/  the full hub, everything included
+#   python -I tools/build_site.py --public --out DIR   -> the public hub: no venture plan, no financial model
+PUBLIC = "--public" in sys.argv
+if "--out" in sys.argv:
+    OUT = os.path.abspath(sys.argv[sys.argv.index("--out") + 1])
+    if (ROOT + os.sep).lower().startswith((OUT.rstrip(os.sep + "/") + os.sep).lower()):
+        sys.exit("--out must not be the repository folder or one of its parents")
 
 DOCS = [  # (title, description, file)
     ("Venture plan", "Strategy, go-to-market, pricing, unit economics, sourcing, prototyping, funding, risks, 90-day plan.", "docs/SenseBook_Venture_Plan"),
@@ -61,9 +69,9 @@ def page(title, body):
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <title>{html.escape(title)} · SenseBook</title><style>{CSS}</style></head>
-<body><div class="wrap"><header class="top"><a class="brand" href="/">SenseBook</a><span>Private project hub · built {date.today():%d %b %Y}</span></header>
+<body><div class="wrap"><header class="top"><a class="brand" href="/">SenseBook</a><span>{"Project hub" if PUBLIC else "Full project hub"} · built {date.today():%d %b %Y}</span></header>
 {body}
-<p class="note">Private. Everything here is a planning document or prototype; figures are estimates until tested.</p></div></body></html>"""
+<p class="note">Everything here is a planning document or prototype; figures are estimates until tested.</p></div></body></html>"""
 
 
 def inline(s):
@@ -164,10 +172,12 @@ def main():
 
     body.append("<h2>Documents</h2><div class=\"grid\">")
     for title, desc, stem in DOCS:
+        if PUBLIC and title == "Venture plan":            # kept off the public hub
+            continue
         pdf, docx = copy(stem + ".pdf"), copy(stem + ".docx")
         links = " ".join(f'<a href="{u}">{k}</a>' for k, u in (("PDF", pdf), ("Word", docx)) if u)
         body.append(f'<div class="card"><span class="tag">Document</span><h3>{title}</h3><p>{desc}</p><div class="links">{links}</div></div>')
-    x = copy(MODEL[2])
+    x = None if PUBLIC else copy(MODEL[2])               # the financial model is kept off the public hub
     if x:
         body.append(f'<div class="card"><span class="tag">Spreadsheet</span><h3>{MODEL[0]}</h3><p>{MODEL[1]}</p><div class="links"><a href="{x}">Excel</a></div></div>')
     body.append("</div>")
@@ -190,7 +200,7 @@ def main():
     for group in ("Design", "Prototype"):
         cards = []
         if group == "Design":                                         # interactive 3D viewer (three.js page + GLB model)
-            v_page = copy(os.path.join("tools", "viewer", "index.html"), os.path.join("viewer", "index.html"))
+            v_page = copy(os.path.join("design", "viewer", "index.html"), os.path.join("viewer", "index.html"))
             v_glb = copy(os.path.join("design", "cad", "out", "sensebook.glb"), os.path.join("viewer", "sensebook.glb"))
             if v_page and v_glb:
                 cards.append('<div class="card"><span class="tag">Design</span><h3>3D model viewer</h3>'

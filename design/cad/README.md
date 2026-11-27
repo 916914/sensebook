@@ -24,7 +24,7 @@ Everything in this folder is built by script from one file of numbers, [`sb_para
 | `step/*.step` | One STEP file per body (88). |
 | `stl/*.stl` | The 18 printed parts. See [`PRINT_NOTES.md`](out/PRINT_NOTES.md). |
 | `blade_flat_pattern_*.dxf` | Flat outlines for cutting the two spring-steel blades (two step heights). |
-| `sensebook.glb` | The model for the web viewer (`tools/viewer/`). |
+| `sensebook.glb` | The model for the web viewer (`design/viewer/`). |
 | `model_report.json` | Collisions, clearances, mass and centre of mass for every body and pose. |
 | `check_report.json` | The model against `analysis.py`. Summarised in [`../VALIDATION.md`](../VALIDATION.md). |
 | `analysis_results.json` | Output of `analysis.py`. |
@@ -72,4 +72,4 @@ These were needed to make a complete model. Each is a proposal to test, not a se
 
 ## Licence
 
-Everything in `design/cad/` (the scripts and the files they export) is hardware design: CERN-OHL-W-2.0. The renders and diagrams are CC BY 4.0. The viewer page in `tools/` is Apache-2.0. See the repository `LICENSE`.
+Everything in `design/cad/` (the scripts and the files they export) is hardware design: CERN-OHL-W-2.0. The renders and diagrams are CC BY 4.0. The viewer page in `design/viewer/` is software and carries its own Apache-2.0 notice. See the repository `LICENSE`.

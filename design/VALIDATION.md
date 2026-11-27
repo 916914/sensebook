@@ -31,7 +31,7 @@
 - **Exports** in `cad/out/`: one STEP for the whole assembly, 88 part STEP files, 18 print-ready STL files (all watertight) with [print notes](cad/out/PRINT_NOTES.md), four blade DXF patterns, and a 4 MB GLB for the web viewer.
 - **Pictures** in `renders/`: 15 renders. Front, side and top carry dimensions read from the model.
 - **Hardware kit** in `prototype/hardware/`: [bill of materials](../prototype/hardware/Prototype_BOM.md), [pin map](../prototype/hardware/pinmap.md) and wiring diagram generated from the software's own pin table, [assembly guide](../prototype/hardware/Assembly_Guide.md), [test checklist](../prototype/hardware/Test_Checklist.md).
-- **Viewer:** `tools/viewer/` is added to the hub by `tools/build_site.py`. Rotate, pull apart, make the shell see-through, click a part for its name.
+- **Viewer:** `design/viewer/` is added to the hub by `tools/build_site.py`. Rotate, pull apart, make the shell see-through, click a part for its name.
 
 | | | |
 |---|---|---|
