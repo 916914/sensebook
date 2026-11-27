@@ -278,8 +278,8 @@ def icon(name):
 # ------------------------------------------------------------------------------------------ landing page
 def landing(have):
     renders = have["renders"]
-    hero_img = renders[0] if renders else "/img/sensebook-on-book.svg"
-    hero_cap = "Render" if renders else "Illustration of SenseBook on a textbook spread (not a photo)"
+    hero_img = "/img/sensebook-on-book.svg"
+    hero_cap = "Illustration of SenseBook on a textbook spread (not a photo)"
     viewer = '<a class="btn" href="/viewer/">Open the 3D model</a>' if have["viewer"] else ""
     gallery = ""
     if renders:

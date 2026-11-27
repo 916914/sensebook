@@ -171,6 +171,9 @@ Every route gets the same device, software and look. We also publish the **Sense
 python brand/src/make_options.py   # logo options, name board, palette board
 python brand/src/make_brand.py     # logo files, colour tokens, icons, illustration, tactile, packaging, audio
 python brand/src/make_guide.py     # the brand guide PDF and page previews (needs Microsoft Edge or Chrome)
+python brand/src/make_pitch.py     # docs/pitch: the 10-slide deck and the one-page summary
+python brand/src/make_og.py        # the hub site's social image
+python -I tools/build_site.py      # the hub site, into site/
 ```
 Needs Python 3 with fontTools, brotli, uharfbuzz, PyMuPDF and Pillow. On Windows, run these from PowerShell or cmd: headless Edge didn't write PDFs from Git Bash in our build.
 
