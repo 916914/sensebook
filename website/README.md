@@ -1,6 +1,6 @@
 # Institution website
 
-The website of the human-advancement technology institution whose first invention is SenseBook. Built from the owner's brief (`briefs/website-brief.md`, outside this repo) with Next.js, Tailwind CSS and Framer Motion.
+The website of Human Advancement, a human-advancement technology institution born in Bangladesh, whose first invention is SenseBook. Built from the owner's brief (`briefs/website-brief.md`, outside this repo) with Next.js, Tailwind CSS and Framer Motion.
 
 - `docs/01-strategy.md`: strategy, site architecture and copy direction
 - `docs/02-homepage-copy.md`: the full homepage copy
@@ -15,7 +15,7 @@ Home `/`, Manifesto `/manifesto`, SenseBook `/sensebook`, Vision `/vision`, Impa
 | What | Where |
 |---|---|
 | Every word on the site | `src/content/*.ts` (one file per page) |
-| The institution's name | `src/content/site.ts` (shows `[Institution]` until it is decided) |
+| The institution's name (Human Advancement) | `src/content/site.ts` |
 | Layout pieces | `src/components/` |
 | Pages | `src/app/*/page.tsx` |
 | Colours and type | `src/app/globals.css` |

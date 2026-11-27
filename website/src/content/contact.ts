@@ -14,5 +14,5 @@ export const contact = {
     { name: "Engineers", subject: "Engineering", text: "Hardware, embedded and software engineers. SenseBook’s design files are public, and reading them is a good place to start." },
   ],
   reply: "We read every message, and reply where there is a clear way to work together.",
-  missing: "The contact address will appear here when the site is published.",
+  missing: "Our contact address will be published here shortly.",
 } as const;

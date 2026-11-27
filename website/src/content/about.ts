@@ -4,7 +4,7 @@
 export const about = {
   label: "About",
   title: "An institution for human potential.",
-  lede: "is a human-advancement technology institution, born in Bangladesh. We invent, design and engineer technologies that advance human potential. SenseBook is our first invention.",
+  lede: "is a technology institution, born in Bangladesh, dedicated to advancing human potential. We invent, design and engineer the technologies that do it. SenseBook is our first invention.",
   beliefs: {
     title: "What we believe",
     items: [

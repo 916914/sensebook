@@ -1,6 +1,6 @@
 # 2. Homepage copy
 
-Lines marked (brief) are the owner's words, used as written. Everything else is new and waits for the owner's review. **[Institution]** stands for the name until the owner gives it.
+Lines marked (brief) are the owner's words, used as written. Everything else is new and was shown to the owner before the build. The institution's name is **Human Advancement**.
 
 ---
 
@@ -92,6 +92,6 @@ Buttons: **Explore SenseBook** · **Contact us** (brief)
 
 ## Footer
 
-[Institution]. Born in Bangladesh. Built for humanity.
+Human Advancement. Born in Bangladesh. Built for humanity.
 Pages: Manifesto, SenseBook, Vision, Impact, About, Contact.
 SenseBook is open: software Apache-2.0, hardware CERN-OHL-W-2.0, documents and images CC BY 4.0. Link to the public repository.

@@ -32,7 +32,7 @@ Layout
 ```
 HOME
 ┌──────────────────────────────────────────────┐ slate night
-│ [Institution]          Manifesto SenseBook … │
+│ Human Advancement      Manifesto SenseBook … │
 │                                              │
 │ Greatness should                             │
 │ not be a privilege.                          │

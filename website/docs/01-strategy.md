@@ -9,7 +9,7 @@ The website of a human-advancement technology institution. SenseBook is its firs
 - Core belief: Greatness should not be a privilege.
 - Purpose: Advance human potential.
 - Signature: Born in Bangladesh. Built for humanity.
-- Name: not decided yet. Every page reads it from one setting (`src/content/site.ts`) and shows **[Institution]** until the owner gives it.
+- Name: **Human Advancement** (owner, 27 Nov). Every page reads it from one setting, `src/content/site.ts`.
 
 ## The five jobs, and where each is done
 

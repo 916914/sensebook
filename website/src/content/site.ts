@@ -2,13 +2,13 @@
 // One place for the institution’s identity. Change the name here and every page follows.
 
 export const site = {
-  /** The institution’s name. "[Institution]" until the owner decides it. */
-  name: "[Institution]",
+  /** The institution’s name (owner, 27 Nov 2026). */
+  name: "Human Advancement",
   belief: "Greatness should not be a privilege.",
   purpose: "Advance human potential.",
   signature: "Born in Bangladesh. Built for humanity.",
   description:
-    "A human-advancement technology institution, born in Bangladesh and built for humanity. Our first invention is SenseBook, a screen-free AI learning companion for printed books.",
+    "Human Advancement is a technology institution, born in Bangladesh and built for humanity, dedicated to advancing human potential. Our first invention is SenseBook, a screen-free AI learning companion for printed books.",
   /** Public repository of SenseBook’s open design files. */
   repoUrl: "https://github.com/916914/sensebook",
   /** Set NEXT_PUBLIC_CONTACT_EMAIL at build time (for example in Vercel). It is never committed to the repo. */
