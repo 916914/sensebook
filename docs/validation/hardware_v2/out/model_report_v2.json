@@ -1,0 +1,797 @@
+{
+ "cells": {
+  "step_z": 19.2,
+  "lower_front_y": -21.8,
+  "deepest_camera_y": -20.6
+ },
+ "camera": {
+  "tilt_from_facet_deg": {
+   "near": 1.2,
+   "far": 9.6
+  },
+  "aims": {
+   "near": {
+    "down_deg": 56.0,
+    "yaw_deg": 2.0,
+    "hfov": 108.0,
+    "vfov": 92.0
+   },
+   "far": {
+    "down_deg": 47.0,
+    "yaw_deg": 7.0,
+    "hfov": 60.0,
+    "vfov": 47.0
+   }
+  },
+  "positions_book_mm": {
+   "near_left": [
+    -13.0,
+    -27.3,
+    117.4
+   ],
+   "near_right": [
+    13.0,
+    -27.3,
+    117.4
+   ],
+   "far_left": [
+    -25.0,
+    -27.4,
+    117.7
+   ],
+   "far_right": [
+    25.0,
+    -27.4,
+    117.7
+   ]
+  },
+  "text_area_min_dpi": 315,
+  "text_area_median_dpi": 539,
+  "share_text_area_at_or_above_300": 1.0,
+  "full_page_covered": true,
+  "single_v1_camera_text_min_dpi": 82
+ },
+ "battery": {
+  "cell_volume_cm3": 24.54,
+  "cells": {
+   "cell_right_upper": 4.38,
+   "cell_right_lower": 1.92,
+   "cell_left_upper": 4.38,
+   "cell_left_lower": 1.92,
+   "cell_center_upper": 2.32,
+   "cell_center_lower": 0.97,
+   "cell_front": 8.63
+  },
+  "v1_cell_volume_cm3": 17.5,
+  "wh": {
+   "generic_lipo": 11.3,
+   "high_voltage_4v45": 14.7,
+   "silicon_carbon": 19.6
+  },
+  "hours": {
+   "generic_lipo": {
+    "light_off": [
+     16.0,
+     29.7
+    ],
+    "light_on": [
+     6.5,
+     10.9
+    ]
+   },
+   "high_voltage_4v45": {
+    "light_off": [
+     20.8,
+     38.7
+    ],
+    "light_on": [
+     8.5,
+     14.3
+    ]
+   },
+   "silicon_carbon": {
+    "light_off": [
+     27.8,
+     51.6
+    ],
+    "light_on": [
+     11.3,
+     19.0
+    ]
+   }
+  },
+  "power_w": {
+   "light_off": [
+    0.35,
+    0.65
+   ],
+   "light_on_extra": [
+    0.6,
+    0.95
+   ]
+  }
+ },
+ "light": {
+  "feasible": true,
+  "leds": 20,
+  "min_lux": 300,
+  "max_lux": 750,
+  "uniformity": 0.4,
+  "flux_lm": 71,
+  "electrical_w": 0.59,
+  "max_led_cd": 84.0
+ },
+ "option_A": {
+  "collisions": [],
+  "tight_gaps": [
+   {
+    "a": "status_leds",
+    "b": "status_dot_pipes",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "status_dot_pipes",
+    "b": "shell_front_tub",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "hub_body",
+    "b": "leg_pin",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "hub_body",
+    "b": "torsion_spring",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "hub_body",
+    "b": "knuckle_pin",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "blade_coat_right",
+    "b": "book_cover_right",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "blade_coat_left",
+    "b": "book_cover_left",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "shell_front_tub",
+    "b": "antenna_flex",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "blade_right",
+    "b": "book_pages_right",
+    "gap_mm": 0.089
+   },
+   {
+    "a": "blade_left",
+    "b": "book_pages_left",
+    "gap_mm": 0.089
+   },
+   {
+    "a": "shell_front_tub",
+    "b": "mic_front",
+    "gap_mm": 0.09
+   },
+   {
+    "a": "mic_mute_switch",
+    "b": "shell_front_tub",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "light_optic_top",
+    "b": "light_leds_top",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "light_optic_bottom_left",
+    "b": "light_leds_bottom_left",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "light_optic_bottom_right",
+    "b": "light_leds_bottom_right",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "cell_front",
+    "b": "flex_top",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "shell_front_tub",
+    "b": "light_board_bottom_left",
+    "gap_mm": 0.124
+   },
+   {
+    "a": "shell_front_tub",
+    "b": "light_board_bottom_right",
+    "gap_mm": 0.124
+   },
+   {
+    "a": "shell_front_tub",
+    "b": "speaker_box",
+    "gap_mm": 0.15
+   },
+   {
+    "a": "main_board",
+    "b": "cell_bus",
+    "gap_mm": 0.15
+   }
+  ],
+  "mass": {
+   "total_g": 160.2,
+   "head_g": 109.0,
+   "com_book": [
+    0.0,
+    -36.0,
+    97.4
+   ]
+  },
+  "head_envelope_mm": [
+   89.2,
+   34.0,
+   53.5
+  ],
+  "v1_head_envelope_mm": [
+   89.2,
+   34.0,
+   53.5
+  ],
+  "pose_collisions": {
+   "table_hardcover": [],
+   "table_paperback": [],
+   "tripod_no_book": [],
+   "in_hand": [],
+   "extended": [],
+   "stowed": []
+  },
+  "line_of_sight": {
+   "near_left": {
+    "rays": 397,
+    "blocked": 0
+   },
+   "near_right": {
+    "rays": 397,
+    "blocked": 0
+   },
+   "far_left": {
+    "rays": 1416,
+    "blocked": 0
+   },
+   "far_right": {
+    "rays": 1416,
+    "blocked": 0
+   }
+  }
+ },
+ "option_B": {
+  "collisions": [],
+  "tight_gaps": [
+   {
+    "a": "status_leds",
+    "b": "status_dot_pipes",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "status_dot_pipes",
+    "b": "shell_front_tub_b",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "hub_body",
+    "b": "leg_pin",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "hub_body",
+    "b": "torsion_spring",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "hub_body",
+    "b": "knuckle_pin",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "blade_coat_right",
+    "b": "book_cover_right",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "blade_coat_left",
+    "b": "book_cover_left",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "shell_front_tub_b",
+    "b": "antenna_flex",
+    "gap_mm": 0.05
+   },
+   {
+    "a": "blade_right",
+    "b": "book_pages_right",
+    "gap_mm": 0.089
+   },
+   {
+    "a": "blade_left",
+    "b": "book_pages_left",
+    "gap_mm": 0.089
+   },
+   {
+    "a": "shell_front_tub_b",
+    "b": "mic_front",
+    "gap_mm": 0.09
+   },
+   {
+    "a": "mic_mute_switch",
+    "b": "shell_front_tub_b",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "light_optic_top",
+    "b": "light_leds_top",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "light_optic_bottom_left",
+    "b": "light_leds_bottom_left",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "light_optic_bottom_right",
+    "b": "light_leds_bottom_right",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "cell_front",
+    "b": "flex_top",
+    "gap_mm": 0.1
+   },
+   {
+    "a": "shell_front_tub_b",
+    "b": "light_board_bottom_left",
+    "gap_mm": 0.124
+   },
+   {
+    "a": "shell_front_tub_b",
+    "b": "light_board_bottom_right",
+    "gap_mm": 0.124
+   },
+   {
+    "a": "shell_front_tub_b",
+    "b": "speaker_box",
+    "gap_mm": 0.15
+   },
+   {
+    "a": "main_board",
+    "b": "cell_bus",
+    "gap_mm": 0.15
+   }
+  ],
+  "mass": {
+   "total_g": 166.1,
+   "head_g": 106.2,
+   "com_book": [
+    -0.1,
+    -36.5,
+    91.7
+   ]
+  },
+  "head_envelope_mm": [
+   89.2,
+   34.0,
+   52.1
+  ],
+  "v1_head_envelope_mm": [
+   89.2,
+   34.0,
+   53.5
+  ],
+  "pose_collisions": {
+   "table_hardcover": [],
+   "table_paperback": [],
+   "tripod_no_book": [],
+   "in_hand": [],
+   "extended": [],
+   "stowed": []
+  },
+  "line_of_sight": {
+   "near_left": {
+    "rays": 397,
+    "blocked": 0
+   },
+   "near_right": {
+    "rays": 397,
+    "blocked": 0
+   },
+   "far_left": {
+    "rays": 1416,
+    "blocked": 0
+   },
+   "far_right": {
+    "rays": 1416,
+    "blocked": 0
+   }
+  }
+ },
+ "shell_size_mm": {
+  "v1": [
+   88.0,
+   30.0,
+   48.3
+  ],
+  "v2": [
+   88.0,
+   30.0,
+   48.3
+  ]
+ },
+ "v1_reference": {
+  "mass_total_g": 160.0,
+  "mass_head_g": 108.8,
+  "cell_volume_cm3": 17.5,
+  "model_commit": "598d0f3"
+ },
+ "leds": 20,
+ "cameras_model": {
+  "near_left": {
+   "p": [
+    -13.0,
+    -27.264233849749928,
+    117.43116708432277
+   ],
+   "X": [
+    0.9993908270190958,
+    0.03489949670250097,
+    -0.0
+   ],
+   "Y": [
+    -0.01951555089073927,
+    0.558852258262839,
+    -0.8290375725550417
+   ],
+   "Z": [
+    -0.028932994029634087,
+    0.8285325452656868,
+    0.5591929034707468
+   ],
+   "f_px": 2964.2935142618726,
+   "hfov": 108.0,
+   "vfov": 92.04,
+   "distortion": -0.1,
+   "text_min_dpi_own_zone": 331
+  },
+  "near_right": {
+   "p": [
+    13.0,
+    -27.264233849749928,
+    117.43116708432277
+   ],
+   "X": [
+    0.9993908270190958,
+    -0.03489949670250097,
+    0.0
+   ],
+   "Y": [
+    0.01951555089073927,
+    0.558852258262839,
+    -0.8290375725550417
+   ],
+   "Z": [
+    0.028932994029634087,
+    0.8285325452656868,
+    0.5591929034707468
+   ],
+   "f_px": 2964.2935142618726,
+   "hfov": 108.0,
+   "vfov": 92.04,
+   "distortion": -0.1,
+   "text_min_dpi_own_zone": 331
+  },
+  "far_left": {
+   "p": [
+    -25.0,
+    -27.434155720827377,
+    117.67840494090936
+   ],
+   "X": [
+    0.9925461516413221,
+    0.1218693434051475,
+    -0.0
+   ],
+   "Y": [
+    -0.08311469234420404,
+    0.6769148477057255,
+    -0.7313537016191705
+   ],
+   "Z": [
+    -0.08912959541325247,
+    0.7259023020307434,
+    0.6819983600624985
+   ],
+   "f_px": 7066.76729488102,
+   "hfov": 60.0,
+   "vfov": 46.99,
+   "distortion": -0.02,
+   "text_min_dpi_own_zone": 315
+  },
+  "far_right": {
+   "p": [
+    25.0,
+    -27.434155720827377,
+    117.67840494090936
+   ],
+   "X": [
+    0.9925461516413221,
+    -0.1218693434051475,
+    0.0
+   ],
+   "Y": [
+    0.08311469234420404,
+    0.6769148477057255,
+    -0.7313537016191705
+   ],
+   "Z": [
+    0.08912959541325247,
+    0.7259023020307434,
+    0.6819983600624985
+   ],
+   "f_px": 7066.76729488102,
+   "hfov": 60.0,
+   "vfov": 46.99,
+   "distortion": -0.02,
+   "text_min_dpi_own_zone": 315
+  }
+ },
+ "light_model": {
+  "leds_book_mm": [
+   [
+    -29.0,
+    -34.53,
+    111.23
+   ],
+   [
+    -27.5,
+    -19.53,
+    121.53
+   ],
+   [
+    -24.0,
+    -34.53,
+    111.23
+   ],
+   [
+    -22.5,
+    -19.53,
+    121.53
+   ],
+   [
+    -19.0,
+    -34.53,
+    111.23
+   ],
+   [
+    -17.5,
+    -19.53,
+    121.53
+   ],
+   [
+    -14.0,
+    -34.53,
+    111.23
+   ],
+   [
+    -12.5,
+    -19.53,
+    121.53
+   ],
+   [
+    -7.5,
+    -19.53,
+    121.53
+   ],
+   [
+    -2.5,
+    -19.53,
+    121.53
+   ],
+   [
+    2.5,
+    -19.53,
+    121.53
+   ],
+   [
+    7.5,
+    -19.53,
+    121.53
+   ],
+   [
+    12.5,
+    -19.53,
+    121.53
+   ],
+   [
+    14.0,
+    -34.53,
+    111.23
+   ],
+   [
+    17.5,
+    -19.53,
+    121.53
+   ],
+   [
+    19.0,
+    -34.53,
+    111.23
+   ],
+   [
+    22.5,
+    -19.53,
+    121.53
+   ],
+   [
+    24.0,
+    -34.53,
+    111.23
+   ],
+   [
+    27.5,
+    -19.53,
+    121.53
+   ],
+   [
+    29.0,
+    -34.53,
+    111.23
+   ]
+  ],
+  "aims": [
+   [
+    -140.0,
+    25.0,
+    22.0
+   ],
+   [
+    -140.0,
+    75.0,
+    16.0
+   ],
+   [
+    -140.0,
+    130.0,
+    12.0
+   ],
+   [
+    -140.0,
+    185.0,
+    9.0
+   ],
+   [
+    -140.0,
+    228.0,
+    8.0
+   ],
+   [
+    -50.0,
+    25.0,
+    22.0
+   ],
+   [
+    -50.0,
+    75.0,
+    16.0
+   ],
+   [
+    -50.0,
+    130.0,
+    12.0
+   ],
+   [
+    -50.0,
+    185.0,
+    9.0
+   ],
+   [
+    -50.0,
+    228.0,
+    8.0
+   ],
+   [
+    50.0,
+    25.0,
+    22.0
+   ],
+   [
+    50.0,
+    75.0,
+    16.0
+   ],
+   [
+    50.0,
+    130.0,
+    12.0
+   ],
+   [
+    50.0,
+    185.0,
+    9.0
+   ],
+   [
+    50.0,
+    228.0,
+    8.0
+   ],
+   [
+    140.0,
+    25.0,
+    22.0
+   ],
+   [
+    140.0,
+    75.0,
+    16.0
+   ],
+   [
+    140.0,
+    130.0,
+    12.0
+   ],
+   [
+    140.0,
+    185.0,
+    9.0
+   ],
+   [
+    140.0,
+    228.0,
+    8.0
+   ]
+  ],
+  "cd": [
+   12.676,
+   13.47,
+   7.28,
+   47.532,
+   36.536,
+   3.47,
+   6.073,
+   8.985,
+   0.0,
+   84.033,
+   4.708,
+   0.566,
+   18.63,
+   0.0,
+   65.0,
+   13.418,
+   14.776,
+   7.142,
+   40.861,
+   42.223
+  ]
+ },
+ "page": {
+  "spread_mm": [
+   370.0,
+   245.0
+  ],
+  "text_margin_mm": {
+   "top": 15.0,
+   "bottom": 15.0,
+   "outer": 18.0,
+   "gutter": 15.0
+  },
+  "sensor_px": [
+   8160,
+   6144
+  ]
+ }
+}

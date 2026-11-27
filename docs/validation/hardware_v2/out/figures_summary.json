@@ -1,0 +1,52 @@
+{
+ "v1_text_min_dpi": 82,
+ "v2_text_min_dpi": 315,
+ "v2_page_min_dpi": 157,
+ "v2_same_side_text_min_dpi": 301,
+ "v2_text_lux": [
+  300,
+  753
+ ],
+ "cost_usd": [
+  149,
+  259
+ ],
+ "cost_by_block": {
+  "Compute": [
+   63.5,
+   87.6
+  ],
+  "Radio": [
+   6.4,
+   12.8
+  ],
+  "Cameras": [
+   42.0,
+   84.0
+  ],
+  "Sensors": [
+   5.0,
+   9.0
+  ],
+  "Light": [
+   2.8,
+   6.3
+  ],
+  "Audio": [
+   3.9,
+   8.3
+  ],
+  "Power": [
+   8.9,
+   16.4
+  ],
+  "Board": [
+   11.0,
+   23.0
+  ],
+  "Mechanical": [
+   6.0,
+   12.0
+  ]
+ }
+}

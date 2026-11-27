@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SenseBook v2 hardware · 3D model</title>
+<style>
+:root{--bg:#f6f7f6;--surface:#ffffff;--ink:#1d2a2e;--muted:#5b6b70;--line:#d9e1e2;--teal:#1f4e57;--teal-soft:#e3eef0;--marigold:#b7790f;--stage:#e9ebe8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111a1c;--surface:#172427;--ink:#e6eeef;--muted:#9fb1b5;--line:#2a3b3f;--teal:#8cc7d1;--teal-soft:#1d3236;--marigold:#f0b14a;--stage:#1b2629;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111a1c;--surface:#172427;--ink:#e6eeef;--muted:#9fb1b5;--line:#2a3b3f;--teal:#8cc7d1;--teal-soft:#1d3236;--marigold:#f0b14a;--stage:#1b2629;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,"Nirmala UI",sans-serif;display:flex;flex-direction:column}
+header{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line)}
+header .brand{font-weight:700;font-size:20px;color:var(--teal)}
+header h1{font-size:16px;margin:0;font-weight:600}
+header a{margin-left:auto;color:var(--teal);font-weight:600}
+main{flex:1;display:grid;grid-template-columns:minmax(0,1fr) 320px;min-height:0}
+#stage{position:relative;background:var(--stage);min-height:320px}
+#stage canvas{display:block;width:100%;height:100%;touch-action:none}
+#msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--muted);pointer-events:none}
+#picked{position:absolute;left:12px;bottom:12px;right:12px;max-width:560px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+#picked b{color:var(--teal)}
+#msg[hidden],#picked[hidden]{display:none}
+aside{border-left:1px solid var(--line);background:var(--surface);padding:14px 16px;overflow:auto;display:flex;flex-direction:column;gap:14px}
+fieldset{border:0;margin:0;padding:0}
+legend,label.h{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--marigold);font-weight:700;margin-bottom:6px;display:block;padding:0}
+input[type=range]{width:100%;accent-color:var(--teal)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg label{flex:1;min-width:84px;text-align:center;border:1px solid var(--line);border-radius:8px;padding:6px 8px;cursor:pointer;font-size:13px}
+.seg input{position:absolute;opacity:0}
+.seg input:checked+span{font-weight:700;color:var(--teal)}
+.seg label:has(input:checked){background:var(--teal-soft);border-color:var(--teal)}
+.seg label:has(input:focus-visible){outline:2px solid var(--marigold);outline-offset:2px}
+button{font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:7px 10px;cursor:pointer}
+button:hover{border-color:var(--teal)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--marigold);outline-offset:2px}
+#parts{list-style:none;margin:0;padding:0;font-size:13px;max-height:30vh;overflow:auto;border:1px solid var(--line);border-radius:8px}
+#parts li button{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:6px 10px;background:transparent}
+#parts li:last-child button{border-bottom:0}
+#parts li button[aria-pressed=true]{background:var(--teal-soft);font-weight:600}
+#parts li button .new{color:var(--marigold);font-weight:700;font-size:11px;margin-left:6px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.fact{border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:6px;padding:6px 8px}
+.fact .n{font-size:18px;font-weight:700;color:var(--teal);line-height:1.15}
+.fact .l{font-size:12px;color:var(--muted);line-height:1.3}
+.note{font-size:12.5px;color:var(--muted);margin:0}
+.key{display:flex;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.key i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:4px}
+@media (max-width:860px){main{grid-template-columns:1fr;grid-template-rows:minmax(52vh,1fr) auto}aside{border-left:0;border-top:1px solid var(--line)}#parts{max-height:30vh}}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">SenseBook</span>
+  <h1>Hardware v2 proposal: 3D model</h1>
+  <a href="proposal.html">The proposal and the numbers →</a>
+</header>
+<main>
+  <div id="stage" aria-label="3D view of the SenseBook hardware v2 proposal">
+    <div id="msg">Loading the model…</div>
+    <div id="picked" hidden></div>
+  </div>
+  <aside>
+    <fieldset>
+      <legend>Buttons</legend>
+      <div class="seg" role="radiogroup" aria-label="Button layout">
+        <label><input type="radio" name="opt" value="A" checked><span>A: on the head</span></label>
+        <label><input type="radio" name="opt" value="B"><span>B: hub wings + clicker</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Show</legend>
+      <div class="seg" role="radiogroup" aria-label="Show">
+        <label><input type="radio" name="show" value="device" checked><span>Device</span></label>
+        <label><input type="radio" name="show" value="head"><span>Head only</span></label>
+        <label><input type="radio" name="show" value="page"><span>Cameras on the page</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Shell</legend>
+      <div class="seg" role="radiogroup" aria-label="Shell">
+        <label><input type="radio" name="shell" value="solid" checked><span>Solid</span></label>
+        <label><input type="radio" name="shell" value="ghost"><span>See-through</span></label>
+        <label><input type="radio" name="shell" value="off"><span>Hidden</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <label class="h" for="explode">Pull apart</label>
+      <input id="explode" type="range" min="0" max="100" value="0">
+      <output id="explodeOut" class="note" for="explode">Assembled</output>
+    </fieldset>
+    <div><button id="reset" type="button">Reset view</button></div>
+    <div>
+      <label class="h">From the model's own checks</label>
+      <div class="facts" id="facts"></div>
+      <p class="key" id="zkey" hidden><span><i style="background:#1f7a84"></i>wide cameras (108°)</span><span><i style="background:#c98a12"></i>page cameras (60°)</span></p>
+    </div>
+    <div>
+      <label class="h" for="parts">Parts (<span id="count">0</span>), <span style="color:var(--marigold)">new in v2</span> marked</label>
+      <ul id="parts" aria-label="Parts"></ul>
+    </div>
+    <p class="note">Drag to turn, scroll or pinch to zoom, right-drag or two fingers to move. Click a part to name it.
+    This is a design model, built on the build chat's v1 model: bought parts are drawn at datasheet or estimated sizes, every number is an estimate, and nothing has been built or tested.</p>
+  </aside>
+</main>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const stage = document.getElementById('stage'), msg = document.getElementById('msg'), picked = document.getElementById('picked');
+const list = document.getElementById('parts');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true }); }
+catch (e) { msg.textContent = 'This browser cannot show 3D here. See the proposal page for pictures.'; throw e; }
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.3;
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.add(new THREE.HemisphereLight(0xffffff, 0x9aa5a8, 1.0));
+const camera = new THREE.PerspectiveCamera(30, 1, 0.003, 20);
+const lamp = new THREE.DirectionalLight(0xffffff, 2.0);
+lamp.position.set(-0.3, 0.5, 1); camera.add(lamp); scene.add(camera);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = 0.08;
+controls.addEventListener('change', draw);
+
+const bodies = [];
+let home = null, selected = null;
+const state = { opt: 'A', show: 'device', shell: 'solid', t: 0 };
+function draw() { renderer.render(scene, camera); }
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setSize(w, h, false); camera.aspect = w / Math.max(h, 1); camera.updateProjectionMatrix(); draw();
+}
+new ResizeObserver(resize).observe(stage);
+
+function visibleBox() {
+  const box = new THREE.Box3();
+  bodies.forEach(b => { if (b.node.visible) box.expandByObject(b.node); });
+  return box;
+}
+function frame(dir) {
+  const box = visibleBox(); if (box.isEmpty()) return;
+  const c = box.getCenter(new THREE.Vector3()), r = box.getSize(new THREE.Vector3()).length() / 2;
+  const d = r / Math.sin(THREE.MathUtils.degToRad(camera.fov / 2)) * 1.0;
+  const v = (dir || new THREE.Vector3(0.62, 0.45, -0.66)).clone().normalize();
+  camera.position.copy(c).addScaledVector(v, d); controls.target.copy(c); controls.update();
+  home = { pos: camera.position.clone(), target: c.clone() }; draw();
+}
+function apply() {
+  bodies.forEach(b => {
+    const optOk = !b.option || b.option === state.opt;
+    let showOk;
+    if (state.show === 'device') showOk = b.group !== 'book' && b.group !== 'views';
+    else if (state.show === 'head') showOk = b.group === 'unit';
+    else showOk = b.group !== 'clicker';
+    const shellHidden = b.shell && state.shell === 'off';
+    b.node.visible = optOk && showOk && !shellHidden;
+    if (b.shell) b.mats.forEach(m => { m.transparent = state.shell === 'ghost'; m.opacity = state.shell === 'ghost' ? 0.15 : 1; m.depthWrite = state.shell !== 'ghost'; m.needsUpdate = true; });
+    b.node.position.copy(b.base).addScaledVector(b.off, state.t);
+  });
+  document.getElementById('zkey').hidden = state.show !== 'page';
+  draw();
+}
+function select(b) {
+  if (selected) selected.mats.forEach(m => m.emissive && m.emissive.setHex(m.userData.em0 ?? 0));
+  selected = b;
+  list.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(!!b && x.dataset.label === b.label)));
+  if (!b) { picked.hidden = true; draw(); return; }
+  b.mats.forEach(m => m.emissive && m.emissive.setHex(0x8a4b00));
+  picked.hidden = false; picked.innerHTML = '<b></b>'; picked.firstChild.textContent = b.label + (b.v2 ? '  (new in v2)' : '  (v1 part, reused)');
+  draw();
+}
+
+fetch('facts.json').then(r => r.json()).then(f => {
+  const el = document.getElementById('facts');
+  f.forEach(x => { const d = document.createElement('div'); d.className = 'fact'; d.innerHTML = '<div class="n"></div><div class="l"></div>';
+    d.firstChild.textContent = x.n; d.lastChild.textContent = x.l; el.append(d); });
+}).catch(() => {});
+
+new GLTFLoader().load('sensebook_v2.glb', gltf => {
+  const root = gltf.scene; scene.add(root); root.updateMatrixWorld(true);
+  const labels = new Map();
+  root.children.slice().forEach(node => {
+    const u = node.userData || {}; if (!u.label) return;
+    const e = u.explode || [0, 0, 0]; const mats = [];
+    node.traverse(o => { if (!o.isMesh) return; o.material = o.material.clone(); o.material.userData.em0 = o.material.emissive ? o.material.emissive.getHex() : 0; mats.push(o.material); });
+    const b = { node, base: node.position.clone(), off: new THREE.Vector3(e[0], e[2], -e[1]), group: u.group, label: u.label,
+                option: u.option || '', v2: !!u.v2, shell: node.name.startsWith('shell_'), mats };
+    node.traverse(o => { o.userData.body = b; });
+    bodies.push(b);
+    if (!labels.has(b.label)) labels.set(b.label, b);
+  });
+  [...labels.values()].filter(b => b.group !== 'views' && b.group !== 'book').sort((a, b) => (b.v2 - a.v2) || a.label.localeCompare(b.label)).forEach(b => {
+    const li = document.createElement('li'), bt = document.createElement('button');
+    bt.type = 'button'; bt.dataset.label = b.label; bt.setAttribute('aria-pressed', 'false');
+    bt.append(document.createTextNode(b.label + (b.option ? '  [Option ' + b.option + ']' : '')));
+    if (b.v2) { const s = document.createElement('span'); s.className = 'new'; s.textContent = 'NEW'; bt.append(s); }
+    bt.addEventListener('click', () => {
+      if (b.option && b.option !== state.opt) { document.querySelector(`input[name=opt][value=${b.option}]`).checked = true; state.opt = b.option; apply(); }
+      select(selected && selected.label === b.label ? null : b);
+    });
+    li.append(bt); list.append(li);
+  });
+  document.getElementById('count').textContent = list.children.length;
+  msg.hidden = true; resize(); apply(); frame();
+}, undefined, () => { msg.textContent = 'The 3D model file could not be loaded.'; });
+
+document.querySelectorAll('input[name=opt]').forEach(r => r.addEventListener('change', e => { state.opt = e.target.value; apply(); }));
+document.querySelectorAll('input[name=show]').forEach(r => r.addEventListener('change', e => {
+  state.show = e.target.value; apply();
+  frame(state.show === 'page' ? new THREE.Vector3(0.0, 0.9, 0.55) : null);
+}));
+document.querySelectorAll('input[name=shell]').forEach(r => r.addEventListener('change', e => { state.shell = e.target.value; apply(); }));
+document.getElementById('explode').addEventListener('input', e => {
+  state.t = e.target.value / 100; apply();
+  document.getElementById('explodeOut').textContent = state.t === 0 ? 'Assembled' : Math.round(state.t * 100) + '% pulled apart';
+});
+document.getElementById('reset').addEventListener('click', () => { if (!home) return; camera.position.copy(home.pos); controls.target.copy(home.target); controls.update(); draw(); });
+const ray = new THREE.Raycaster(); let down = null;
+renderer.domElement.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; });
+renderer.domElement.addEventListener('pointerup', e => {
+  if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5) return;
+  const r = renderer.domElement.getBoundingClientRect();
+  ray.setFromCamera(new THREE.Vector2((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1), camera);
+  const hit = ray.intersectObjects(bodies.filter(b => b.node.visible).map(b => b.node), true).find(h => h.object.userData.body);
+  select(hit ? hit.object.userData.body : null);
+});
+window.sensebookView = { frame: v => frame(v && new THREE.Vector3(...v)), set: (k, v) => { state[k] = v; apply(); }, select: label => select(bodies.find(b => b.label === label) || null) };
+</script>
+</body>
+</html>

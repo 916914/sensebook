@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SenseBook hardware v2</title>
+<style>
+:root{--bg:#f6f7f6;--surface:#fff;--ink:#1d2a2e;--muted:#5b6b70;--line:#d9e1e2;--teal:#1f4e57;--teal-soft:#e3eef0;--marigold:#9a6408;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111a1c;--surface:#172427;--ink:#e6eeef;--muted:#9fb1b5;--line:#2a3b3f;--teal:#8cc7d1;--teal-soft:#1d3236;--marigold:#f0b14a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111a1c;--surface:#172427;--ink:#e6eeef;--muted:#9fb1b5;--line:#2a3b3f;--teal:#8cc7d1;--teal-soft:#1d3236;--marigold:#f0b14a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Nirmala UI",sans-serif}
+header{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;padding:14px 16px;border-bottom:1px solid var(--line);background:var(--surface)}
+header .brand{font-weight:700;font-size:20px;color:var(--teal)}
+header a{margin-left:auto;color:var(--teal);font-weight:600}
+main{max-width:1040px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:28px;line-height:1.2;margin:8px 0 6px}
+h2{font-size:21px;margin:40px 0 8px;padding-top:10px;border-top:1px solid var(--line)}
+h2 small{display:block;font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:var(--marigold);font-weight:700;margin-bottom:2px}
+p{margin:8px 0;max-width:76ch}
+.lead{font-size:17px;color:var(--muted)}
+.status{border-left:4px solid var(--marigold);background:var(--surface);padding:10px 14px;border-radius:6px;max-width:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:18px 0}
+.tile{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:8px;padding:10px 12px}
+.tile .n{font-size:24px;font-weight:700;color:var(--teal);line-height:1.15}
+.tile .l{font-size:13px;color:var(--muted)}
+figure{margin:14px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#46555a;padding:6px 4px 0}
+.renders{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.renders figure{margin:0}
+.table-wrap{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surface)}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+td.n{white-space:nowrap;font-variant-numeric:tabular-nums}
+td.src{font-size:12.5px;color:var(--muted)}
+ul{max-width:76ch;padding-left:20px}
+li{margin:4px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.two{grid-template-columns:1fr}h1{font-size:24px}}
+a{color:var(--teal)}
+a:focus-visible{outline:2px solid var(--marigold);outline-offset:2px}
+footer{max-width:1040px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><span class="brand">SenseBook</span><span>Hardware v2 proposal</span><a href="index.html">Open the 3D model →</a></header>
+<main>
+<h1>SenseBook hardware v2: what changes in the device</h1>
+<p class="lead">The same clip-on head at the top edge of the book, the same size, with new insides: four cameras that read every
+printed line at 300 dpi or more, a light that lights only the page, a bigger battery, a stronger computer, better radio and better sound.
+Two button layouts: A keeps v1's buttons, B moves them to the hub and adds a pocket clicker.</p>
+<p class="status"><b>Status: design proposal.</b> Nothing here has been built or measured. Numbers come from the 3D model
+(built on the build chat's v1 model, commit 598d0f3) and from datasheets and listings checked on 27 Nov 2026.
+<b>EST</b> marks our own estimates.</p>
+
+<div class="tiles">
+<div class="tile"><div class="n">315 dpi</div><div class="l">lowest on the printed text (v1: 82)</div></div>
+<div class="tile"><div class="n">300–753 lux</div><div class="l">on all printed text, about 0.59 W (EST)</div></div>
+<div class="tile"><div class="n">24.5 cm³</div><div class="l">of battery cells (v1: 17.5 cm³)</div></div>
+<div class="tile"><div class="n">88 × 40 × 34 mm</div><div class="l">head size, unchanged from v1</div></div>
+<div class="tile"><div class="n">$149–259</div><div class="l">parts per unit at 1,000 units (EST)</div></div>
+</div>
+
+<div class="renders">
+<figure><img src="renders/v2_hero_A.jpg" alt="SenseBook v2 clipped to the top edge of an open textbook, seen from the reader's side" loading="lazy">
+<figcaption>Option A on an open textbook. Render of the CAD model, not a photograph.</figcaption></figure>
+<figure><img src="renders/v2_facet_A.jpg" alt="Close view of the sloped lens facet: four camera windows in a row, a ToF window in the middle, a light strip above and two below" loading="lazy">
+<figcaption>The sloped lens facet: four camera windows, the hand sensor in the middle, light strips above and below.</figcaption></figure>
+</div>
+
+<h2><small>1 · Reading the page</small>Four 50 MP cameras: every printed line at 315 dpi or more</h2>
+<p><b>v1:</b> one 12 MP camera with a 120° lens looks down from the top edge. Because it looks at a slant, the far end of the page gets
+few pixels: the lowest point on the printed text gets about 82 dpi. Text recognition tools usually ask for about 300 dpi for small print.</p>
+<p><b>v2:</b> the camera stays at the top edge, as you asked. Instead of one camera for the whole spread, four sit in a row on the same sloped facet,
+each with a 50 MP phone sensor (8160 × 6144 px). Two <b>page cameras</b> with about
+60° lenses look across the book and reach the far end of each page, where the slant is worst. Two <b>wide cameras</b>
+(about 108°) cover the area right under the device that the page cameras cannot see.
+Almost every point (99.9%) is seen by two to four cameras, and the software uses whichever has the most pixels there.
+The lowest point on the printed text now gets 315 dpi (301 dpi even using only the two cameras on that page's side), counting the slight barrel distortion of real lenses
+(2% at the corner for the page cameras, 10% for the wide ones, EST).
+The whole page, margins included, is seen (157 dpi at the worst margin corner).</p>
+<p><b>Why 60° and not the stock 64° lens:</b> with 64° the far text corners came out at about 298 dpi once lens distortion was counted.
+A slightly longer lens (about 4.5 mm instead of 4.15 mm, same sensor and module) gives 315.</p>
+<figure><img src="figures/dpi_v1_v2.svg" alt="Two maps of an open textbook. Left, v1: most of the page is below 300 dpi, the lowest point on the printed text is 82 dpi. Right, v2: all printed text is above 300 dpi, the lowest is 315 dpi.">
+<figcaption>Pixels per inch on a 37 × 24.5 cm textbook spread at v1's default 9 cm stick. Dashed boxes are the printed text. White lines in v2 split the page by which camera has the most pixels there. Geometry estimate including lens distortion (EST); real sharpness also depends on focus and lens quality.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Camera</th><th>View (horizontal × vertical)</th><th>Lowest dpi where it is the best camera</th></tr></thead><tbody><tr><td>Wide camera, left</td><td class=n>108° × 92°</td><td class=n>331</td></tr><tr><td>Wide camera, right</td><td class=n>108° × 92°</td><td class=n>331</td></tr><tr><td>Page camera, left</td><td class=n>60° × 47°</td><td class=n>315</td></tr><tr><td>Page camera, right</td><td class=n>60° × 47°</td><td class=n>315</td></tr></tbody></table></div>
+<ul>
+<li><b>No recording.</b> The cameras are off. A small hand sensor (ST VL53L8CX) sees a hand or a page turning; then the four cameras take one still each and turn off again.</li>
+<li><b>Aim.</b> The page cameras look 47° down and 7° outward; the wide cameras
+56° down and 2° outward. The model searched every aim in 1° steps and kept each module within
+9.6° of the facet, so all four fit flat behind it.</li>
+<li><b>Snapshots for later:</b> the hardware can keep text from pages (not pictures) on the device. How many, and when the assistant deletes them, is a software setting.</li>
+</ul>
+
+<h2><small>2 · Light</small>A light bar that lights the page, not the room</h2>
+<p><b>v1:</b> a ring of LEDs around the lens lights a circle. To get the far corners of the page bright enough, the middle gets far too bright, and much of the light misses the book.
+In our model the ring needs about 5.7 W to put 300 lux on every point of the printed text, and the middle of the page then gets over 9,000 lux (EST).</p>
+<p><b>v2:</b> two thin strips on the facet hold 20 small warm-white LEDs (CRI 90). A moulded optic aims each LED at its own patch of the page,
+and a 24-channel driver (TI LP5024) sets each one. The model finds the least power that puts 300 to 750 lux on every point of the printed text:
+about 71 lumens, 0.59 W from the battery (EST).
+<b>It follows the book:</b> the cameras see where the page ends, and LEDs aimed off the page stay off, so a small paperback uses less light than a big atlas.</p>
+<figure><img src="figures/light_v2.svg" alt="Map of light on an open textbook: the printed text gets between 300 and 753 lux.">
+<figcaption>Light on the page from the v2 light bar, recomputed from the model's LED positions, aims and intensities. Dashed boxes are the printed text. Estimate.</figcaption></figure>
+
+<h2><small>3 · Battery</small>24.5 cm³ of cells in the same head</h2>
+<p>The Pi Zero, its camera board and the separate audio and power boards took most of the head. v2 has one main board on v1's mounting points,
+so cells fill the space around the cameras: stepped cells behind and above them and a new cell in the front, 24.5 cm³ in all,
+against 17.5 cm³ in v1. The head stays 88 × 40 × 34 mm.</p>
+<p>The power plan: the main chip sleeps between page turns. A small Bluetooth audio chip keeps reading aloud while it sleeps.
+Average draw with the light off: 0.35 to 0.65 W. The light adds 0.60 to 0.95 W. All EST.</p>
+<figure><img src="figures/battery_v2.svg" alt="Battery hours for three kinds of cell, light off and light on, against the 10 hour and 8 hour targets.">
+<figcaption>Reading hours from the model's cell volume, 92% usable. The range runs from the highest to the lowest power estimate.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Cell type</th><th>Wh</th><th>Light off</th><th>10 h met?</th><th>Light on</th><th>8 h met?</th></tr></thead><tbody><tr><td>Standard Li-po (460 Wh/L)</td><td class=n>11.3</td><td class=n>16.0 to 29.7 h</td><td>yes, even in the worst case</td><td class=n>6.5 to 10.9 h</td><td>only in the better cases</td></tr><tr><td>4.45 V cell (600 Wh/L, EST)</td><td class=n>14.7</td><td class=n>20.8 to 38.7 h</td><td>yes, even in the worst case</td><td class=n>8.5 to 14.3 h</td><td>yes, even in the worst case</td></tr><tr><td>Silicon-carbon cell (800 Wh/L, phone grade)</td><td class=n>19.6</td><td class=n>27.8 to 51.6 h</td><td>yes, even in the worst case</td><td class=n>11.3 to 19.0 h</td><td>yes, even in the worst case</td></tr></tbody></table></div>
+<p><b>What this means:</b> standard Li-po cells give 10 hours with the light off but not 8 hours with it on. 4.45 V cells give
+8.5 to 14.3 h with the light on. These are custom stepped pouch cells; nobody has quoted them yet.</p>
+
+<h2><small>4 · Computer and radio</small>Rockchip RK3576 with an AI engine, Wi-Fi 6 and Bluetooth 5.4</h2>
+<ul>
+<li><b>Computer:</b> Rockchip RK3576, 8 cores, 6 TOPS NPU (an on-chip AI engine for reading text and making speech), 2 GB LPDDR4X, 16 GB eMMC.
+v1's Pi Zero 2 W has 4 slower cores, 512 MB and no AI engine. The board keeps the Pi Zero's outline and screw holes, so v1's cover and standoffs fit.</li>
+<li><b>Radio:</b> Wi-Fi 6 + Bluetooth 5.4 module (Quectel FCS96x class, 12 × 12 mm) with a flex antenna on the inside of the right wall, away from the steel stick. v1: 2.4 GHz Wi-Fi 4 and Bluetooth 4.2.</li>
+<li><b>Untested:</b> taking full 50 MP stills on the RK3576. Its image processor handles 16 MP, so full resolution means capturing raw frames and processing them on the chip. No one was found doing this on the RK3576.</li>
+</ul>
+
+<h2><small>5 · Sound</small>A sealed speaker and a smart amplifier</h2>
+<ul>
+<li>v1: an open 20 × 14 mm micro speaker. v2: a sealed 15 × 11 mm box speaker (Soberton 1511 class, 90 dB at 0.6 W and 10 cm) behind a new grille on the front, driven by a smart amplifier (TI TAS2563) that protects the speaker while running it loud. About 88–90 dB at 10 cm, EST.</li>
+<li>A third microphone on the front, so the device can cancel its own voice and hear the reader while it speaks (echo cancelling in software).</li>
+<li>v1's headphone jack, volume keys and mute switch stay where they are.</li>
+</ul>
+
+<h2><small>6 · Buttons</small>Option A keeps v1's buttons. Option B is the alternative.</h2>
+<div class="two">
+<div><p><b>Option A (v1 layout, unchanged):</b> Ask, Play/Pause, Back and Forward on top of the head, volume and mute on the side.</p></div>
+<div><p><b>Option B:</b> the main keys sit on two wings of the hub at the top edge of the book. The book takes the push, so the head does not sway.
+A pocket clicker (Bluetooth, 36 × 28 × 9 mm, EST) does the same from the hand, in bed or on a bus. The top openings are closed.</p></div>
+</div>
+<div class="renders">
+<figure><img src="renders/v2_hero_B.jpg" alt="Option B: keys on two wings of the hub at the top edge of the book, and a small clicker on the table" loading="lazy">
+<figcaption>Option B: hub wings with Ask, Play/Pause, Back and Forward, and the pocket clicker.</figcaption></figure>
+<figure><img src="renders/v2_inside_A.jpg" alt="Inside the head with the shell hidden: four camera modules on the facet, light boards, battery cells and the main board" loading="lazy">
+<figcaption>Inside the head (shell hidden): cameras, light bars, cells, main board.</figcaption></figure>
+</div>
+
+<h2><small>7 · Cost</small>$149 to $259 in parts per unit (EST)</h2>
+<p>The venture plan's v1 parts cost is $52.30 at 1,000 units. v2 costs more, mostly because of memory (its price rose sharply in 2026) and the four cameras.
+To keep it down, v2 uses 2 GB of memory instead of 4 GB, 16 GB of storage instead of 32 GB, echo cancelling in software instead of a $12–18 voice chip,
+catalogue phone camera modules with no custom optics, and v1's shell, stick, hub and blades unchanged.</p>
+<figure><img src="figures/cost_v2.svg" alt="Parts cost by block, from $149 to $259 per unit in total.">
+<figcaption>Parts cost by block at about 1,000 units. Tooling, certification and assembly setup are one-off costs and not included.</figcaption></figure>
+<details><summary>All 25 lines with sources</summary>
+<div class="table-wrap"><table><thead><tr><th>Block</th><th>Part</th><th>Qty</th><th>Cost</th><th>Basis</th><th>Source or note</th></tr></thead>
+<tbody><tr><td>Compute</td><td>Rockchip RK3576 SoC, 6 TOPS NPU, FCCSP 16.1 x 17.2 mm</td><td class=n>1</td><td class=n>$20.00–24.60</td><td>Listed</td><td class=src>LCSC C42388007: US$22.76 (30+) to 24.57 (1); LCKFB TaishanPi-3M BOM 9 Feb 2026: 141.25 CNY (about US$20) at 1,170 units</td></tr><tr><td>Compute</td><td>LPDDR4X, 2 GB</td><td class=n>1</td><td class=n>$22.00–35.00</td><td>EST</td><td class=src>No 2026 quote found. 4 GB estimated US$45-65 after the 2026 memory price rises (TrendForce; Raspberry Pi price notes); 2 GB taken as roughly half</td></tr><tr><td>Compute</td><td>eMMC, 16 GB</td><td class=n>1</td><td class=n>$20.00–25.00</td><td>Listed</td><td class=src>DRAMeXchange spot 16 June 2026: 16 GB average US$24.21</td></tr><tr><td>Compute</td><td>Power management IC (RK806 class)</td><td class=n>1</td><td class=n>$1.50–3.00</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Radio</td><td>Wi-Fi 6 + Bluetooth 5.4 module (Quectel FCS96x class, 12 x 12 mm)</td><td class=n>1</td><td class=n>$6.07–12.00</td><td>Listed (low end)</td><td class=src>Quectel FCS962N-LP US$6.07 at 1k+ (Future Electronics); FCS960K price not found</td></tr><tr><td>Radio</td><td>Flex antenna</td><td class=n>1</td><td class=n>$0.30–0.80</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Cameras</td><td>50 MP AF camera module (Samsung S5KJN1 class) with a ~4.5 mm, ~60 deg lens, page pair</td><td class=n>2</td><td class=n>$18.00–34.00</td><td>Listed (unverified)</td><td class=src>Alibaba asking prices GBP 7-13 per piece for 48-50 MP AF MIPI modules (decimal point unclear in the listing text); the listed module has a 4.15 mm lens, so the ~4.5 mm lens is a catalogue choice still to confirm</td></tr><tr><td>Cameras</td><td>50 MP ultra-wide camera module, ~108 deg, near pair</td><td class=n>2</td><td class=n>$24.00–50.00</td><td>EST</td><td class=src>No ultra-wide 50 MP listing found; taken as dearer than the standard module</td></tr><tr><td>Sensors</td><td>ToF hand and page sensor, ST VL53L8CX</td><td class=n>1</td><td class=n>$4.00–7.00</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Sensors</td><td>6-axis motion sensor, ST LSM6DSV class</td><td class=n>1</td><td class=n>$1.00–2.00</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Light</td><td>Mid-power LED, CRI 90, 2016 package</td><td class=n>20</td><td class=n>$0.80–2.00</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Light</td><td>LED driver, TI LP5024 (24 channels)</td><td class=n>1</td><td class=n>$1.00–1.80</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Light</td><td>Light-bar boards (3) and moulded optic strips (3)</td><td class=n>1</td><td class=n>$1.00–2.50</td><td>EST</td><td class=src>Optic mould tooling is a one-off cost, not included</td></tr><tr><td>Audio</td><td>Sealed box speaker, 15 x 11 mm (Soberton 1511 class)</td><td class=n>1</td><td class=n>$0.80–1.80</td><td>EST</td><td class=src>Listed on DigiKey; price not captured</td></tr><tr><td>Audio</td><td>Smart speaker amplifier, TI TAS2563</td><td class=n>1</td><td class=n>$1.20–2.20</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Audio</td><td>MEMS microphone</td><td class=n>3</td><td class=n>$0.90–1.80</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Audio</td><td>Low-power Bluetooth audio chip (plays while the main chip sleeps)</td><td class=n>1</td><td class=n>$1.00–2.50</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Power</td><td>Charger with power path, TI BQ25895</td><td class=n>1</td><td class=n>$1.55–2.45</td><td>Listed</td><td class=src>LCSC C2861263: US$2.45 (1), 1.55 (1000+)</td></tr><tr><td>Power</td><td>USB-C PD sink controller</td><td class=n>1</td><td class=n>$0.80–2.00</td><td>EST</td><td class=src>No price found</td></tr><tr><td>Power</td><td>Fuel gauge, ADI MAX17260</td><td class=n>1</td><td class=n>$1.54–2.00</td><td>Listed (low end)</td><td class=src>ADI list price from US$1.54 at 1k</td></tr><tr><td>Power</td><td>Stepped pouch cells, 1 cell in 3 parallel packs, generic Li-po</td><td class=n>1</td><td class=n>$5.00–10.00</td><td>EST</td><td class=src>No quote. 4.45 V or silicon-carbon cells cost more (no price found). Cell certification US$5-15k one-off (Alibaba seller guide 2026)</td></tr><tr><td>Board</td><td>Main board, 65 x 30 mm, 8-layer HDI</td><td class=n>1</td><td class=n>$4.00–9.00</td><td>EST</td><td class=src>No quote</td></tr><tr><td>Board</td><td>Assembly (two-sided, BGA) and test</td><td class=n>1</td><td class=n>$5.00–10.00</td><td>EST</td><td class=src>No quote</td></tr><tr><td>Board</td><td>Flex cables (6) and small boards (USB, ToF, top)</td><td class=n>1</td><td class=n>$2.00–4.00</td><td>EST</td><td class=src>No quote</td></tr><tr><td>Mechanical</td><td>Shell, cover, stick, hub, blades, rear leg, keys, screws, heat spreader (v1 parts, unchanged)</td><td class=n>1</td><td class=n>$6.00–12.00</td><td>EST</td><td class=src>Injection-mould tooling is a one-off cost, not included</td></tr></tbody></table></div></details>
+
+<h2><small>8 · Checks</small>What the model was checked for</h2>
+<div class="table-wrap"><table><thead><tr><th>Check</th><th>Option A</th><th>Option B</th></tr></thead><tbody><tr><td>Parts overlapping each other (more than 0.02 mm³)</td><td class=n>0</td><td class=n>0</td></tr><tr><td>Overlaps in every v1 pose (stick lengths, tilt, blade and leg positions)</td><td class=n>0</td><td class=n>0</td></tr><tr><td>Camera sight lines blocked by a part (rays to every page point each camera reads)</td><td class=n>0 of 3626</td><td class=n>0 of 3626</td></tr><tr><td>Everything in the head, bounding box (mm), buttons and hinge included</td><td class=n>89.2 × 34.0 × 53.5</td><td class=n>89.2 × 34.0 × 52.1</td></tr><tr><td>Same, v1 parts (for comparison)</td><td class=n>89.2 × 34.0 × 53.5</td><td class=n></td></tr><tr><td>Front shell bounding box (mm)</td><td class=n>88.0 × 30.0 × 48.3</td><td class=n>v1: 88.0 × 30.0 × 48.3</td></tr><tr><td>Mass, whole device without the book (g)</td><td class=n>160.2</td><td class=n>166.1 (clicker not included)</td></tr><tr><td>Mass of the head (g)</td><td class=n>109.0</td><td class=n>106.2  (v1: 108.8)</td></tr></tbody></table></div>
+<p>Also checked by the model: every camera's window lets its full view through; the four cameras together see the whole page.
+Not checked: heat, drop strength, radio range, sound level, real camera blur and focus. These need a prototype.</p>
+
+<h2><small>9 · Not yet known</small>What a prototype has to show</h2>
+<ul>
+<li>Full 50 MP stills from four cameras on the RK3576 (see section 4).</li>
+<li>Camera module sizes: taken from typical phone modules; no supplier drawing yet. The ~4.5 mm lens for the page cameras is a catalogue choice still to confirm with a module maker.</li>
+<li>Cell prices and density for small custom 4.45 V and silicon-carbon cells: no quote yet.</li>
+<li>The power figures, the light's real efficiency and the speaker's loudness: estimates until measured.</li>
+<li>Prices marked EST in the cost table.</li>
+</ul>
+</main>
+<footer>SenseBook hardware v2 proposal, 27 Nov 2026. Hardware design files CERN-OHL-W-2.0; text, figures and renders CC BY 4.0; code Apache-2.0.
+Model files: <code>docs/validation/hardware_v2/</code> in the SenseBook repository.</footer>
+</body>
+</html>
