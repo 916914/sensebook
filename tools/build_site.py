@@ -1,7 +1,7 @@
 """Build the private SenseBook hub site into D:\\Sensebook\\site (a clean folder that is safe to deploy).
 
-It copies only finished deliverables (PDF, DOCX, XLSX, renders, wiring diagram, CAD exports) and converts the
-Markdown design and prototype documents to HTML pages. No source code, keys, data, notes or scripts are copied.
+It copies only finished deliverables (PDF, DOCX, XLSX, renders, wiring diagram, CAD exports, the 3D viewer page and
+its GLB model) and converts the Markdown design and prototype documents to HTML pages. No source code, keys, data, notes or scripts are copied.
 Standard library only. Run:  python -I tools/build_site.py   (from D:\\Sensebook)
 """
 import html, os, re, shutil, sys, zipfile
@@ -19,10 +19,12 @@ PAGES = [  # (slug, title, source markdown, group)
     ("attachment-plan", "Tri-grip attachment plan", "design/SenseBook_Attachment_Plan.md", "Design"),
     ("industrial-design", "Industrial design", "design/SenseBook_Industrial_Design.md", "Design"),
     ("image-prompts", "Image prompts", "design/Image_Prompts.md", "Design"),
+    ("build-validation", "3D build and project validation", "design/VALIDATION.md", "Design"),
     ("prototype-bom", "Prototype bill of materials", "prototype/hardware/Prototype_BOM.md", "Prototype"),
     ("pinmap", "Pin map", "prototype/hardware/pinmap.md", "Prototype"),
     ("assembly-guide", "Assembly guide", "prototype/hardware/Assembly_Guide.md", "Prototype"),
     ("test-checklist", "Test checklist", "prototype/hardware/Test_Checklist.md", "Prototype"),
+    ("print-notes", "3D-print notes", "design/cad/out/PRINT_NOTES.md", "Prototype"),
     ("software", "Prototype software", "prototype/software/README.md", "Prototype"),
     ("software-architecture", "Software architecture", "prototype/software/docs/ARCHITECTURE.md", "Prototype"),
 ]
@@ -75,12 +77,15 @@ def inline(s):
 
 
 def fix_link(href):
-    """Point image links at the copied renders; leave web links alone."""
+    """Point image links at the copied renders and document links at their hub pages; leave web links alone."""
     if href.startswith(("http://", "https://", "#", "/")):
         return href
     name = os.path.basename(href)
     if name.lower().endswith((".png", ".jpg", ".jpeg", ".svg")):
         return "/renders/" + name
+    for slug, _title, src, _group in PAGES:                 # a link to another Markdown document that has a hub page
+        if name and name == os.path.basename(src) and href.replace("\\", "/").split("#")[0].endswith(name):
+            return f"/{slug}/"
     return href
 
 
@@ -164,12 +169,24 @@ def main():
         body.append("<h2>Renders</h2><div class=\"gallery\">")
         for f in imgs:
             u = copy(os.path.join("design", "renders", f), os.path.join("renders", f))
-            cap = os.path.splitext(f)[0].replace("_", " ").replace("-", " ")
+            cap = re.sub(r"^\d+\s+", "", os.path.splitext(f)[0].replace("_", " ").replace("-", " "))
             body.append(f'<figure><a href="{u}"><img src="{u}" alt="SenseBook render: {cap}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>')
         body.append("</div>")
 
+    diagrams_dir = os.path.join(ROOT, "design", "diagrams")          # figures used inside the document pages
+    for f in sorted(os.listdir(diagrams_dir)) if os.path.isdir(diagrams_dir) else []:
+        if f.lower().endswith((".png", ".jpg", ".svg")):
+            copy(os.path.join("design", "diagrams", f), os.path.join("renders", f))
+
     for group in ("Design", "Prototype"):
         cards = []
+        if group == "Design":                                         # interactive 3D viewer (three.js page + GLB model)
+            v_page = copy(os.path.join("tools", "viewer", "index.html"), os.path.join("viewer", "index.html"))
+            v_glb = copy(os.path.join("design", "cad", "out", "sensebook.glb"), os.path.join("viewer", "sensebook.glb"))
+            if v_page and v_glb:
+                cards.append('<div class="card"><span class="tag">Design</span><h3>3D model viewer</h3>'
+                             '<p>Turn the prototype model, pull it apart and look inside.</p>'
+                             '<div class="links"><a href="/viewer/">Open the 3D model</a></div></div>')
         for slug, title, src, g in PAGES:
             if g != group:
                 continue
@@ -191,13 +208,14 @@ def main():
             if extra:
                 cards.append(f'<div class="card"><span class="tag">Prototype</span><h3>Wiring diagram</h3><div class="links">{" ".join(extra)}</div></div>')
             cad = os.path.join(ROOT, "design", "cad", "out")
-            if os.path.isdir(cad) and any(f.lower().endswith((".stl", ".step", ".dxf")) for f in os.listdir(cad)):
+            cad_files = [(os.path.join(d, f), os.path.relpath(os.path.join(d, f), cad)) for d, _, fs in os.walk(cad) for f in sorted(fs)
+                         if f.lower().endswith((".stl", ".step", ".stp", ".dxf")) or f == "PRINT_NOTES.md"] if os.path.isdir(cad) else []
+            if cad_files:
                 zpath = os.path.join(OUT, "downloads", "SenseBook_CAD_files.zip")
                 os.makedirs(os.path.dirname(zpath), exist_ok=True)
                 with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
-                    for f in sorted(os.listdir(cad)):
-                        if f.lower().endswith((".stl", ".step", ".stp", ".dxf")):
-                            z.write(os.path.join(cad, f), f)
+                    for full, rel in sorted(cad_files, key=lambda t: t[1]):
+                        z.write(full, rel.replace("\\", "/"))
                 cards.append('<div class="card"><span class="tag">Prototype</span><h3>3D-print and CAD files</h3><p>STL for printing, STEP for editing, DXF blade patterns.</p><div class="links"><a href="/downloads/SenseBook_CAD_files.zip">Download ZIP</a></div></div>')
         if cards:
             body.append(f"<h2>{group}</h2><div class=\"grid\">" + "".join(cards) + "</div>")

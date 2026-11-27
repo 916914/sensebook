@@ -1,0 +1,3 @@
+# build chat: local tool environments and intermediate meshes (rebuilt by the scripts in cad/)
+.venv-render/
+cad/build/

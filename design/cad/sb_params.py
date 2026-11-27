@@ -110,3 +110,63 @@ def side_profile(n=8):
     pts.append((FACET_BOT_Y, 0.0))
     pts.append((0.0, FACET_TOP_Z))
     return pts
+
+
+# =====================================================================================
+# 3D MODEL LAYER (added with build_model.py). Everything below is the model's own layout
+# of the parts inside the envelope above. All of it is EST: part sizes are from typical
+# datasheets / breakout boards, not from parts on the bench. Unit frame unless noted.
+# =====================================================================================
+SEAM_Y = -30.0                                   # tub (front) / back cover split plane
+TONGUE_T, TONGUE_H, TONGUE_GAP = 0.9, 1.8, 0.15   # cover tongue inside the tub wall
+PIVOT_PIN_D = 3.0                                # M3 friction pivot of the tilt joint
+LUG_T, LUG_GAP = 4.0, 6.2                         # tilt lugs under the unit, gap for the tongue
+
+# ---- camera (IMX708 board with M12 holder; board size EST, see BOM note)
+CAM_BOARD_X, CAM_BOARD_T, CAM_BOARD_TH = 24.0, 25.0, 1.2
+CAM_V_MIN = -8.0                                 # board extends 8 mm below / 17 mm above the lens axis
+CAM_STACK = 15.0                                 # lens front -> board front face (lens + holder)
+CAM_LENS_RECESS = 1.4                            # lens front sits this far behind the outer facet (window 1.0)
+CAM_HOLDER, CAM_HOLDER_H = 14.0, 8.5             # M12 holder footprint (square) and height
+CAM_LENS_D = 14.0
+CAM_POST_U, CAM_POST_V = 10.0, (-6.0, 8.0)       # 4 mounting posts (EST pattern, match to the real module)
+
+# ---- Pi Zero 2 W: against the back cover, parts facing the cover (heat path), GPIO edge up
+PI_L, PI_Wd, PI_TH = 65.0, 30.0, 1.0
+PI_Z0 = 3.8                                      # lower long edge
+PI_PCB_Y = -27.8                                 # flat underside of the PCB (faces the camera)
+SPREADER = (40.0, 21.0, 1.0)                     # aluminium heat spreader on the cover (x, z, thickness)
+
+# ---- cells: two 102535 pouches standing either side of the camera, in front of the Pi
+CELL = (25.0, 10.0, 35.0)                        # x, y, z
+CELL_X0, CELL_Y1, CELL_Z0 = 12.6, -17.0, 2.4     # inner x edge, front y face, bottom z
+
+# ---- controls (top face unless noted)
+ASK_D, ASK_XY = 13.0, (0.0, -18.0)
+PLAY_SIZE, PLAY_XY = (10.0, 4.4), (0.0, -7.2)
+NAV_D, NAV_X, NAV_Y = 8.5, 24.0, -11.0           # Back at -x, Forward at +x
+VOL_SIZE, VOL_Y, VOL_Z = (8.0, 3.5), -9.0, (27.5, 20.5)   # left side: Vol+ above Vol-
+MUTE_Y, MUTE_Z = -12.0, 13.3                      # left side slide switch
+USB_Y, USB_Z = -10.95, 23.0                       # right side
+JACK_Y, JACK_Z = -12.0, 13.3                      # right side
+DOT_X, DOT_Z, DOT_D = (-34.0, -28.0, -22.0, -16.0), 32.5, 2.4
+SPK = (20.0, 4.0, 14.0)                          # speaker x, y, z
+SPK_XZ = (26.0, 27.0)
+MIC_X, MIC_Y = 32.0, -8.0
+
+# ---- stick / hub / legs (book frame)
+TUBE_OUT_Z = (-7.5, 96.0)                        # outer tube runs through the hub
+TUBE_IN_Z0, TUBE_IN_LEN = -6.5, 106.5            # inner tube bottom (collapsed) and length
+COLLAR = (13.0, 89.5, 97.0)                      # twist-lock collar OD, z0, z1
+LEG_PIVOT = (-50.0, -8.0)                        # rear-leg pivot axis (y, z), along x
+LEG_CHORD = 57.0                                 # pivot -> pad centre
+PAD = (REAR_FOOT_W, 14.0, 2.0)                   # TPU pad x, along-leg, thickness
+KNUCKLE_PIN = (-33.2, -1.4)                      # blade-knuckle pin (y, z), along x
+BLADE_ROOT_Z = -4.0                              # blade root height (book frame, hub centred on z=0)
+BLADE_ROOT_Y = -36.5
+COVER_HARD, BLOCK_HARD = 3.0, 12.0               # hardcover scene: cover board and page-block thickness at the gutter
+COVER_SOFT, BLOCK_SOFT = 0.4, 4.0                # thin paperback scene
+COVER_THICK, BLOCK_THICK = 3.0, 30.0             # thick reference book scene (stick extended)
+
+# ---- material densities (g/cm3) for volume-based mass checks
+RHO = {"petg": 1.27, "tpu": 1.21, "steel": 7.9, "al": 2.70, "pmma": 1.18, "brass": 8.5}
